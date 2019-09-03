@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Manjari', sans-serif;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: #98777b;
+  background-color: white;
 }
 
 .topnav a {
@@ -14,16 +14,22 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 100%;
 }
 
 .topnav a:hover {
-  background-color: #da614e;
-  color: black;
+  background-color: #92d5d6;
+  color: white;
 }
 
 .topnav a.active {
   background-color: #f7f399;
   color: white;
+}
+
+img {
+	width: 10%;
+	height: 10%;
+	float:left;
 }
 
