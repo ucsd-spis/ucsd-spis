@@ -3,56 +3,28 @@
 <head>
 	<title>Enrollment</title>
 	<link rel="stylesheet" href="enrollment.css">
-	<style>
-		.button {
-  			background-color: #4CAF50; /* Green */
-  			border: none;
-  			color: white;
-  			padding: 16px 32px;
-  			text-align: center;
-   			display: inline-block;
-  			font-size: 16px;
-  			cursor: pointer;
-			display: flex; 
-			justify-content: center; 
-			align-items:center;
-			margin:0 auto;
-		}
-
-		.button1 {
-  			background-color: white; 
-  			color: black; 
-  			border: 2px solid #4CAF50;
-		}
-
-		.button1:hover {
- 			background-color: #4CAF50;
-  			color: white;
-		}
-	</style>
+	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-	<div class="topnav">
+		<div class="topnav">
 		<img src="SPIS-logo.jpg">
-		<a href="index.html">Home</a>
-		<a href="academic.html">Academic Program</a>
-		<a href="calendar.html">Calendar</a>
-		<a href="people.html">People</a>
-		<a href="housing.html">Housing</a>
-		<a href="highlights.html">Highlights</a>
-		<a class="active" href="enrollment.html">Enrollment</a>
-		<a href="resources.html">Resources</a>
-	</div> 
+		<a class="tab" href="index.html">Home</a>
+		<a class="tab" href="academic.html">Academic Program</a>
+		<a class="tab" href="calendar.html">Calendar</a>
+		<a class="tab" href="people.html">People</a>
+		<a class="tab" href="housing.html">Housing</a>
+		<a class="tab" href="highlights.html">Highlights</a>
+		<a id="active" class="tab" href="enrollment.html">Enrollment</a>
+		<a class="tab" href="resources.html">Resources</a>
+	</div>
+ 
 
-	<table class = "info">
-		<tr>
-			<th>Application</th>
-			<th>Registration</th>
-		</tr>
-		<tr>
-			<td>&nbsp;&nbsp;&nbsp; 2019 SPIS will consider applications from all 2019 UC San Diego freshmen who are admitted to one of the following majors.
+	<div class = "info">
+		<div class="application">
+			<h1>Application</h1>
+			<h2>&nbsp;&nbsp;&nbsp; 2019 SPIS will consider applications from all 2019 UC San Diego freshmen who are admitted to one of the following majors.
 			<ul>
 				<li>Computer Engineering, Computer Science and Bioinformatics majors in the CSE Department</li>
 				<li>Computer Engineering majors in the ECE Department</li>
@@ -73,8 +45,14 @@
 				<p></p>
 				<li>If you are a student with a disability who may need accommodations to participate in our programs, you are encouraged to contact the Office for Students with Disabilities directly at 858.534.4382. Additional information may be found at http://disabilities.ucsd.edu/about/index.html</li>
 			
-			</ul></td>
-			<td> Welcome to the 2019 SPIS registration! In this page, you will find the forms and detailed instructions for completing your registration for 2019 SPIS. 
+			</ul></h2>
+		</div>
+
+
+
+		<div class="registration">
+			<h1>Registration</h1>
+			<h2> Welcome to the 2019 SPIS registration! In this section, you will find the forms and detailed instructions for completing your registration for 2019 SPIS. 
 			<p><b>Confirm Acceptance</b></p>
 			<p>Participation in 2019 SPIS is by admission only. If you received an admission offer to participate in 2019 SPIS, please confirm your acceptance by sending email to Professor Mohan Paturi at paturi@cs.ucsd.edu by Monday, June 3rd.</p>
 			<p><b>Fee Payment</b></p>
@@ -85,11 +63,12 @@
 			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_evaluationConsent.pdf?attachauth=ANoY7cpX3oi6xVQydUPWK0uJtUqsVFP2b6JEUIkng2nKTYEilW4NZWALAvN1F1eZ99nu1c5-Ulxt01MjNFIvppi5P4JNYYfLEipNaoTYazOGZ9CuZqF4TenQ3A9X9WCCXvsGeCf40Q4sTJvGOEZ0Lvb9jOWPofERFk8aW3U9XxuY8eYeTTJ5rb5-9mlZ7vrP52nE4JpWDibE9INL8CNSycUFlzU5_GhDfHs9018ihqrhPWr5oTJ29D0%3D&attredirects=0">Evaluation Consent:</a> Please complete and sign the evaluation form if you agree to participate in the pre and post evaluation of SPIS. These evaluations will be used to make improvements to the program in the future. </p>
 			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_mediaAuthorizationAndRelease.pdf?attachauth=ANoY7crrlHH0UNMH4rgQUtVvTGCZEFW6chGSMiT0f2aGQ3ulK9smR50o13e_ZOEGfwXjte5u3v2LP5cprNkUKI8bC5lZp0BQDuG4mta142ArDJoJJmlTbv7BDtLJ2l2fSeMwbTTtSKw3znDlH0B0WYku-C0Rr7ZWn3mXlM2relmc_dH9qwg73FJI4AkEgJVoBlI--p0-0WEWftQT20Oc4MuOFpEfpHgyiP45zJySykeQbMevn0k0P_6lG9PFC9f12lsK87AuAoJ0&attredirects=0">Media Release Waiver:</a> Please complete and sign the Media Release Waiver. The waiver authorizes SPIS with the right to use any photos or videos of your student that may be taken during the course of the program for future marketing or public relations use. </p>
 			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_waiverOfLiabilityAcademicAndTransportationAgreement.pdf?attachauth=ANoY7cqpS6qWRbDFrbmRUN4m7Kv05djgW9WP9IR3YhiE_U5KeGzIJ4WMgHS4dhKhyjMXEQ_QR5uaFtI3bb_rksfLXmagOc0gcW0FQS6208qwJjKQ_zSLs0Pr4y2p-qxhBO4rYCANbUKFkayO0C5yhKrhQN0qb4MMZTv9YCJn_awm5xOOtwLaAWw2T9yjHbn61a3_aZLNuAVsqVB4L2ny1uTcUZ1gM8cqzjSXsO60x_3Se3mGn17UTVglMrsRckQWCjijvnI4sdmiv_7OaphsOr21kDImWw2_fA%3D%3D&attredirects=0">Waiver of Liability, Assumption of Risk, and Indemnity Agreement:</a> Please read the agreement carefully before signing. By signing this waiver you agree to all the terms in the agreement as it pertains to SPIS. All students participating in SPIS must return the completed agreement in order to participate in the program. </p>
-			</td>
+			</h2>
+		</div>
 
 				
 		
-	</table>
+	</div>
 
 
 

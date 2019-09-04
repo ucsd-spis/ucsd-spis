@@ -1,84 +1,72 @@
 body {
   margin: 0;
-  font-family: 'Manjari', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .topnav {
-  overflow: hidden;
-  background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ 	overflow: hidden;
+ 	background-color: white;
+	font-family: 'Manjari', sans-serif;
 }
 
 .topnav a {
   float: left;
-  color: #92d5d6;
+  color: #369eba;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 100%;
+  align-items: center;
+  font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #92d5d6;
+  background-color: #369eba;
   color: white;
 }
 
-.topnav a.active {
-  background-color: #f7f399;
-  color: white;
+.topnav a#active {
+  background-color: #f2df61;
+  color: #142d91;
 }
 
 img {
-	width: 10%;
-	height: 10%;
+	display: block;
 	float:left;
+	height: 60px;
+	width: 100px;
+	margin: auto;
 }
 
-body {
-  margin: 0;
-  font-family: 'Manjari', sans-serif;
+.info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: white;
+.application {
+	margin-top: 25px;
+	margin-right: 30px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #369eba;
+	text-align: center;
+	border-radius: 15px;
+	color: white;
 }
 
-.topnav a {
-  float: left;
-  color: #92d5d6;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 100%;
+.registration {
+	margin-top: 25px;
+	margin-right: 40px;
+	margin-left: 30px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #142d91;
+	text-align: center;
+	border-radius: 15px;
+	color: white;
 }
 
-.topnav a:hover {
-  background-color: #92d5d6;
-  color: white;
-}
-
-.topnav a.active {
-  background-color: #f7f399;
-  color: white;
-}
-
-img {
-	width: 10%;
-	height: 10%;
-	float:left;
-}
-
-table.info {
-    width:70%; 
-    margin-left:15%; 
-    margin-right:15%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
-}
 
 
