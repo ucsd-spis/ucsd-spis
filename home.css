@@ -60,6 +60,7 @@ object {
 	color: white;
 	margin-top: 85%;
 	padding: 10px;
+	border-radius: 15px;
 }
 
 a {
