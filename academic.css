@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.topnav {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ 	overflow: hidden;
+ 	background-color: white;
+	font-family: 'Manjari', sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #369eba;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  align-items: center;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #369eba;
+  color: white;
+}
+
+.topnav a#active {
+  background-color: #f2df61;
+  color: #142d91;
+}
+
+img {
+	display: block;
+	float:left;
+	height: 60px;
+	width: 100px;
+	margin: auto;
+}
+
+.intro{
+   margin-left: 100px;
+   margin-right: 100px;
+}
+
+table, th, td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.classes {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.focs{
+	margin: 5%;
+	background-color: #369eba;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	border-radius: 15px;
+}
+
+.aps{
+	margin: 5%;
+	background-color: #f2df61;
+	text-align: center;
+	padding: 10px;
+	border-radius: 15px;
+}
+
+.facets{
+	margin:5%;
+	background-color: #142d91;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	border-radius: 15px;
+}
+
+h1{
+	font-size: 25px;
+}
+
+h2{
+	font-size: 15px;
+}
+
+button{
+  background-color: #369eba;
+  color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+}
+
+button:hover {
+	background-color: white;
+	color: #369eba;
+	cursor: pointer;
+}
+
+#title {
+	font-size: 20px;
+}
+
+.note {
+	margin-right: 7%;
+	margin-left: 7%;
+	margin-top: 1%;
+}
+
+.smaller {
+	font-size: 13px;
+}
+
