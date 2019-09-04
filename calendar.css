@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-family: 'Manjari', sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: left;
+  color: #92d5d6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.topnav a:hover {
+  background-color: #92d5d6;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #f7f399;
+  color: white;
+}
+
+img {
+	width: 10%;
+	height: 10%;
+	float:left;
+}
