@@ -46,18 +46,18 @@ img {
 	margin-right: 100px;
 }
 
+.info {
+	padding: 40px;
+}
+
 object {
 	text-align: center;
 }
 
 .bullets {
 	background-color: #92d5d6;
-	margin-top: 300px;
-}
-
-.pictures {
-	text-align: center;
-	align-items: center;
+	margin-top: 85%;
+	padding: 10px;
 }
 
 .leftside {
@@ -66,5 +66,38 @@ object {
 
 .rightside {
 	margin-left: 17px;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  margin: 25px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
