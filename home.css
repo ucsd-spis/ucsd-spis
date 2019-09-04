@@ -4,8 +4,10 @@ body {
 }
 
 .topnav {
-  overflow: hidden;
-  background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ 	overflow: hidden;
+ 	background-color: white;
 }
 
 .topnav a {
@@ -14,7 +16,8 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 100%;
+  align-items: center;
+  font-size: 17px;
 }
 
 .topnav a:hover {
@@ -22,14 +25,46 @@ body {
   color: white;
 }
 
-.topnav a.active {
+.topnav a#active {
   background-color: #f7f399;
-  color: white;
+  color: black;
 }
 
 img {
-	width: 10%;
-	height: 10%;
+	display: block;
 	float:left;
+	height: 60px;
+	width: 100px;
+	margin: auto;
+}
+
+.boxes {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	text-align: center;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+object {
+	text-align: center;
+}
+
+.bullets {
+	background-color: #92d5d6;
+	margin-top: 300px;
+}
+
+.pictures {
+	text-align: center;
+	align-items: center;
+}
+
+.leftside {
+	margin-right: 17px;
+}
+
+.rightside {
+	margin-left: 17px;
 }
 
