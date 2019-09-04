@@ -4,20 +4,21 @@
 <head>
 	<title>Academic Program</title>
 	<link rel="stylesheet" href="academic.css">
+	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
-<div class="topnav">
-	<img src="SPIS-logo.jpg">
-	<a href="index.html">Home</a>
-	<a class="active" href="academic.html">Academic Program</a>
-	<a href="calendar.html">Calendar</a>
-	<a href="people.html">People</a>
-	<a href="housing.html">Housing</a>
-	<a href="highlights.html">Highlights</a>
-	<a href="enrollment.html">Enrollment</a>
-	<a href="resources.html">Resources</a>
-
-</div> 
+	<div class="topnav">
+		<img src="SPIS-logo.jpg">
+		<a class="tab" href="index.html">Home</a>
+		<a id="active" class="tab" href="academic.html">Academic Program</a>
+		<a class="tab" href="calendar.html">Calendar</a>
+		<a class="tab" href="people.html">People</a>
+		<a class="tab" href="housing.html">Housing</a>
+		<a class="tab" href="highlights.html">Highlights</a>
+		<a class="tab" href="enrollment.html">Enrollment</a>
+		<a class="tab" href="resources.html">Resources</a>
+	</div>
+ 
 
 <div class="intro">
 <p>
@@ -37,43 +38,51 @@ The academic program focuses on the foundations of computer science and engineer
 <p>In addition, students will participate in the Facets of Computer Science and Engineering seminar, where they will be exposed to the larger world of computing and learn the tools and techniques needed to make a smooth transition to UC San Diego.
 
 2019 SPIS faculty include Gary Gillespie, Curt Schurgers, and Niema Moshiri.</p>
+</div>
 
-	<table class="classes">
-		<tr>
-			<th><a href="https://ucsd-cse-spis-2019.github.io/">Foundations of Computer Science</a></th>
-			<th>Algorithmic Problem Solving</th>
-			<th>Facets</th>
-		</tr>
-		<tr>
-			<td>&nbsp;&nbsp;&nbsp;   This course introduces students to the intellectual and practical foundations of the discipline of computer science.  The goals of this course are to get students excited about studying CS and empowered with the knowledge and skills they need to thrive in UCSD's computer science program.  <br /><br />
+	<div class="classes">
+
+		<div class="focs">
+			<h1>Foundations of Computer Science</h1><br><br>
+			<h2>&nbsp;&nbsp;&nbsp;   This course introduces students to the intellectual and practical foundations of the discipline of computer science.  The goals of this course are to get students excited about studying CS and empowered with the knowledge and skills they need to thrive in UCSD's computer science program.  <br /><br />
 			<br>&nbsp;&nbsp; &nbsp;  This main page for the foundations course is focused on answering the question "What am I supposed to be working on right now?"   <br /><br />
-			<br>&nbsp;&nbsp; &nbsp;  The course will cover basic Computer Science skills such as algorithm development and programming with an emphasis on logical thinking and debugging. Students will implement programs in Python (a high-level language) and may work with the Raspberry Pi.  Throughout, we will emphasize the connections between low-level hardware, programming, and abstract algorithms as tools for solving problems.  Students will work on projects extending these ideas in the areas of data science, robotics, web development.<br /><br /></td>  
+			<br>&nbsp;&nbsp; &nbsp;  The course will cover basic Computer Science skills such as algorithm development and programming with an emphasis on logical thinking and debugging. Students will implement programs in Python (a high-level language) and may work with the Raspberry Pi.  Throughout, we will emphasize the connections between low-level hardware, programming, and abstract algorithms as tools for solving problems.  Students will work on projects extending these ideas in the areas of data science, robotics, web development.<br /><br /></h2><br><br><br><br> 
+			<a href="https://ucsd-cse-spis-2019.github.io/"><button>Course Content</button></a>
 
-			<td>&nbsp;&nbsp; &nbsp; Though programming is the most visible aspect of how Computer Science is applied, the basis of Computer Science is a way of thinking about problems and solving them algorithmically before one starts implementing them as programs. Several lectures will be devoted to algorithmic problem solving (APS), where students will think about problems and algorithms and write the solutions precisely and coherently in plain English. The types of problems encountered in APS are similar to the ones often presented to prospective employees at job interviews for companies such as Qualcomm, Google, Microsoft, Facebook, as well as start-up companies.<br /><br />
-			<br>&nbsp;&nbsp;&nbsp; <b>Homework policy: </b> 
+	</div>
+
+
+		<div class="aps">
+			<h1>Algorithmic Problem Solving</h1><br>
+			<h2>&nbsp;&nbsp; &nbsp; Though programming is the most visible aspect of how Computer Science is applied, the basis of Computer Science is a way of thinking about problems and solving them algorithmically before one starts implementing them as programs. Several lectures will be devoted to algorithmic problem solving (APS), where students will think about problems and algorithms and write the solutions precisely and coherently in plain English. The types of problems encountered in APS are similar to the ones often presented to prospective employees at job interviews for companies such as Qualcomm, Google, Microsoft, Facebook, as well as start-up companies.<br /><br />
+				<br>&nbsp;&nbsp;&nbsp; <b>Homework policy: </b>
 			<ol>
-				<li>Each student is expected to work by herself/himself to complete homework and exams. However, in the case of homework, students are encouraged to discuss high-level ideas and strategies among themselves in small groups. This in no way relieves the responsibility on the part of each student to work out all the details and to write the solutions by herself/himself.</li>
-				<li>Submit your homework via Gradescope. </li>
-				<li>Homework is due Sunday at 9 PM for each of the first four Sundays.</li>
-				<li>Instructions for submitting your APS solutions via GradeScope:</li>
+				<li class="smaller">Each student is expected to work by herself/himself to complete homework and exams. However, in the case of homework, students are encouraged to discuss high-level ideas and strategies among themselves in small groups. This in no way relieves the responsibility on the part of each student to work out all the details and to write the solutions by herself/himself.</li>
+				<li class="smaller">Submit your homework via Gradescope. </li>
+				<li class="smaller">Homework is due Sunday at 9 PM for each of the first four Sundays.</li>
+				<li class="smaller">Instructions for submitting your APS solutions via GradeScope:</li>
 				<ul>
-					<li>login to Gradescope and select the course you will be uploading your homework to</li>
-					<li>select the assignment you will be uploading </li>
-					<li>choose to either submit images, or submit a pdf and upload it from your computer  </li>
-					<li>specify the corresponding pages of your work to the questions assigned (you can do this by first selecting the question on the tab in the left labeled "Question Outline" and then clicking on the page of your own work that it corresponds to - do this for all questions)  </li>
-					<li>click "submit" on the bottom right of your screen  </li>
+					<li class="smaller">login to Gradescope and select the course you will be uploading your homework to</li>
+					<li class="smaller">select the assignment you will be uploading </li>
+					<li class="smaller">choose to either submit images, or submit a pdf and upload it from your computer  </li>
+					<li class="smaller">specify the corresponding pages of your work to the questions assigned (you can do this by first selecting the question on the tab in the left labeled "Question Outline" and then clicking on the page of your own work that it corresponds to - do this for all questions)  </li>
+					<li class="smaller">click "submit" on the bottom right of your screen  </li>
 				</ul>
 			</ol>
-			<p>*NOTE: Please format your homework so that each question you answer is on an individual page (only one question per page)</p></td>
+			<p class="smaller">*NOTE: Please format your homework so that each question you answer is on an individual page (only one question per page)</p></h2>
+		</div>
 
-			<td>Facets is a series of interactive lectures where students will
+
+		<div class="facets">
+			<h1>Facets</h1>
+			<h2>Facets is a series of interactive lectures where students will
 			<ul>
-				<li>explore exciting ideas in computer science and engineering,</li>
-				<li>learn about opportunities in industry,</li>
-				<li>interact with departmental and college advisors for course planning, and</li>
-				<li>gain the knowledge about various resources at UC San Diego.</li>
+				<li class="smaller">explore exciting ideas in computer science and engineering,</li>
+				<li class="smaller">learn about opportunities in industry,</li>
+				<li class="smaller">interact with departmental and college advisors for course planning, and</li>
+				<li class="smaller">gain the knowledge about various resources at UC San Diego.</li>
 			</ul>
-			<p>The lectures will be presented by UC San Diego faculty, alumni, college/departmental advisors, and industry professionals.</p>
+			The lectures will be presented by UC San Diego faculty, alumni, college/departmental advisors, and industry professionals.</h2>
 			
 			<table class="facets">
 				<tr>
@@ -123,10 +132,11 @@ The academic program focuses on the foundations of computer science and engineer
 				</tr>
 
 			</table>
-		</tr>
-	</table>
+		</div>
+	</div>
 
-<p> Note to students regarding daily schedule: </p>
+<div class="note">
+<p id="title"> Note to students regarding daily schedule: </p>
 	<ul>
 		<li> <b>FoCS Depth / FoCS Breadth: </b> These parallel Friday sessions offer an opportunity for you to make a choice. If there are aspects of the FoCS program from Monday-Thursday of that week that are still a bit hazy, and you'd like some review, the FOCS Depth sessions will recap what you learned that week, and go a bit deeper. If you feel pretty confident about what you've learned, the FoCS Breadth sessions provide an opportunity to learn about something new and different.
 		</li><br>

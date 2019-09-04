@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Manjari', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .topnav {
@@ -8,11 +8,12 @@ body {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
  	overflow: hidden;
  	background-color: white;
+	font-family: 'Manjari', sans-serif;
 }
 
 .topnav a {
   float: left;
-  color: #92d5d6;
+  color: #369eba;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -21,13 +22,13 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #92d5d6;
+  background-color: #369eba;
   color: white;
 }
 
 .topnav a#active {
-  background-color: #f7f399;
-  color: black;
+  background-color: #f2df61;
+  color: #142d91;
 }
 
 img {
@@ -55,9 +56,18 @@ object {
 }
 
 .bullets {
-	background-color: #92d5d6;
+	background-color: #142d91;
+	color: white;
 	margin-top: 85%;
 	padding: 10px;
+}
+
+a {
+	color: black;
+}
+
+.bullets a {
+	color: white;
 }
 
 .leftside {
