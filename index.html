@@ -5,22 +5,6 @@
 	<title>UCSD SPIS</title>
 	<link rel="stylesheet" href="home.css">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
-	<script>
-		var slideIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1} 
-  x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-	</script>
 </head>
 
 
@@ -43,7 +27,7 @@ function carousel() {
 	<div class="leftside">
 	<div class="info">
 		<p>
-		In 2013, the <a class="link" href="http://cse.ucsd.edu/">Computer Science and Engineering</a> (CSE) department conceived of a project to help incoming students excel in their early computer science courses and beyond¿even if they have no background in computer science or programming. The CSE Department is motivated by the goals of providing the best education to its students and to helping them realize their individual potential. The Summer Program for Incoming Students (SPIS, pronounced "spice") is a first step towards these goals.<br><br>
+		In 2013, the <a class="link" href="http://cse.ucsd.edu/">Computer Science and Engineering</a> (CSE) department conceived of a project to help incoming students excel in their early computer science courses and beyond, even if they have no background in computer science or programming. The CSE Department is motivated by the goals of providing the best education to its students and to helping them realize their individual potential. The Summer Program for Incoming Students (SPIS, pronounced "spice") is a first step towards these goals.<br><br>
 
 		SPIS will give students college-level exposure to computer science, emphasizing problem-solving, communication skills, and mathematical modeling. Students will be exposed to project-based learning as well as research in computer science and engineering. In addition to academics, SPIS will introduce participants to the social, cultural, and broader intellectual experiences open to university students. Those accepted to the SPIS program will also receive career mentoring, and enjoy a series of lectures and demonstrations illustrating the exciting and varied career opportunities available in computer science and engineering. <br><br>
 
@@ -119,7 +103,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1} 
   slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
+  setTimeout(showSlides, 3000);
 }
 	</script>
 

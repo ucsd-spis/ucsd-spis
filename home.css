@@ -72,6 +72,10 @@ a {
 	color: white;
 }
 
+ul {
+	text-align: left;
+}
+
 .leftside {
 	margin-right: 17px;
 }

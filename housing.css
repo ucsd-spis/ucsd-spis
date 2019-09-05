@@ -85,7 +85,8 @@ button{
   color: white;
   border: 2px solid white;
   font-size: 16px;
-  padding: 16px 32px;
+  width: 100px;
+  height: 50px;
   margin: 4px 2px;
 }
 

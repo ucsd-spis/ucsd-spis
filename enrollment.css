@@ -111,3 +111,7 @@ button:hover {
 	cursor: pointer;
 }
 
+ul {
+	text-align: left;
+}
+
