@@ -3,12 +3,26 @@
 <head>
 	<title>UCSD SPIS</title>
 	<link rel="stylesheet" href="highlights.css">
+	<script>
+	var slideIndex = 0;
+	carousel();
+	function carousel() {
+  		var i;
+  		var x = document.getElementsByClassName("mySlides");
+  		for (i = 0; i < x.length; i++) {
+  		  x[i].style.display = "none"; 
+  		}
+  		slideIndex++;
+  		if (slideIndex > x.length) {slideIndex = 1} 
+  		x[slideIndex-1].style.display = "block"; 
+  		setTimeout(carousel, 2000); // Change image every 2 seconds
+	}
+	</script>
 </head>
 
 
 <body>
-
-
+	
 	<div class="topnav">
 		<img src="SPIS-logo.jpg">
 		<a href="index.html">Home</a>
@@ -19,7 +33,83 @@
 		<a id = "active" class="tab" href="highlights.html">Highlights</a>
 		<a href="enrollment.html">Enrollment</a>
 		<a href="resources.html">Resources</a>
-	</div> 
+	</div>
+
+	<div class = "page">
+
+	
+	<div class="slideshow-container">
+
+  		<!-- Full-width images with number and caption text -->
+ 		<div class="mySlides fade">
+    		<img src="high1.jpg" style="width:100%; height:auto">
+ 		 </div>
+
+  		<div class="mySlides fade">
+    		<img src="pic1.jpg" style="width:100%; height:auto">
+  		</div>
+
+  		<div class="mySlides fade">
+   		<img src="pic2.jpg" style="width:100%; height:auto">
+  		</div>
+
+  		<div class="mySlides fade">
+	        <img src="pic3.jpg" style="width:100%; height:auto">
+                </div>
+
+  		<div class="mySlides fade">
+	  	<img src="high5.JPG" style="width:100%; height:auto">
+  		</div>
+
+		<div class="mySlides fade">
+	  	<img src="high6.JPG" style="width:100%; height:auto">
+  		</div>
+
+		<div class="mySlides fade">
+	  	<img src="high9.jpg" style="width:100%; height:auto">
+  		</div>
+
+		<div class="mySlides fade">
+	  	<img src="high8.jpg" style="width:100%; height:auto">
+  		</div>
+
+		<div class="mySlides fade">
+	  	<img src="high7.jpg" style="width:100%; height:auto">
+  		</div>
+
+	</div>
+
+	<div class="video">
+		<object width="380" height="260" data="mhigh1.mp4">
+		</object>
+		<object width="380" height="260" data="mhigh2.mp4">
+		</object>
+		<object width="380" height="260" data="mhigh3.mp4">
+		</object>
+		<object width="380" height="260" data="mhigh4.mp4">
+		</object>
+		<object width="380" height="260" data="mhigh5.mp4">
+		</object>
+
+	</div>
+	</div>
+
+	<script>
+	var slideIndex = 0;
+	showSlides();
+	
+	function showSlides() {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none"; 
+	  }
+	  slideIndex++;
+	  if (slideIndex > slides.length) {slideIndex = 1} 
+	  slides[slideIndex-1].style.display = "block"; 
+	  setTimeout(showSlides, 3000); // Change image every 2 seconds
+	}
+	</script>
 
 </body>
 </html>
