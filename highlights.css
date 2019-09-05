@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.topnav {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ 	overflow: hidden;
+ 	background-color: white;
+	font-family: 'Manjari', sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #369eba;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  align-items: center;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #369eba;
+  color: white;
+}
+
+.topnav a#active {
+  background-color: #f2df61;
+  color: #142d91;
+}
+
+img {
+	display: block;
+	float:left;
+	height: 60px;
+	width: 100px;
+	margin: auto;
+}
