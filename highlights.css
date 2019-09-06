@@ -38,3 +38,46 @@ img {
 	width: 100px;
 	margin: auto;
 }
+
+.page {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.video {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  margin: 25px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}

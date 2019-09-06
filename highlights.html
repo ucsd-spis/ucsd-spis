@@ -3,21 +3,7 @@
 <head>
 	<title>UCSD SPIS</title>
 	<link rel="stylesheet" href="highlights.css">
-	<script>
-	var slideIndex = 0;
-	carousel();
-	function carousel() {
-  		var i;
-  		var x = document.getElementsByClassName("mySlides");
-  		for (i = 0; i < x.length; i++) {
-  		  x[i].style.display = "none"; 
-  		}
-  		slideIndex++;
-  		if (slideIndex > x.length) {slideIndex = 1} 
-  		x[slideIndex-1].style.display = "block"; 
-  		setTimeout(carousel, 2000); // Change image every 2 seconds
-	}
-	</script>
+	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
 
@@ -36,7 +22,6 @@
 	</div>
 
 	<div class = "page">
-
 	
 	<div class="slideshow-container">
 
@@ -77,19 +62,22 @@
 	  	<img src="high7.jpg" style="width:100%; height:auto">
   		</div>
 
+		<div class="mySlides fade">
+    		<img src="high10.JPG" style="width:100%; height:auto">
+  		</div>
 	</div>
 
 	<div class="video">
-		<object width="380" height="260" data="mhigh1.mp4">
-		</object>
-		<object width="380" height="260" data="mhigh2.mp4">
-		</object>
-		<object width="380" height="260" data="mhigh3.mp4">
-		</object>
-		<object width="380" height="260" data="mhigh4.mp4">
-		</object>
-		<object width="380" height="260" data="mhigh5.mp4">
-		</object>
+		<div><object width="380" height="260" data="mhigh1.mp4">
+		</object></div>
+		<div><object width="380" height="260" data="mhigh2.mp4">
+		</object></div>
+		<div><object width="380" height="260" data="mhigh4.mp4">
+		</object></div>
+		<div><object width="380" height="260" data="mhigh3.mp4">
+		</object></div>
+		<div><object width="380" height="260" data="mhigh5.mp4">
+		</object></div>
 
 	</div>
 	</div>
