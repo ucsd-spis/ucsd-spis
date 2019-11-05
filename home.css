@@ -31,6 +31,22 @@ body {
   color: #142d91;
 }
 
+.bottomnav {
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottomnav a {
+  float: right;
+  display: block;
+  background-color: #369eba;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 img {
 	display: block;
 	float:left;
