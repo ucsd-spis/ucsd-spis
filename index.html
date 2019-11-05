@@ -5,6 +5,7 @@
 	<title>UCSD SPIS</title>
 	<link rel="stylesheet" href="home.css">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
@@ -21,7 +22,7 @@
 		<a class="tab" href="enrollment.html">Enrollment</a>
 		<a class="tab" href="resources.html">Resources</a>
 	</div>
-	
+
 	<div class="boxes">
 
 	<div class="leftside">
@@ -40,7 +41,7 @@ SPIS is a 5-week residential summer program on the UC San Diego campus for stude
 		</object>
 	</div>
 	</div>
-	
+
 	<div class="rightside">
 	<!-- Slideshow container -->
 <div class="slideshow-container">
@@ -89,26 +90,32 @@ SPIS is a 5-week residential summer program on the UC San Diego campus for stude
 
 	</div>
 	</div>
-	
+
 	<div class="bottomnav">
-		<a href="developers.html">About the Developers</a>
+		<div id="contact">
+			<i class="material-icons">email</i> Contact Us: paturi@cs.ucsd.edu
+		</div>
+
+		<div id="developers">
+			<a href="developers.html">About the Developers</a>
+		</div>
 	</div>
 
 	<script>
 		var slideIndex = 0;
-showSlides();
+		showSlides();
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1} 
-  slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 3000);
-}
+		function showSlides() {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}
+		  slides[slideIndex-1].style.display = "block";
+		  setTimeout(showSlides, 3000);
+		}
 	</script>
 
 </body>

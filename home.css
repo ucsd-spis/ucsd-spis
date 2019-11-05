@@ -32,19 +32,39 @@ body {
 }
 
 .bottomnav {
+  display: grid;
+	grid-template-columns: 1fr 1fr;
   overflow: hidden;
+  background-color: #00609C;
+  opacity: 0.92;
   bottom: 0;
-  width: 100%;
+  margin-top: 1%;
+  color: white;
+}
+
+#contact {
+  padding-top: 2%;
+  padding-left: 5%;
 }
 
 .bottomnav a {
   float: right;
   display: block;
-  background-color: #369eba;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  color: white;
+}
+
+#developers {
+  opacity: 0.8;
+  padding-right: 3%;
+}
+
+#developers:hover {
+  opacity: 1;
+	cursor: pointer;
 }
 
 img {
@@ -124,12 +144,11 @@ ul {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
-
