@@ -66,6 +66,7 @@ button:hover {
 	color: #f2df61;
 	cursor: pointer;
 }
+
 .pic {
 	border-radius: 50%;
 	height: 150px;
@@ -73,4 +74,8 @@ button:hover {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+.image {
+	grid-template-columns: 1fr 1fr 1fr;
 }
