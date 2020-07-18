@@ -57,12 +57,12 @@ body {
   color: white;
 }
 
-#developers {
+.developers {
   opacity: 0.8;
   padding-right: 3%;
 }
 
-#developers:hover {
+.developers:hover {
   opacity: 1;
 	cursor: pointer;
 }
