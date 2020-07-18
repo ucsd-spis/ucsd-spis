@@ -13,6 +13,17 @@ h1 {
   color: white;
 }
 
+.developers a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+
+.developers a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .both {
   background-color: #f2df61;
   margin-left: 5%;
