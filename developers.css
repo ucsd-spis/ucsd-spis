@@ -10,16 +10,18 @@ h1 {
 .developers {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.link a {
+  text-decoration: none;
   color: white;
 }
 
-.developers a {
-  text-decoration: none;
-  color: white;
+.link {
   opacity: 0.8;
 }
 
-.developers a:hover {
+.link:hover {
   opacity: 1;
   cursor: pointer;
 }
