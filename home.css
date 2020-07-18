@@ -47,7 +47,7 @@ body {
   padding-left: 5%;
 }
 
-#about {
+.developers a {
   float: right;
   display: block;
   text-align: center;
