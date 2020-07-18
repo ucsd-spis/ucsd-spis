@@ -42,16 +42,16 @@ body {
   color: white;
 }
 
-#contact {
+.contact {
   padding-top: 2%;
   padding-left: 5%;
 }
 
-#contact a {
+.contact a {
   color: white;
 }
 
-#developers a {
+.developers a {
   float: right;
   display: block;
   text-align: center;
@@ -61,12 +61,12 @@ body {
   color: white;
 }
 
-#developers {
+.developers {
   opacity: 0.8;
   padding-right: 3%;
 }
 
-#developers:hover {
+.developers:hover {
   opacity: 1;
 	cursor: pointer;
 }
