@@ -47,7 +47,7 @@ body {
   padding-left: 5%;
 }
 
-.bottomnav a {
+#about {
   float: right;
   display: block;
   text-align: center;
