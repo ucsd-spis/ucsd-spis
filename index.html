@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+	<!-- https://ucsd-spis.github.io/ucsd-spis/index.html -->
 
 <head>
 	<title>UCSD SPIS</title>
 	<link rel="stylesheet" href="home.css">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 
 <body>
-
+	
 	<div class="topnav">
 		<img src="SPIS-logo.jpg">
 		<a id="active" class="tab" href="index.html">Home</a>
@@ -32,7 +34,7 @@
 
 		SPIS will give students college-level exposure to computer science, emphasizing problem-solving, communication skills, and mathematical modeling. Students will be exposed to project-based learning as well as research in computer science and engineering. In addition to academics, SPIS will introduce participants to the social, cultural, and broader intellectual experiences open to university students. Those accepted to the SPIS program will also receive career mentoring, and enjoy a series of lectures and demonstrations illustrating the exciting and varied career opportunities available in computer science and engineering. <br><br>
 
-SPIS is a 5-week residential summer program on the UC San Diego campus for students accepted into CSE majors as well as for other UC San Diego admitted students who want to explore computer science as a career option. SPIS courses are taught by the very best faculty at UCSD. Students in the program interact with a wide range of CSE faculty and learn about <a class="link" href="http://cse.ucsd.edu/faculty-research">computer science and engineering research</a>. They also have opportunities to connect with engineers from the computer industry. SPIS provides an excellent student experience with individual meetings with faculty, tutoring from experienced CSE undergraduate students, collaborations with fellow students, individual advising to smooth the transition to UC San Diego, and living on campus.
+		SPIS is a 5-week residential summer program on the UC San Diego campus for students accepted into CSE majors as well as for other UC San Diego admitted students who want to explore computer science as a career option. SPIS courses are taught by the very best faculty at UCSD. Students in the program interact with a wide range of CSE faculty and learn about <a class="link" href="http://cse.ucsd.edu/faculty-research">computer science and engineering research</a>. They also have opportunities to connect with engineers from the computer industry. SPIS provides an excellent student experience with individual meetings with faculty, tutoring from experienced CSE undergraduate students, collaborations with fellow students, individual advising to smooth the transition to UC San Diego, and living on campus.
 		</p>
 	</div>
 	<br><br>
@@ -69,7 +71,7 @@ SPIS is a 5-week residential summer program on the UC San Diego campus for stude
 </div>
 
 	<div class="bullets">
-		<p>2019 SPIS will consider applications from all 2019 UC San Diego freshmen who are admitted to one of the following majors.</p>
+		<p><c class="year"></c> SPIS will consider applications from all <c class="year"></c> UC San Diego freshmen who are admitted to one of the following majors.</p>
 		<ul>
 			<li>Computer Engineering, Computer Science and Bioinformatics majors in the CSE Department</li>
 			<li>Computer Engineering majors in the ECE Department</li>
@@ -78,12 +80,12 @@ SPIS is a 5-week residential summer program on the UC San Diego campus for stude
 		</ul>
 		<p>In addition, we will consider applications from a small of number of other freshmen who would like to explore computer science and engineering. </p>
 		<ul>
-			<li>All students are required to complete the <a href="https://docs.google.com/forms/d/1bA_ZsLrhTpa_WBamCP1V3rNiWIbZa-urWsxFDjR2zwc/edit#responses">2019 SPIS application</a>. Applications will be open starting <b>April 13, 2019</b> and its deadline is <b>May 17, 2019</b>.</li>
-			<li>Only a limited number of students will be admitted to 2019 SPIS. Students who will benefit most from the program will be given preference.</li>
-			<li>Students are required to pay a total fee of <b>$2,250</b> to cover the instructional, housing and dining expenses as well as books, supplies, and event expenses. This low fee has been possible due to generous contributions from the Qualcomm Institute and the CSE Department. The actual value of the program exceeds $4,000.</li>
-			<li>A number of scholarships (based on financial hardship) are available to partially cover the cost of the $2,250 fee.</li>
+			<li>All students are required to complete the <a href="https://" onclick="location.href=this.href+applicationLink;return false;"> <c class="year"></c> SPIS application</a>. Applications will be open starting <b class="appStart"></b> and its deadline is <b class="appEnd"></b>.</li>
+			<li style="margin-left:2em">Only a limited number of students will be admitted to <c class="year"></c> SPIS. Students who will benefit most from the program will be given preference.</li>
+			<li>Students are required to pay a total fee of <b>$<c class="fee"></c></b> to cover the instructional, housing and dining expenses as well as books, supplies, and event expenses. This low fee has been possible due to generous contributions from the Qualcomm Institute and the CSE Department. The actual value of the program exceeds $4,000.</li>
+			<li style="margin-left:2em">A number of scholarships (based on financial hardship) are available to partially cover the cost of the $<c class="fee"></c> fee.</li>
 			<li>Participants will live in UC, San Diego campus housing for the entire duration of the program.</li>
-			<li>The program runs for five weeks from August 4th through September 6th, 2019</li>
+			<li>The program runs for five weeks from <c class="programStart"></c> through <c class="programEnd"></li>
 			<li>If you have any questions about the program, please send email to Professor Mohan Paturi at paturi@cs.ucsd.edu with a brief statement about your interest and academic background.</li>
 		</ul>
 	</div>
@@ -117,6 +119,8 @@ SPIS is a 5-week residential summer program on the UC San Diego campus for stude
 		  setTimeout(showSlides, 3000);
 		}
 	</script>
+
+	<script src="upgrade.js"></script>
 
 </body>
 </html>
