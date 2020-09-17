@@ -1,12 +1,13 @@
 <html>
-<body>
 
 <head>
 	<title>Academic Program</title>
 	<link rel="stylesheet" href="academic.css">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
-</head>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+<body>
 	<div class="topnav">
 		<img src="SPIS-logo.jpg">
 		<a class="tab" href="index.html">Home</a>
@@ -49,7 +50,7 @@ The academic program focuses on the foundations of computer science and engineer
 			<br>&nbsp;&nbsp; &nbsp;  The course will cover basic Computer Science skills such as algorithm development and programming with an emphasis on logical thinking and debugging. Students will implement programs in Python (a high-level language) and may work with the Raspberry Pi.  Throughout, we will emphasize the connections between low-level hardware, programming, and abstract algorithms as tools for solving problems.  Students will work on projects extending these ideas in the areas of data science, robotics, web development.<br /><br /></h2><br><br><br><br> 
 			<a href="https://" onclick="location.href=this.href+internalWebsiteLink;return false;"><button>Course Content</button></a>
 
-	</div>
+		</div>
 
 
 		<div class="aps">
@@ -84,73 +85,49 @@ The academic program focuses on the foundations of computer science and engineer
 			</ul>
 			The lectures will be presented by UC San Diego faculty, alumni, college/departmental advisors, and industry professionals.</h2>
 			
-			<table class="facets">
-				<tr>
-					<th><Date</th>
-					<th>Title</th>
-					<th>Speaker</th>
-				</tr>
-				<tr>
-					<td>Tuesday, August 6</td>
-					<td>Program Synthesis</td>
-					<td>Nadia Polikarpova, CSE Faculty</td>
-				</tr>
-				<tr>
-					<td>Thursday, August 8</td>
-					<td>Data Science: Applications, Careers, and Research</td>
-					<td>Arun Kumar, CSE Faculty</td>
-				</tr>
-				<tr>
-					<td>Tuesday, August 13</td>
-					<td>The Blockchain Future</td>
-					<td>Holden Robbins, CSE Faculty</td>
-				</tr>
-				<tr>
-					<td>Thursday, August 15</td>
-					<td>Advising - Introductions, Roles, and Resources</td>
-					<td>Veronica Abreu, Jane Eichhorst, Cynthia Sanchez and Andrea Willis </td>
-				</tr>
-				<tr>
-					<td>Tuesday, August 20</td>
-					<td>Thriving at UC San Diego</td>
-					<td>SPIS Mentors</td>
-				</tr>
-				<tr>
-					<td>Thursday, August 22</td>
-					<td>Computing in (High School) Physics</td>
-					<td>Joseph Politz, CSE Faculty</td>
-				</tr>
-				<tr>
-					<td>Tuesday, August 27</td>
-					<td>Imposter Syndrome Panel</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Thursday, August 29</td>
-					<td>Student research presentations</td>
-					<td></td>
-				</tr>
+			<facetsTable></facetsTable>
 
-			</table>
+			<script>
+				var data;
+				d3.csv("facets.csv").then(function(result) {
+					data = result;
+					var table = "<table class='facets'>";
+					table+= "<tr><th>Date</th>";
+					table+= "<th>Title</th>";
+					table+= "<th>Speaker</th></tr>";
+					
+					for(i = 0; i < data.length; i++){
+						table+= "<tr><td>";
+						table+= data[i].Date;
+						table+= "</td><td>";
+						table+= data[i].Title;
+						table+= "</td><td>";
+						table+= data[i].Speaker;
+						table+= "</td></tr>";
+					}
+					table+= "</table>";
+
+					$("facetsTable").html(table);	
+				});
+			</script>
 		</div>
+    </div>
+			
+	<div class="note">
+		<p id="title"> Note to students regarding daily schedule: </p>
+		<ul>
+			<li> <b>FoCS Depth / FoCS Breadth: </b> These parallel Friday sessions offer an opportunity for you to make a choice. If there are aspects of the FoCS program from Monday-Thursday of that week that are still a bit hazy, and you'd like some review, the FOCS Depth sessions will recap what you learned that week, and go a bit deeper. If you feel pretty confident about what you've learned, the FoCS Breadth sessions provide an opportunity to learn about something new and different.
+			</li><br>
+			<li> <b>Open Lab Hours: </b> These sessions are led primarily by the undergraduate student mentors and are a chance to work on the lab assignments given during FoCS sessions, or to step away from the computer and work on the APS problems.		
+			</li><br>
+			<li> <b>Extra Mentor Hours: </b> These optional mentor-led sessions provide additional time to work on your FoCS lab assignments, APS problems, and final projects.
+			</li><br>
+			<li> <b>Faculty One-to-One Meetings: </b> These are individual meetings scheduled with faculty. You'll work in the lab on your FoCS and APS assignments until your appointment time, and then you'll come to your meeting.  After your meeting, you may return to the lab to continue working, or if you are finished with your work for the week, you are free to go explore the UCSD campus.
+			</li>
+		</ul>
 	</div>
-
-<div class="note">
-<p id="title"> Note to students regarding daily schedule: </p>
-	<ul>
-		<li> <b>FoCS Depth / FoCS Breadth: </b> These parallel Friday sessions offer an opportunity for you to make a choice. If there are aspects of the FoCS program from Monday-Thursday of that week that are still a bit hazy, and you'd like some review, the FOCS Depth sessions will recap what you learned that week, and go a bit deeper. If you feel pretty confident about what you've learned, the FoCS Breadth sessions provide an opportunity to learn about something new and different.
-		</li><br>
-		<li> <b>Open Lab Hours: </b> These sessions are led primarily by the undergraduate student mentors and are a chance to work on the lab assignments given during FoCS sessions, or to step away from the computer and work on the APS problems.		
-		</li><br>
-		<li> <b>Extra Mentor Hours: </b> These optional mentor-led sessions provide additional time to work on your FoCS lab assignments, APS problems, and final projects.
-		</li><br>
-		<li> <b>Faculty One-to-One Meetings: </b> These are individual meetings scheduled with faculty. You'll work in the lab on your FoCS and APS assignments until your appointment time, and then you'll come to your meeting.  After your meeting, you may return to the lab to continue working, or if you are finished with your work for the week, you are free to go explore the UCSD campus.
-		</li>
-	</ul>
-		
-</div>
-
-<script src="upgrade.js"></script>
-
+				
+	<script src="upgrade.js"></script>
+				
 </body>
 </html>

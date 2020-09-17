@@ -57,6 +57,18 @@ body {
 	font-size: 15px;
 }
 
+.email a {
+	color: white;
+  }
+
+.emailAdvisor {
+	font-size: 15px;
+}
+
+.emailAdvisor a {
+	color: black;
+}
+
 #title {
 	text-align:center;
 	font-size: 60px;
@@ -103,5 +115,5 @@ body {
 
 .person {
 	margin-left: 15px;
-	margin right: 15px;
+	margin-right: 15px;
 }
