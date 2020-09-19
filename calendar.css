@@ -71,6 +71,10 @@ ul {
 	text-align: left;
 }
 
+.inner {
+	margin-left: 30px;
+}
+
 ol {
 	text-align: left;
 }
