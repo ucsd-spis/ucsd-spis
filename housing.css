@@ -100,6 +100,15 @@ button:hover {
 	font-size: 20px;
 }
 
-ul{
+li{
 	text-align:left;
+	margin-left: 20px;
+}
+
+.inner {
+	margin-left: 15px;
+}
+
+.inner2 {
+	margin-left: 60px;
 }

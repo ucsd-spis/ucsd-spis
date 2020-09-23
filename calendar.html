@@ -98,41 +98,8 @@
 				$("welcome").html(welcome);	
 			});
 		</script>
-		
 		<welcome></welcome>
-		<!--
-		<h1><c class="year"></c> SPIS Welcome Day</h1>
-		<p></p>
-		<b class="title"> 9:00 am - 12:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Marshall Residential Hall check-in at the ERC Conference Dask and move-in to your assigned rooms in Marshall Residential Hall N, O, or S.(see <a href="housing.html">Housing</a> for more information)</p>
-		<p></p>
-		<b class="title"> 12:00 pm - 1:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Have lunch on your own and walk to the CSE Building (EBU 3B) for the SPIS Welcome Reception</p>
-		<p></p>
-		<b class="title"> 1:15 pm - 2:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;SPIS Welcome Reception. Light refreshments will be served (Room 1202, CSE Building)</p>
-		<p></p>
-		<b class="title"> 2:00 pm - 3:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;SPIS Welcome Ceremony. UC San Diego faculty welcome the students and parents (Room 1202, CSE Building) </p>
-		<p>&nbsp;&nbsp; &nbsp;Welcoming team:</p>
-		<ul>
-			<li>John Moore, Professor and Dean of Undergraduate Education</li>
-			&nbsp;&nbsp; &nbsp;<li>Christine Alvarado, CSE Faculty and Associate Dean for Students, Jacobs School of Engineering</li>
-			&nbsp;&nbsp; &nbsp;<li>SPIS faculty, staff, and mentors</li>
-		</ul>
-		<p></p>
-		<b class="title"> 3:00 pm - 3:15 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Parents depart</p>
-		<p></p>
-		<b class="title"> 3:15 pm - 4:30 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;SPIS students, faculty, and mentors stay for arrival activities (Room CSE 1202, CSE Building) </p>
-		<p></p>
-		<b class="title"> 4:30 pm - 6:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;SPIS students return to Marshall Residential Halls to unpack and settle in </p>
-		<p></p>
-		<b class="title"> 6:00 pm - 7:15 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Dinner at Cafe Ventanas</p>
-	-->
+
 	</div>
 
 
@@ -188,17 +155,14 @@
 
 						data[i].Description = data[i].Description.replace('*', '');
 
-						/*
-						<li>Speakers</li>
-						<ul>
-							<li>Dean Tullsen, Chair, CSE</li>
-							<li>Lily Steiner, SPIS student</li>
-							<li>Chris Velasquez, SPIS student</li>
-						</ul>
-						*/
-
-						if (data[i].Description.includes("Speakers:")) {
-							closing = closing.replace("* Speakers:", "<li>Speakers:</li>");
+						if (data[i].Description.includes("'")) {
+							var outerBulletStart = data[i].Description.indexOf("*");
+							var outerBulletEnd = data[i].Description.indexOf("'");
+							var outerBulletOriginal = data[i].Description.substring(outerBulletStart, outerBulletEnd);
+							var outerBulletReplacement = data[i].Description.substring(outerBulletStart + 1, outerBulletEnd);
+							console.log(outerBulletOriginal);
+							console.log(outerBulletReplacement);
+							closing = closing.replace(outerBulletOriginal, "<li>" + outerBulletReplacement + "</li>");
 
 							closing+= "<ul>";
 							while(data[i].Description.includes("'")) {
@@ -224,41 +188,7 @@
 			});
 		</script>
 		<closing></closing>
-		<!--
-		<h1><c class="year"></c> SPIS Closing Ceremony</h1>
-		<p>Parents (as well as general public) are welcome to attend the SPIS closing ceremony. Parents/guests are advised to follow the information below to better navigate themselves inside the campus and to park their car. </p>
-		<p></p>
-		<ul>
-			<li>Student project demos will be held in B230/240 of the CSE (Computer Science and Engineering) building. Please enter the lobby of the CSE building and take the elevator to go down to basement. The closing ceremony will be held in CSE 1202 in the CSE building. </li>
-			<li>The nearest location for parking is <a href="https://www.google.com/maps/place/Hopkins+Parking+Structure/@32.8837794,-117.2415152,17z/data=!3m1!4b1!4m5!3m4!1s0x80dc06c1e6156103:0xc6690b999c002d97!8m2!3d32.8837749!4d-117.2393265">Hopkins Parking Structure</a>. Please use the directions and maps to locate the Hopkins Parking Structure or other parking spaces. Payment stations are located at each parking lot and structure. </li>
-		</ul>
-		<p id="schedule">Schedule</p>
-		<b class="title">8:00 - 9:00 am</b> 
-		<p>&nbsp;&nbsp; &nbsp;Students will set up their presentations in CSE B230/B240 </p>
-		<p></p>
-		<b class="title">9:00 - 11:00 am</b>
-		<p>&nbsp;&nbsp; &nbsp;Project presentations, CSE B230 and B240, open to parents and public </p>
-		<p></p>
-		<b class="title">11:00 - 12:15 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;SPIS Closing Ceremony, CSE 1202</p>
-			<ul>
-				<li>Welcome (Mohan Paturi)</li>
-				<li>Speakers</li>
-				<ul>
-					<li>Dean Tullsen, Chair, CSE</li>
-					<li>Lily Steiner, SPIS student</li>
-					<li>Chris Velasquez, SPIS student</li>
-				</ul>
-				<li>Students will receive certificates from SPIS faculty (Gary Gillespie, Niema Moshiri, Curt Schurgers)</li>
-				<li>Closing remarks (Mohan Paturi)</li>
-			</ul>
-		<p></p>
-		<b class="title">12:30 - 1:30 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Light refreshments, CSE Building</p>
-		<p></p>
-		<b class="title">1:30 - 2:00 pm</b>
-		<p>&nbsp;&nbsp; &nbsp;Walk to the residence halls to prepare for departure</p>
-		-->
+
 	</div>
 </div>
 

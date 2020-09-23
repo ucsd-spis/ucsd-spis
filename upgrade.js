@@ -1,8 +1,10 @@
 // takes info from upgrades.json to update variables
 
 // TRY PARSING JSON 
-// PROBLEN: LINKS NO WORK BUT EVERYTHING ELSE DOES
+// PROBLEM: LINKS NO WORK BUT EVERYTHING ELSE DOES -> FIXED
 var applicationLink, internalWebsiteLink;
+var mapLink, faq, confidentialHealthHistory;
+var evaluationConsent, mediaReleaseWaiver, waiverOfLiability;
 
 $.getJSON("upgrades.json", function(json) {
     console.log(json);
@@ -18,6 +20,13 @@ $.getJSON("upgrades.json", function(json) {
     var registrationDue = json.registrationDue;
     applicationLink = json.applicationLink;
     internalWebsiteLink = json.internalWebsiteLink;
+    mapLink = json.mapLink;
+    faq = json.faq;
+    confidentialHealthHistory = json.confidentialHealthHistory;
+    evaluationConsent = json.evaluationConsent;
+    mediaReleaseWaiver = json.mediaReleaseWaiver;
+    waiverOfLiability = json.waiverOfLiability;
+
 
     // strip links of "https://" or "http://"
 
@@ -33,6 +42,48 @@ $.getJSON("upgrades.json", function(json) {
     }
     else if (internalWebsiteLink.includes("http://")) {
         internalWebsiteLink = internalWebsiteLink.substring(7);
+    }
+
+    if (mapLink.includes("https://")) {
+        mapLink = mapLink.substring(8);
+    }
+    else if (mapLink.includes("http://")) {
+        mapLink = mapLink.substring(7);
+    }
+
+    if (faq.includes("https://")) {
+        faq = faq.substring(8);
+    }
+    else if (faq.includes("http://")) {
+        faq = faq.substring(7);
+    }
+
+    if (confidentialHealthHistory.includes("https://")) {
+        confidentialHealthHistory = confidentialHealthHistory.substring(8);
+    }
+    else if (confidentialHealthHistory.includes("http://")) {
+        confidentialHealthHistory = confidentialHealthHistory.substring(7);
+    }
+
+    if (evaluationConsent.includes("https://")) {
+        evaluationConsent = evaluationConsent.substring(8);
+    }
+    else if (evaluationConsent.includes("http://")) {
+        evaluationConsent = evaluationConsent.substring(7);
+    }
+
+    if (mediaReleaseWaiver.includes("https://")) {
+        mediaReleaseWaiver = mediaReleaseWaiver.substring(8);
+    }
+    else if (mediaReleaseWaiver.includes("http://")) {
+        mediaReleaseWaiver = mediaReleaseWaiver.substring(7);
+    }
+
+    if (waiverOfLiability.includes("https://")) {
+        waiverOfLiability = waiverOfLiability.substring(8);
+    }
+    else if (waiverOfLiability.includes("http://")) {
+        waiverOfLiability = waiverOfLiability.substring(7);
     }
 
     // automatically update every occurance of variables on site

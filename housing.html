@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="housing.css">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
 </head>
 
 
@@ -27,33 +29,181 @@
 		<div class="housing">
 			<h1>Student Housing</h1>
 			<h2>
-				<p>SPIS students will live in Marshall Residential Halls N, O, or S in Marshall College. 
-				<p>Check-in (9 am - 12 pm on <c class="programStart"></c>) will be at the ERC Conference Desk. Check-out (7:30 am - 9 am and 1:30 pm - 3:30 pm on <c class="programEnd"></c>) will be at the ERC Conference Desk. </p>
-				<p>Participants may check-out early, but will need to communicate specific times prior to August 26th to Cyndi Meeves (Hospitality and Conference Services, 858-531-6625). The following information will help you locate the ERC Conference Desk and park at Pangea Parking Structure. </p>
-				<p><b class="title">Location<br></b> ERC Conference Desk</p>
-				<p><b class="title">Hours<br></b> 7 am - 9 pm, 7 days a week</p>
-				<p><b class="title">Address<br></b> 9851 North Torrey Pines Road, La Jolla CA 92093</p>
-				<p><b class="title">Phone<br></b> 858-534-1142</p>
-				<p><b class="title">Parking<br></b> Pangea Parking Structure<br>Although parking is free on the weekends, (beginning 11pm on Friday evening through 7am Monday morning), please follow all the posted rules. </p><br>
-				<a href="https://hdh.ucsd.edu/conferences/docs/Neighborhood-Marshall.pdf"><button>Map</button></a><br>
-				<a href = "https://drive.google.com/file/d/1dp1Y3i1mSonLDkuwbFOIH6l-WyHoHDS4/view"><button>FAQs</button></a>
+				<script>
+					var data;
+					d3.csv("housing.csv").then(function(result) {
+						data = result;
+						var housing = "";
+						
+						for(i = 0; i < data.length; i++){
+							housing+= "<p>";
+							housing+= data[i].Intro;
+							housing+= "</p>";
+							
+							while(data[i].Intro.includes('[')) {
+								var varNameStart = data[i].Intro.indexOf('[');
+								var varNameEnd = data[i].Intro.indexOf(']');
+						
+								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
+		
+								var original = data[i].Intro.substring(varNameStart, varNameEnd + 1);
+								var replacement = "<c class='" + varName + "'></c>";
+		
+								housing = housing.replace(original, replacement);
 
-			</h2></div>
+								data[i].Intro = data[i].Intro.replace("[", "");
+								data[i].Intro = data[i].Intro.replace("]", "");
+							}
+						}
+		
+						for(i = 0; i < data.length; i++) {
+							housing+= "<p><b class='title'>";
+							housing+= data[i].Title;
+							housing+= "<br></b> ";
+							housing+= data[i].Details;
+							housing+= "</p>";
+						}
+						housing+= "<br>";
+
+						$("housing").html(housing);	
+					});
+				</script>
+				<housing></housing>
+				
+				<a href="https://" onclick="location.href=this.href+mapLink;return false;"><button>Map</button></a><br>
+				<a href="https://" onclick="location.href=this.href+faq;return false;"><button>FAQs</button></a>
+
+			</h2>
+		</div>
 
 
 		<div class="dining">
 			<h1>Dining</h1>
 			<h2>
+				<script>
+					var data;
+					var dining = "";
+					d3.csv("dining.csv").then(function(result) {
+						data = result;
+						var j = 0;
+						for(i = 0; i < data.length; i++){
+							dining+= "<p>";
+							dining+= data[i].Intro;
+							dining+= "</p>";
+							
+							while(data[i].Intro.includes('[')) {
+								var varNameStart = data[i].Intro.indexOf('[');
+								var varNameEnd = data[i].Intro.indexOf(']');
+						
+								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
+		
+								var original = data[i].Intro.substring(varNameStart, varNameEnd + 1);
+								var replacement = "<c class='" + varName + "'></c>";
+		
+								dining = dining.replace(original, replacement);
+
+								data[i].Intro = data[i].Intro.replace("[", "");
+								data[i].Intro = data[i].Intro.replace("]", "");
+							}
+						}
+		
+						
+						for(i = 0; i < data.length; i++){
+							dining += "<li>";
+							dining += data[i]['Location Bullets'];
+		
+							while(data[i]['Location Bullets'].includes("*")) {
+								if (j == 0) {
+									dining = dining.replace("*", "<ul> *");
+									j++;
+								}
+		
+								var bulletStart = data[i]['Location Bullets'].indexOf('*');
+								var bulletEnd = data[i]['Location Bullets'].indexOf('*', bulletStart + 1);
+		
+								var bullet = data[i]['Location Bullets'].substring(bulletStart + 1, bulletEnd);	
+								var original = data[i]['Location Bullets'].substring(bulletStart, bulletEnd);
+								if(bulletEnd == -1) {
+									bullet = data[i]['Location Bullets'].substring(bulletStart + 1);
+									original = data[i]['Location Bullets'].substring(bulletStart);
+								}
+		
+								var replacement = "<li type='circle' class='inner'>" + bullet + "</li>";
+		
+								dining = dining.replace(original, replacement);
+		
+								data[i]['Location Bullets'] = data[i]['Location Bullets'].replace('*', '');
+							}
+							if (data[i]['Location Bullets'].includes("'")) {
+								var outerBulletStart = data[i]['Location Bullets'].indexOf("''");
+								var outerBulletEnd = data[i]['Location Bullets'].indexOf("'", outerBulletStart);
+								var outerBulletOriginal = data[i]['Location Bullets'].substring(outerBulletStart, outerBulletEnd);
+								var outerBulletReplacement = data[i]['Location Bullets'].substring(outerBulletStart + 1, outerBulletEnd);
+								console.log(outerBulletOriginal);
+								console.log(outerBulletReplacement);
+								dining = dining.replace(outerBulletOriginal, "<li type='circle' class='inner'>" + outerBulletReplacement + "</li>");
+	
+								dining+= "<ul>";
+								while(data[i]['Location Bullets'].includes("'")) {
+									var innerBulletStart = data[i]['Location Bullets'].indexOf("'");
+									var innerBulletEnd = data[i]['Location Bullets'].indexOf("'", innerBulletStart + 1);
+	
+									var innerBullet = data[i]['Location Bullets'].substring(innerBulletStart + 1, innerBulletEnd);	
+									
+									var innerOriginal = data[i]['Location Bullets'].substring(innerBulletStart, innerBulletEnd + 2);
+									var innerReplacement = "<li type='square' class='inner2'>" + innerBullet + "</li>";
+	
+									dining = dining.replace(innerOriginal, innerReplacement);
+	
+									data[i]['Location Bullets'] = data[i]['Location Bullets'].replace("'", "");
+									data[i]['Location Bullets'] = data[i]['Location Bullets'].replace("'", "");
+								}
+								dining += "</ul>";
+							
+							}
+							
+							dining += "</ul>";
+						}
+						
+						for (i = 0; i < data.length; i++){
+							dining+= "<p>";
+							dining+= data[i].Closing;
+							dining+= "</p>";
+							
+						}
+						
+						dining += "<p><b class='title'>Special Meal Accomodations</b></p>";
+						for (i = 0; i < data.length; i++){
+							dining += "<p>";
+							dining += data[i]["Special Meal Accomodations"];
+							dining += "</p>";
+
+							var wordStart = dining.indexOf("[");
+							var wordEnd = dining.indexOf("]");
+							var word = dining.substring(wordStart+1, wordEnd);
+							
+							var linkStart = dining.indexOf("{");
+							var linkEnd = dining.indexOf("}");
+							var link = dining.substring(linkStart+1, linkEnd);
+							dining = dining.replace(dining.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>")
+						}
+						
+						$("dining").html(dining);	
+						
+					});
+				</script>
+				<dining></dining>
+				<!--
 				<p>Students will have the option of dining at one of three dining facilities during the five week stay. First meal will begin with dinner on <c class="programStart"></c> and the last meal will be lunch on <c class="programEnd"></c>. </p>
 				<p>The three dining locations are: Cafe Ventanas, Pines, or 64 Degrees. Please note that meal cards will only be valid for one swipe per meal period. Operating hours are 6:30 am - 8:00 pm.</p>
 				<ul>
 					<li>Location: Cafe Ventanas
 						<ul>
-							<li>The following time blocks are assigned to SPIS students for each day of the week: </li>
+							<li type="circle" class="sub1">The following time blocks are assigned to SPIS students for each day of the week: </li>
 							<ul>
-								<li>Breakfast: 7:15-8:00 am</li>
-								<li>Lunch: 12:00-12:45 pm</li>
-								<li>Dinner: 6:30-7:15 pm</li>
+								<li type="square" class="sub2">Breakfast: 7:15-8:00 am</li>
+								<li class"sub2">Lunch: 12:00-12:45 pm</li>
+								<li class="sub2">Dinner: 6:30-7:15 pm</li>
 							</ul>
 						</ul>
 					</li>
@@ -62,12 +212,12 @@
 					<li>Location: 64 Degrees
 					</li>
 				</ul>
-				<p></p>Cafe Ventanas is the home dining facility for SPIS Students. Participants are able to eat at Pines or 64 Degrees, however, be aware that those dining facilities may have large groups already assigned. A capacity breakdown by time block for Cafe Ventanas and available dining locations (as some may close) will be posted on the Monday of each week to facilitate your planning.
+				<p>Cafe Ventanas is the home dining facility for SPIS Students. Participants are able to eat at Pines or 64 Degrees, however, be aware that those dining facilities may have large groups already assigned. A capacity breakdown by time block for Cafe Ventanas and available dining locations (as some may close) will be posted on the Monday of each week to facilitate your planning.
 				<p>The Village Market will be available if students would like to eat there (cash, credit card or Triton Cash). The Village Market is not part of the dining plan.</p>
 
 				<p><b class="title">Special Meal Accomodations</b><p>
 				<p>For any special meal accommodations, the <a href = "https://drive.google.com/file/d/0B4gMdSgWOaZ_NFpjRThnS1NFd2c/view">Medical E Form</a> will need to be completed for the students that don't feel they can manage their dietary needs with the options that will be already be presented in the unit. Please complete the form and bring it with you if you need any special meal accommodations. </p>
-				
+				-->
 			</h2>
 		</div>
 	</div>
