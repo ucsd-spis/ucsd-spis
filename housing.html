@@ -45,9 +45,10 @@
 								var varNameEnd = data[i].Intro.indexOf(']');
 						
 								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
-		
+								var v = localStorage.getItem(varName);
+
 								var original = data[i].Intro.substring(varNameStart, varNameEnd + 1);
-								var replacement = "<c class='" + varName + "'></c>";
+								var replacement = v;
 		
 								housing = housing.replace(original, replacement);
 
@@ -96,9 +97,9 @@
 								var varNameEnd = data[i].Intro.indexOf(']');
 						
 								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
-		
+								var v = localStorage.getItem(varName);
 								var original = data[i].Intro.substring(varNameStart, varNameEnd + 1);
-								var replacement = "<c class='" + varName + "'></c>";
+								var replacement = v;
 		
 								dining = dining.replace(original, replacement);
 

@@ -48,7 +48,9 @@
 			var data;
 			d3.csv("opening.csv").then(function(result) {
 				data = result;
-				var welcome = "<h1><c class='year'></c> SPIS Welcome Day</h1>";
+				var year = localStorage.getItem("year");
+				var welcome = "<h1>"+ year+" SPIS Welcome Day</h1>";
+				//var welcome = "<h1><c class='year'></c> SPIS Welcome Day</h1>";
 				
 				for(i = 0; i < data.length; i++){
 					welcome+= "<p></p> <b class='title'>";
@@ -108,7 +110,8 @@
 		
 		<script>
 			var data;
-			var closing = "<h1><c class='year'></c> SPIS Closing Ceremony</h1>";
+			var year = localStorage.getItem("year");
+			var closing = "<h1>"+ year + " SPIS Closing Ceremony</h1>";
 			d3.csv("closing.csv").then(function(result) {
 				data = result;
 				for (i = 0; i < data.length; i++){

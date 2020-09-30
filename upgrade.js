@@ -86,9 +86,11 @@ $.getJSON("upgrades.json", function(json) {
         waiverOfLiability = waiverOfLiability.substring(7);
     }
 
+
     // automatically update every occurance of variables on site
 
     for (i=0; i<document.getElementsByClassName("year").length; i++) {
+        localStorage.setItem("year", year);
         document.getElementsByClassName("year")[i].innerHTML = year;
     }
 
@@ -105,10 +107,12 @@ $.getJSON("upgrades.json", function(json) {
     }
 
     for (i=0; i<document.getElementsByClassName("programStart").length; i++) {
+        localStorage.setItem("programStart", programStart);
         document.getElementsByClassName("programStart")[i].innerHTML = programStart;
     }
 
     for (i=0; i<document.getElementsByClassName("programEnd").length; i++) {
+        localStorage.setItem("programEnd", programEnd);
         document.getElementsByClassName("programEnd")[i].innerHTML = programEnd;
     }
 
