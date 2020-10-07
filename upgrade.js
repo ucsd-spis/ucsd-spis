@@ -90,7 +90,6 @@ $.getJSON("upgrades.json", function(json) {
     // automatically update every occurance of variables on site
 
     for (i=0; i<document.getElementsByClassName("year").length; i++) {
-        localStorage.setItem("year", year);
         document.getElementsByClassName("year")[i].innerHTML = year;
     }
 

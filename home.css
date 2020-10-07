@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
+  overflow-x:hidden;
 }
 
 .topnav {
@@ -89,17 +90,13 @@ img {
 .boxes {
 	display: grid;
 	grid-template-columns: 50% 50%;
-	text-align: center;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .info {
-	padding: 40px;
-}
-
-object {
-	text-align: center;
+  padding-left: 10%;
+  padding-top: 10%;
 }
 
 .bullets {
@@ -107,7 +104,10 @@ object {
 	color: white;
 	margin-top: 85%;
 	margin-bottom:15px;
-	padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
 	border-radius: 15px;
 }
 
@@ -124,42 +124,60 @@ ul {
 }
 
 .leftside {
-	margin-right: 17px;
+	margin-right: 10%;
 }
 
 .rightside {
-	margin-left: 17px;
+	margin-left: 10%;
+}
+
+.video {
+	position: relative;
+	padding-bottom: 56.25%; 
+  height: 0;
+}
+
+.video iframe {
+  position: absolute;
+	top: 0;
+  left: 0;
+	width: 80%;
+  height: 80%;
+  padding-left: 25px;
 }
 
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
+.hidden {
+  display: none;
+}
+
+.container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-  margin: 25px;
+.container > div {
+  display: inline-block;
 }
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+.slideshow {
+  margin-right: 25%;
+	position: relative;
+  width: 100%;
+  height: auto;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+.slideshow > div {
+	position: absolute;
+	top: 0; 
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+.slideshow img {
+	width: 100%;
+  margin: 0;
 }

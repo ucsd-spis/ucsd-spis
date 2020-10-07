@@ -21,84 +21,76 @@
 		<a href="resources.html">Resources</a>
 	</div>
 
-	<div class = "page">
+	<!--
+		- separate div for each year
+			- put in same class
+			- EACH DIV:
+				- cover picture (long strip)
+				- text to show year (using loop, JS var, pic titled by year)
+				- CSS: overlay for fading on hover
+				- on hover: show 3 buttons (dropdowns/collapsible)
+					- images, testimonials, projects
+						- images: folder titled yearHighlights to pull from
+						- testimonials: csv/json file
+						- projects: csv (similar to people, google form, image title schema)
+
+		- loop from 2018 to current year-1, adds another 'box' (div)
+		
+	-->
+	<h1>SPIS Throughout the Years...</h1>
 	
-	<div class="slideshow-container">
-
-  		<!-- Full-width images with number and caption text -->
- 		<div class="mySlides fade">
-    		<img src="high1.jpg" style="width:100%; height:auto">
- 		 </div>
-
-  		<div class="mySlides fade">
-    		<img src="pic1.jpg" style="width:100%; height:auto">
-  		</div>
-
-  		<div class="mySlides fade">
-   			<img src="pic2.jpg" style="width:100%; height:auto">
-  		</div>
-
-  		<div class="mySlides fade">
-	    	<img src="pic3.jpg" style="width:100%; height:auto">
-        </div>
-
-  		<div class="mySlides fade">
-	  		<img src="high5.JPG" style="width:100%; height:auto">
-  		</div>
-
-		<div class="mySlides fade">
-	  		<img src="high6.JPG" style="width:100%; height:auto">
-  		</div>
-
-		<div class="mySlides fade">
-	  		<img src="high9.jpg" style="width:100%; height:auto">
-  		</div>
-
-		<div class="mySlides fade">
-	  		<img src="high8.jpg" style="width:100%; height:auto">
-  		</div>
-
-		<div class="mySlides fade">
-	  		<img src="high7.jpg" style="width:100%; height:auto">
-  		</div>
-
-		<div class="mySlides fade">
-    		<img src="high10.JPG" style="width:100%; height:auto">
-  		</div>
+	<div class="year">
+		<img src="2018highlights/cover.jpg" class="cover">
+		<div class="title">2018</div>
+		<div class="buttons">
+			<button class="collapsible">Images</button>
+			<div class="content">
+				<p>That's on Wonderful AF Pictures.</p>
+			</div>
+			<button class="collapsible">Testimonials</button>
+			<div class="content">
+				<p>Period queen you tell 'em.</p>
+			</div>
+			<button class="collapsible">Projects</button>
+			<div class="content">
+				<p>Nice.</p>
+			</div>
+		</div>
 	</div>
-
-	<div class="video">
-		<div><object width="380" height="260" data="mhigh1.mp4">
-		</object></div>
-		<div><object width="380" height="260" data="mhigh2.mp4">
-		</object></div>
-		<div><object width="380" height="260" data="mhigh4.mp4">
-		</object></div>
-		<div><object width="380" height="260" data="mhigh3.mp4">
-		</object></div>
-		<div><object width="380" height="260" data="mhigh5.mp4">
-		</object></div>
-
+	<div class="year">
+		<img src="2017highlights/cover.png" class="cover">
+		<div class="title">2017</div>
+		<div class="buttons">
+			<button class="collapsible">Images</button>
+			<div class="content">
+				<p>ew!!!!!!!!!</p>
+			</div>
+			<button class="collapsible">Testimonials</button>
+			<div class="content">
+				<p>i hate it here.</p>
+			</div>
+			<button class="collapsible">Projects</button>
+			<div class="content">
+				<p>~PROJECTile vomit~</p>
+			</div>
+		</div>
 	</div>
-	</div>
-
 	<script>
-	var slideIndex = 0;
-	showSlides();
-	
-	function showSlides() {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  for (i = 0; i < slides.length; i++) {
-	    slides[i].style.display = "none"; 
-	  }
-	  slideIndex++;
-	  if (slideIndex > slides.length) {slideIndex = 1} 
-	  slides[slideIndex-1].style.display = "block"; 
-	  setTimeout(showSlides, 3000); // Change image every 2 seconds
-	}
-	</script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
 
+		for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+			content.style.display = "none";
+			} else {
+			content.style.display = "block";
+			}
+		});
+		}	
+	</script>
 	<script src="upgrade.js"></script>
 
 </body>
