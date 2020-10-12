@@ -95,7 +95,6 @@ img {
 }
 
 .info {
-  padding-left: 10%;
   padding-top: 10%;
 }
 
@@ -123,8 +122,27 @@ ul {
 	text-align: left;
 }
 
+button{
+  background-color: #142d91;
+  color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+}
+
+button:hover {
+	background-color: white;
+	color: #142d91;
+	cursor: pointer;
+}
+
+.applyButton {
+  text-align: center;
+}
+
 .leftside {
-	margin-right: 10%;
+	margin-right: 5%;
 }
 
 .rightside {
@@ -135,15 +153,20 @@ ul {
 	position: relative;
 	padding-bottom: 56.25%; 
   height: 0;
+  padding-left: 200px; 
+  overflow: hidden;
 }
 
 .video iframe {
   position: absolute;
-	top: 0;
-  left: 0;
+	/*top: 0;
+  left: 0;*/
 	width: 80%;
   height: 80%;
-  padding-left: 25px;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 * {box-sizing:border-box}

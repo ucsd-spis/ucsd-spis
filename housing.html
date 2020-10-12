@@ -69,6 +69,11 @@
 							housing+= "<br></b> ";
 							housing+= data[i].Details;
 							housing+= "</p>";
+
+							while(data[i].Details.includes('\\')) {
+								housing = housing.replace("\\", "<br>");
+								data[i].Details = data[i].Details.replace("\\", "");
+							}
 						}
 						housing+= "<br>";
 
@@ -77,8 +82,8 @@
 				</script>
 				<housing></housing>
 				
-				<a href="https://" onclick="location.href=this.href+mapLink;return false;"><button>Map</button></a><br>
-				<a href="https://" onclick="location.href=this.href+faq;return false;"><button>FAQs</button></a>
+				<div class="buttons"><a href="https://" onclick="location.href=this.href+mapLink;return false;"><button>Map</button></a><br></div>
+				<div class="buttons"><a href="https://" onclick="location.href=this.href+faq;return false;"><button>FAQs</button></a></div>
 
 			</h2>
 		</div>
@@ -141,6 +146,7 @@
 		
 								data[i]['Location Bullets'] = data[i]['Location Bullets'].replace('*', '');
 							}
+
 							if (data[i]['Location Bullets'].includes("'")) {
 								var outerBulletStart = data[i]['Location Bullets'].indexOf("''");
 								var outerBulletEnd = data[i]['Location Bullets'].indexOf("'", outerBulletStart);
@@ -169,7 +175,7 @@
 							
 							}
 							
-							dining += "</ul>";
+							dining += "</ul></li>";
 						}
 						
 						for (i = 0; i < data.length; i++){
@@ -200,31 +206,6 @@
 					});
 				</script>
 				<dining></dining>
-				<!--
-				<p>Students will have the option of dining at one of three dining facilities during the five week stay. First meal will begin with dinner on <c class="programStart"></c> and the last meal will be lunch on <c class="programEnd"></c>. </p>
-				<p>The three dining locations are: Cafe Ventanas, Pines, or 64 Degrees. Please note that meal cards will only be valid for one swipe per meal period. Operating hours are 6:30 am - 8:00 pm.</p>
-				<ul>
-					<li>Location: Cafe Ventanas
-						<ul>
-							<li type="circle" class="sub1">The following time blocks are assigned to SPIS students for each day of the week: </li>
-							<ul>
-								<li type="square" class="sub2">Breakfast: 7:15-8:00 am</li>
-								<li class"sub2">Lunch: 12:00-12:45 pm</li>
-								<li class="sub2">Dinner: 6:30-7:15 pm</li>
-							</ul>
-						</ul>
-					</li>
-					<li>Location: Pines
-					</li>
-					<li>Location: 64 Degrees
-					</li>
-				</ul>
-				<p>Cafe Ventanas is the home dining facility for SPIS Students. Participants are able to eat at Pines or 64 Degrees, however, be aware that those dining facilities may have large groups already assigned. A capacity breakdown by time block for Cafe Ventanas and available dining locations (as some may close) will be posted on the Monday of each week to facilitate your planning.
-				<p>The Village Market will be available if students would like to eat there (cash, credit card or Triton Cash). The Village Market is not part of the dining plan.</p>
-
-				<p><b class="title">Special Meal Accomodations</b><p>
-				<p>For any special meal accommodations, the <a href = "https://drive.google.com/file/d/0B4gMdSgWOaZ_NFpjRThnS1NFd2c/view">Medical E Form</a> will need to be completed for the students that don't feel they can manage their dietary needs with the options that will be already be presented in the unit. Please complete the form and bring it with you if you need any special meal accommodations. </p>
-				-->
 			</h2>
 		</div>
 	</div>

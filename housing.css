@@ -49,9 +49,11 @@ img {
 	margin-right: 30px;
 	margin-left: 40px;
 	margin-bottom: 20px;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
 	background-color: #369eba;
-	text-align: center;
 	border-radius: 15px;
 	color: white;
 }
@@ -61,15 +63,18 @@ img {
 	margin-right: 40px;
 	margin-left: 30px;
 	margin-bottom: 20px;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
 	background-color: #142d91;
-	text-align: center;
 	border-radius: 15px;
 	color: white;
 }
 
 h1 {
 	font-size: 35px;
+	text-align: center;
 }
 
 h2 {
@@ -96,12 +101,15 @@ button:hover {
 	cursor: pointer;
 }
 
+.buttons {
+	text-align: center;
+}
+
 .title {
 	font-size: 20px;
 }
 
 li{
-	text-align:left;
 	margin-left: 20px;
 }
 
@@ -111,4 +119,13 @@ li{
 
 .inner2 {
 	margin-left: 60px;
+}
+
+br {
+	line-height: 2px;
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 0;
 }

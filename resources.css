@@ -39,15 +39,23 @@ img {
 	margin: auto;
 }
 
-.residential {
+.docs {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	background-color: #369eba;
-	border-radius: 15px;
-	padding-top: 15px;
+	grid-template-columns: 1fr 2fr;
 	margin-left: 25px;
 	margin-right: 25px;
 	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.residential {
+	display: grid;
+	grid-template-columns: 1fr;
+	background-color: #369eba;
+	border-radius: 15px;
+	padding: 10px;
+	margin-right: 15px;
 }
 
 .registration {
@@ -57,16 +65,16 @@ img {
 	border-radius: 15px;
 	padding: 10px;
 	margin-left: 25px;
-	margin-right: 25px;
-	text-align: center;
 }
 
 .resources {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	margin: 25px;
+	margin-left: 25px;
+	margin-right: 25px;
 	text-align: center;
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .textbooks {
@@ -142,7 +150,8 @@ button:hover {
 
 .title {
 	text-align: center;
-	font-size: 35px;	
+	font-size: 35px;
+	margin-top: 25px;	
 }
 
 .category {
@@ -152,4 +161,5 @@ button:hover {
 .docs .category {
 	margin-left: 25px;
 }
+
 

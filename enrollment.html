@@ -33,14 +33,14 @@
 
 		<div class="application">
 			<h1>Application</h1>
-			<h2>&nbsp;&nbsp;&nbsp; <c class="year"></c> SPIS will consider applications from all <c class="year"></c> UC San Diego freshmen who are admitted to one of the following majors.
+			<h2><c class="year"></c> SPIS will consider applications from all <c class="year"></c> UC San Diego freshmen who are admitted to one of the following majors.
 			<ul>
 				<li>Computer Engineering, Computer Science and Bioinformatics majors in the CSE Department</li>
 				<li>Computer Engineering majors in the ECE Department</li>
 				<li>Math/CS majors in the Mathematics Department</li>
 				<li>Data Science majors</li>
 			</ul>
-			<p>&nbsp;&nbsp;&nbsp; In addition, we will consider applications from a small of number of other freshmen who would like to explore computer science and engineering. </p>
+			<p>In addition, we will consider applications from a small of number of other freshmen who would like to explore computer science and engineering. </p>
 			<ul>
 				<li>All students are required to complete the <c class="year"></c> SPIS application. Applications will be open starting <c class="appStart"></c> and its deadline is <c class="appEnd"></c>.</li>
 				<li style="margin-left:2em">Only a limited number of students will be admitted to <c class="year"></c> SPIS. Students who will benefit most from the program will be given preference.</li>
@@ -49,9 +49,28 @@
 				<li>Participants will live in UC San Diego campus housing for the entire duration of the five week program, from <c class="programStart"></c> to <c class="programEnd"></c>.</li>
 			</ul>
 			<p></p><br>
-			<a href="https://" onclick="location.href=this.href+applicationLink;return false;"><button>Apply Now!</button></a><br><br>
+			<div class="applyButton"><a href="https://" onclick="location.href=this.href+applicationLink;return false;"><button>Apply Now!</button></a></div><br><br>
 				<p></p>
-				<p>International students will need to obtain an I-20 (to apply for the F-1 visa) or DS-2019 (to apply for the J-1 visa) to attend SPIS. Once you get the admission notice from SPIS, submit your Statement of Intent to Register (SIR) if you haven't done so already. Wait 48 hours after submitting your SIR to login to the iPortal to request your I-20 or DS-2019. You may experience login issues if you do not wait 48 hours. If you have already been issued an I-20 and will need a new one with an earlier start date to attend the SPIS program, email iportal@ucsd.edu with "EARLY START DATE REQUEST - SPIS PROGRAM" in the subject line. Include your full name, PID and request for the early start date due to admission to the SPIS program in the email. You will need to create a new eship global order number if your I-20/DS-2019 needs to be resent. </p>
+				<button type="button" class="collapsible">International Students</button>
+				<div class="content">
+					<p>International students will need to obtain an I-20 (to apply for the F-1 visa) or DS-2019 (to apply for the J-1 visa) to attend SPIS. Once you get the admission notice from SPIS, submit your Statement of Intent to Register (SIR) if you haven't done so already. Wait 48 hours after submitting your SIR to login to the iPortal to request your I-20 or DS-2019. You may experience login issues if you do not wait 48 hours. If you have already been issued an I-20 and will need a new one with an earlier start date to attend the SPIS program, email iportal@ucsd.edu with "EARLY START DATE REQUEST - SPIS PROGRAM" in the subject line. Include your full name, PID and request for the early start date due to admission to the SPIS program in the email. You will need to create a new eship global order number if your I-20/DS-2019 needs to be resent. </p>
+				</div>
+				<script>
+					var coll = document.getElementsByClassName("collapsible");
+					var i;
+
+					for (i = 0; i < coll.length; i++) {
+					coll[i].addEventListener("click", function() {
+						this.classList.toggle("active");
+						var content = this.nextElementSibling;
+						if (content.style.display === "block") {
+						content.style.display = "none";
+						} else {
+						content.style.display = "block";
+						}
+					});
+					}
+				</script>
 				<p></p>
 				<p>If you are a student with a disability who may need accommodations to participate in our programs, you are encouraged to contact the Office for Students with Disabilities directly at 858.534.4382. Additional information may be found <a href="http://disabilities.ucsd.edu/about/index.html">here</a>.</p>
 			
