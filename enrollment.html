@@ -33,7 +33,7 @@
 
 		<div class="application">
 			<h1>Application</h1>
-			<h2><c class="year"></c> SPIS will consider applications from all <c class="year"></c> UC San Diego freshmen who are admitted to one of the following majors.
+			<h2><c class="year"></c> SPIS will consider applications from all <c class="year"></c> UC San Diego freshmen who are admitted to one of the following majors:
 			<ul>
 				<li>Computer Engineering, Computer Science and Bioinformatics majors in the CSE Department</li>
 				<li>Computer Engineering majors in the ECE Department</li>
@@ -41,63 +41,96 @@
 				<li>Data Science majors</li>
 			</ul>
 			<p>In addition, we will consider applications from a small of number of other freshmen who would like to explore computer science and engineering. </p>
-			<ul>
-				<li>All students are required to complete the <c class="year"></c> SPIS application. Applications will be open starting <c class="appStart"></c> and its deadline is <c class="appEnd"></c>.</li>
-				<li style="margin-left:2em">Only a limited number of students will be admitted to <c class="year"></c> SPIS. Students who will benefit most from the program will be given preference.</li>
-				<li>Students are required to pay a total fee of $<c class="fee"></c> to cover the instructional, housing and dining expenses as well as books, supplies, and event expenses. (This low fee has been possible due to generous contributions from the Qualcomm Institute and the CSE Department. The actual value of the program exceeds $4,000.) </li>
-				<li style="margin-left:2em">A number of scholarships (based on financial hardship) are available to partially cover the cost of the $<c class="fee"></c> fee.</li>
-				<li>Participants will live in UC San Diego campus housing for the entire duration of the five week program, from <c class="programStart"></c> to <c class="programEnd"></c>.</li>
-			</ul>
+			<p><b class='small_title'>Application</b>
+			<p> All students are required to complete the <c class="year"></c> SPIS application. Applications will open on <c class="appStart"></c> and close on <c class="appEnd"></c>. Only a limited number of students will be admitted to <c class="year"></c> SPIS. Students who will benefit most from the program will be given preference.</p>
+			<p><b class='small_title'>Fee</b>
+			<p> Students are required to pay a total fee of $<c class="fee"></c> to cover the instructional, housing and dining expenses as well as books, supplies, and event expenses. (This low fee has been possible due to generous contributions from <a href="index.html">our sponsors</a>. The actual value of the program exceeds $4,000.)</p>
+			<p><b class='small_title'>Financial Aid</b>
+			<p> A number of scholarships (based on financial hardship) are available to partially cover the cost of the $<c class="fee"></c> fee.</p>
+			<p><b class='small_title'>Contact</b>
+			<p> If you have any questions about the program, please send email to Professor Mohan Paturi at <a href="mailto: paturi@cs.ucsd.edu">paturi@cs.ucsd.edu</a> with a brief statement about your interest and academic background.</p>
 			<p></p><br>
-			<div class="applyButton"><a href="https://" onclick="location.href=this.href+applicationLink;return false;"><button>Apply Now!</button></a></div><br><br>
-				<p></p>
-				<button type="button" class="collapsible">International Students</button>
-				<div class="content">
-					<p>International students will need to obtain an I-20 (to apply for the F-1 visa) or DS-2019 (to apply for the J-1 visa) to attend SPIS. Once you get the admission notice from SPIS, submit your Statement of Intent to Register (SIR) if you haven't done so already. Wait 48 hours after submitting your SIR to login to the iPortal to request your I-20 or DS-2019. You may experience login issues if you do not wait 48 hours. If you have already been issued an I-20 and will need a new one with an earlier start date to attend the SPIS program, email iportal@ucsd.edu with "EARLY START DATE REQUEST - SPIS PROGRAM" in the subject line. Include your full name, PID and request for the early start date due to admission to the SPIS program in the email. You will need to create a new eship global order number if your I-20/DS-2019 needs to be resent. </p>
-				</div>
-				<script>
-					var coll = document.getElementsByClassName("collapsible");
-					var i;
-
-					for (i = 0; i < coll.length; i++) {
-					coll[i].addEventListener("click", function() {
-						this.classList.toggle("active");
-						var content = this.nextElementSibling;
-						if (content.style.display === "block") {
-						content.style.display = "none";
-						} else {
-						content.style.display = "block";
-						}
-					});
-					}
-				</script>
-				<p></p>
+			<div class="applyButton"><a href="https://" onclick="location.href=this.href+applicationLink;return false;"><button>Apply Now!</button></a></div><br>
+			<p></p>
+			<button type="button" class="collapsibleLeft">International Students</button>
+			<div class="content">
+				<p>International students will need to obtain an I-20 (to apply for the F-1 visa) or DS-2019 (to apply for the J-1 visa) to attend SPIS. Once you get the admission notice from SPIS, submit your Statement of Intent to Register (SIR) if you haven't done so already. Wait 48 hours after submitting your SIR to login to the iPortal to request your I-20 or DS-2019. You may experience login issues if you do not wait 48 hours. If you have already been issued an I-20 and will need a new one with an earlier start date to attend the SPIS program, email iportal@ucsd.edu with "EARLY START DATE REQUEST - SPIS PROGRAM" in the subject line. Include your full name, PID and request for the early start date due to admission to the SPIS program in the email. You will need to create a new eship global order number if your I-20/DS-2019 needs to be resent. </p>
+			</div>
+			<button type="button" class="collapsibleLeft">Students with Disabilities</button>
+			<div class="content">
 				<p>If you are a student with a disability who may need accommodations to participate in our programs, you are encouraged to contact the Office for Students with Disabilities directly at 858.534.4382. Additional information may be found <a href="http://disabilities.ucsd.edu/about/index.html">here</a>.</p>
-			
+			</div>
+			<script>
+				var coll = document.getElementsByClassName("collapsibleLeft");
+				var i;
+
+				for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("activeLeft");
+					var content = this.nextElementSibling;
+					if (content.style.display === "block") {
+					content.style.display = "none";
+					} else {
+					content.style.display = "block";
+					}
+				});
+				}
+			</script>
+		
 			</h2>
 		</div>
 
 
-
 		<div class="registration">
 			<h1>Registration</h1>
-			<h2> Welcome to the <c class="year"></c> SPIS registration! In this section, you will find the forms and detailed instructions for completing your registration for <c class="year"></c> SPIS. <br>
+			<h2> Welcome to the <c class="year"></c> SPIS registration! In this section, you will find the forms and detailed instructions for completing your registration for <c class="year"></c> SPIS once you have been admitted to the program.<br>
 				<p class="title"><b>Confirm Accepance</b></p>
 				<p>Participation in <c class="year"></c> SPIS is by admission only. If you received an admission offer to participate in <c class="year"></c> SPIS, please confirm your acceptance by sending email to Professor Mohan Paturi at paturi@cs.ucsd.edu by <c class="confirmDate"></c>.</p>
 			<p class="title"><b>Fee Payment</b></p>
 			<p>You also need to send a non-refundable check for $<c class="fee"></c> towards the <c class="year"></c> SPIS fee (payable to the "University of California Regents") to the following mailing address to arrive on or before <c class="feeDue"></c>. Please reduce the fee amount by the amount of your scholarship award. </p>
 			<p class="title"><b>Mandatory Forms</b></p>
 			<p>You need to complete the following forms, sign them, and mail them to the following address to participate in <c class="year"></c> SPIS. </p>
-			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_confidentialHealthForm.pdf?attachauth=ANoY7cqEkP8UHIcj4xp-wIe9AlHi-M_0CJZhhj764WNhu95MKNIeWMkzwS8eZ7wnCJdG-IgRUiUaLyJwURjOLOa6B02gyBv4L9-fbtGFWn6vArmVz7a830f1AaG7Hhcc2YDAOzIoh86aGR2_GtCvWZnrwKQ07vw90ROo8OS9oroKT4djVMmpPACA9unUyTJ9QqccVIa3EhV2t5-D30yEdJfadlvtMAaBI3ox0oz6evZo6yh72al6q0E%3D&attredirects=0">Confidential Health History Form:</a> Please complete all sections of the Confidential Health Information Form and include a scan of the front and back of your health insurance card for our files. We ask for this information in the event that there is a health emergency and you need treatment at Student Health Services or UCSD's Thornton Hospital. </p>
-			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_evaluationConsent.pdf?attachauth=ANoY7cpX3oi6xVQydUPWK0uJtUqsVFP2b6JEUIkng2nKTYEilW4NZWALAvN1F1eZ99nu1c5-Ulxt01MjNFIvppi5P4JNYYfLEipNaoTYazOGZ9CuZqF4TenQ3A9X9WCCXvsGeCf40Q4sTJvGOEZ0Lvb9jOWPofERFk8aW3U9XxuY8eYeTTJ5rb5-9mlZ7vrP52nE4JpWDibE9INL8CNSycUFlzU5_GhDfHs9018ihqrhPWr5oTJ29D0%3D&attredirects=0">Evaluation Consent:</a> Please complete and sign the evaluation form if you agree to participate in the pre and post evaluation of SPIS. These evaluations will be used to make improvements to the program in the future. </p>
-			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_mediaAuthorizationAndRelease.pdf?attachauth=ANoY7crrlHH0UNMH4rgQUtVvTGCZEFW6chGSMiT0f2aGQ3ulK9smR50o13e_ZOEGfwXjte5u3v2LP5cprNkUKI8bC5lZp0BQDuG4mta142ArDJoJJmlTbv7BDtLJ2l2fSeMwbTTtSKw3znDlH0B0WYku-C0Rr7ZWn3mXlM2relmc_dH9qwg73FJI4AkEgJVoBlI--p0-0WEWftQT20Oc4MuOFpEfpHgyiP45zJySykeQbMevn0k0P_6lG9PFC9f12lsK87AuAoJ0&attredirects=0">Media Release Waiver:</a> Please complete and sign the Media Release Waiver. The waiver authorizes SPIS with the right to use any photos or videos of your student that may be taken during the course of the program for future marketing or public relations use. </p>
-			<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_waiverOfLiabilityAcademicAndTransportationAgreement.pdf?attachauth=ANoY7cqpS6qWRbDFrbmRUN4m7Kv05djgW9WP9IR3YhiE_U5KeGzIJ4WMgHS4dhKhyjMXEQ_QR5uaFtI3bb_rksfLXmagOc0gcW0FQS6208qwJjKQ_zSLs0Pr4y2p-qxhBO4rYCANbUKFkayO0C5yhKrhQN0qb4MMZTv9YCJn_awm5xOOtwLaAWw2T9yjHbn61a3_aZLNuAVsqVB4L2ny1uTcUZ1gM8cqzjSXsO60x_3Se3mGn17UTVglMrsRckQWCjijvnI4sdmiv_7OaphsOr21kDImWw2_fA%3D%3D&attredirects=0">Waiver of Liability, Assumption of Risk, and Indemnity Agreement:</a> Please read the agreement carefully before signing. By signing this waiver you agree to all the terms in the agreement as it pertains to SPIS. All students participating in SPIS must return the completed agreement in order to participate in the program. </p>
+			
+			<button type="button" class="collapsibleRight">Confidential Health History Form</button>
+			<div class="content">
+				<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_confidentialHealthForm.pdf?attachauth=ANoY7cqEkP8UHIcj4xp-wIe9AlHi-M_0CJZhhj764WNhu95MKNIeWMkzwS8eZ7wnCJdG-IgRUiUaLyJwURjOLOa6B02gyBv4L9-fbtGFWn6vArmVz7a830f1AaG7Hhcc2YDAOzIoh86aGR2_GtCvWZnrwKQ07vw90ROo8OS9oroKT4djVMmpPACA9unUyTJ9QqccVIa3EhV2t5-D30yEdJfadlvtMAaBI3ox0oz6evZo6yh72al6q0E%3D&attredirects=0">Confidential Health History Form:</a> Please complete all sections of the Confidential Health Information Form and include a scan of the front and back of your health insurance card for our files. We ask for this information in the event that there is a health emergency and you need treatment at Student Health Services or UCSD's Thornton Hospital. </p>
+			</div>
+			<button type="button" class="collapsibleRight">Evaluation Consent Form</button>
+			<div class="content">
+				<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_evaluationConsent.pdf?attachauth=ANoY7cpX3oi6xVQydUPWK0uJtUqsVFP2b6JEUIkng2nKTYEilW4NZWALAvN1F1eZ99nu1c5-Ulxt01MjNFIvppi5P4JNYYfLEipNaoTYazOGZ9CuZqF4TenQ3A9X9WCCXvsGeCf40Q4sTJvGOEZ0Lvb9jOWPofERFk8aW3U9XxuY8eYeTTJ5rb5-9mlZ7vrP52nE4JpWDibE9INL8CNSycUFlzU5_GhDfHs9018ihqrhPWr5oTJ29D0%3D&attredirects=0">Evaluation Consent:</a> Please complete and sign the evaluation form if you agree to participate in the pre and post evaluation of SPIS. These evaluations will be used to make improvements to the program in the future. </p>
+			</div>
+			<button type="button" class="collapsibleRight">Media Release Waiver</button>
+			<div class="content">
+				<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_mediaAuthorizationAndRelease.pdf?attachauth=ANoY7crrlHH0UNMH4rgQUtVvTGCZEFW6chGSMiT0f2aGQ3ulK9smR50o13e_ZOEGfwXjte5u3v2LP5cprNkUKI8bC5lZp0BQDuG4mta142ArDJoJJmlTbv7BDtLJ2l2fSeMwbTTtSKw3znDlH0B0WYku-C0Rr7ZWn3mXlM2relmc_dH9qwg73FJI4AkEgJVoBlI--p0-0WEWftQT20Oc4MuOFpEfpHgyiP45zJySykeQbMevn0k0P_6lG9PFC9f12lsK87AuAoJ0&attredirects=0">Media Release Waiver:</a> Please complete and sign the Media Release Waiver. The waiver authorizes SPIS with the right to use any photos or videos of your student that may be taken during the course of the program for future marketing or public relations use. </p>
+			</div>
+			<button type="button" class="collapsibleRight">Waiver of Liability, Assumption of Risk, and Indemnity Agreement</button>
+			<div class="content">
+				<p><a href = "https://3dae11a5-a-d06fb7e1-s-sites.googlegroups.com/a/eng.ucsd.edu/spis/documents/2019_waiverOfLiabilityAcademicAndTransportationAgreement.pdf?attachauth=ANoY7cqpS6qWRbDFrbmRUN4m7Kv05djgW9WP9IR3YhiE_U5KeGzIJ4WMgHS4dhKhyjMXEQ_QR5uaFtI3bb_rksfLXmagOc0gcW0FQS6208qwJjKQ_zSLs0Pr4y2p-qxhBO4rYCANbUKFkayO0C5yhKrhQN0qb4MMZTv9YCJn_awm5xOOtwLaAWw2T9yjHbn61a3_aZLNuAVsqVB4L2ny1uTcUZ1gM8cqzjSXsO60x_3Se3mGn17UTVglMrsRckQWCjijvnI4sdmiv_7OaphsOr21kDImWw2_fA%3D%3D&attredirects=0">Waiver of Liability, Assumption of Risk, and Indemnity Agreement:</a> Please read the agreement carefully before signing. By signing this waiver you agree to all the terms in the agreement as it pertains to SPIS. All students participating in SPIS must return the completed agreement in order to participate in the program. </p>
+			</div>
 			<p class="title"><b>Mailing Address</b></p>
 			<p><c class="year"></c> SPIS<br>
 			Attn: Mohan Paturi<br>
 			Computer Science and Engineering, UC San Diego<br>
 			9500 Gilman Drive #0404<br>
 			La Jolla, CA 92093-0404</p>
+
+		
+			<script>
+				var coll = document.getElementsByClassName("collapsibleRight");
+				var i;
+
+				for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("activeRight");
+					var content = this.nextElementSibling;
+					if (content.style.display === "block") {
+					content.style.display = "none";
+					} else {
+					content.style.display = "block";
+					}
+				});
+				}
+			</script>
 			</h2>
 		</div>
 

@@ -169,6 +169,11 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
+h1 {
+  font-size: 25px;
+  margin-top: 50px;
+}
+
 * {box-sizing:border-box}
 
 .hidden {

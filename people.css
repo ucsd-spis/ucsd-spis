@@ -78,29 +78,55 @@ body {
 	font-size: 40px;
 }
 
-.professors {
+.centered {
+	text-align: center;
+}
+
+.instructors3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: #369eba;
+	color: white;
+	padding: 15px;
+	border-radius: 15px;
+}
+.instructors4 {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	text-align: center;
 	background-color: #369eba;
 	color: white;
 	padding: 15px;
 	border-radius: 15px;
 }
 
-.advisors {
+.advisors3 {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	text-align: center;
+	grid-template-columns: 1fr 1fr 1fr;
 	background-color: #f2df61;
 	padding: 15px;
 	border-radius: 15px;
 }
 
-.mentors {
+.advisors4 {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	text-align: center;
+	background-color: #f2df61;
+	padding: 15px;
+	border-radius: 15px;
+}
+
+.mentors3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: #142d91;
+	color: white;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-radius: 15px;
+}
+.mentors4 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	background-color: #142d91;
 	color: white;
 	padding: 15px;

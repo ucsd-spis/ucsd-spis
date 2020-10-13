@@ -94,7 +94,10 @@ h2 {
 .title {
 	font-size: 22px;
 }
-
+.small_title{
+	font-size: 20px;
+	line-height: 16px;
+}
 a {
 	color: white;
 	font-size: 18px;
@@ -123,8 +126,8 @@ ul {
 	text-align: left;
 }
 
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
+/* Application: Style the button that is used to open and close the collapsible content */
+.collapsibleLeft {
 	background-color: #369eba;
   	color: white;
   	border: 2px solid white;
@@ -139,12 +142,101 @@ ul {
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
+  .activeLeft, .collapsibleLeft:hover {
 	background-color: white;
 	color: #369eba;
 	cursor: pointer;
   }
+
+  .collapsibleLeft:after {
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; /*plus*/
+	font-size: 20px;
+	color: white;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .collapsibleLeft:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; 
+	font-size: 20px;	
+	color: #369eba;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .activeLeft:after {
+	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	color: #369eba;
+  }
+
+  .activeLeft:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content: '\002D';
+	font-size: 20px;	
+	color: #369eba;
+	float: right;
+	margin-left: 5px;
+  }
+
+
+
+/* Enrollment: Style the button that is used to open and close the collapsible content */
+.collapsibleRight {
+	background-color: #142d91;
+  	color: white;
+  	border: 2px solid white;
+  	font-size: 16px;
+	cursor: pointer;
+	padding-left: 18px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+	width: 100%;
+	text-align: left;
+	outline: none;
+  }
   
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .activeRight, .collapsibleRight:hover {
+	background-color: white;
+	color: #142d91;
+	cursor: pointer;
+  }
+
+  .collapsibleRight:after {
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; /*plus*/
+	font-size: 20px;
+	color: white;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .collapsibleRight:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; 
+	font-size: 20px;	
+	color: #142d91;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .activeRight:after {
+	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	color: #142d91;
+  }
+
+  .activeRight:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content: '\002D';
+	font-size: 20px;	
+	color: #142d91;
+	float: right;
+	margin-left: 5px;
+  }
+
+
   /* Style the collapsible content. Note: hidden by default */
   
   .content {
@@ -154,37 +246,3 @@ ul {
 	background-color: #fafbff2d;
 	margin-left: 2.5px;
   }
-
-  .collapsible:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
-	font-size: 20px;
-	color: white;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .collapsible:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; 
-	font-size: 20px;	
-	color: #369eba;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .active:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
-	color: #369eba;
-  }
-
-  .active:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content: '\002D';
-	font-size: 20px;	
-	color: #369eba;
-	float: right;
-	margin-left: 5px;
-  }
-
- 

@@ -46,20 +46,19 @@
 							housing+= data[i].Intro;
 							housing+= "</p>";
 							
-							while(data[i].Intro.includes('[')) {
-								var varNameStart = data[i].Intro.indexOf('[');
-								var varNameEnd = data[i].Intro.indexOf(']');
+							while(data[i].Intro.includes('<')) {
+								var varNameStart = data[i].Intro.indexOf('<');
+								var varNameEnd = data[i].Intro.indexOf('>');
 						
 								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
 								var v = localStorage.getItem(varName);
-
 								var original = data[i].Intro.substring(varNameStart, varNameEnd + 1);
 								var replacement = v;
 		
 								housing = housing.replace(original, replacement);
 
-								data[i].Intro = data[i].Intro.replace("[", "");
-								data[i].Intro = data[i].Intro.replace("]", "");
+								data[i].Intro = data[i].Intro.replace("<", "");
+								data[i].Intro = data[i].Intro.replace(">", "");
 							}
 						}
 		
@@ -103,9 +102,9 @@
 							dining+= data[i].Intro;
 							dining+= "</p>";
 							
-							while(data[i].Intro.includes('[')) {
-								var varNameStart = data[i].Intro.indexOf('[');
-								var varNameEnd = data[i].Intro.indexOf(']');
+							while(data[i].Intro.includes('<')) {
+								var varNameStart = data[i].Intro.indexOf('<');
+								var varNameEnd = data[i].Intro.indexOf('>');
 						
 								var varName = data[i].Intro.substring(varNameStart + 1, varNameEnd);
 								var v = localStorage.getItem(varName);
@@ -114,8 +113,8 @@
 		
 								dining = dining.replace(original, replacement);
 
-								data[i].Intro = data[i].Intro.replace("[", "");
-								data[i].Intro = data[i].Intro.replace("]", "");
+								data[i].Intro = data[i].Intro.replace("<", "");
+								data[i].Intro = data[i].Intro.replace(">", "");
 							}
 						}
 		

@@ -1,5 +1,5 @@
 Intro,Location Bullets,Closing,Special Meal Accomodations
-"Students will have the option of dining at one of three dining facilities during the five week stay. First meal will begin with dinner on [programStart] and the last meal will be lunch on [programEnd].","Location: Cafe Ventanas
+"Students will have the option of dining at one of three dining facilities during the five week stay. First meal will begin with dinner on <programStart> and the last meal will be lunch on <programEnd>.","Location: Cafe Ventanas
 * The following time blocks are assigned to SPIS students for each day of the week:
 'Breakfast: 7:15-8:00 am'
 'Lunch: 12:00-12:45 pm'
