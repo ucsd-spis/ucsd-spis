@@ -63,23 +63,16 @@ img {
 .images {
 	grid-column-start: 2;
 	grid-column-end: 3;
-	margin-top: 75px;
+	margin-top: 22%;
 	margin-bottom: 100px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
 
-.caption {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	margin-top: 175px;
-	text-align: center;
-}
-
 .dates {
 	grid-column-start: 2;
     grid-column-end: 3;
-	margin-top: 250px;
+	margin-top: 60%;
 	margin-right: 10px;
 	margin-left: 10px;
 	margin-bottom: 100px;
