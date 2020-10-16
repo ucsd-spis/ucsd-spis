@@ -1,7 +1,8 @@
 <html>
 <head>
-	<title>Calendar</title>
+	<title>Program Calendar</title>
 	<link rel="stylesheet" href="calendar.css">
+	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
@@ -11,14 +12,14 @@
 
 	<div class="topnav">
 		<img src="SPIS-logo.jpg">
-		<a href="index.html">Home</a>
-		<a href="academic.html">Academic Program</a>
-		<a id="active" href="calendar.html">Calendar</a>
-		<a href="people.html">People</a>
-		<a href="housing.html">Housing</a>
-		<a href="highlights.html">Highlights</a>
-		<a href="enrollment.html">Enrollment</a>
-		<a href="resources.html">Resources</a> 
+		<a class="tab" href="index.html">Home</a>
+		<a class="tab" href="academic.html">Academic Program</a>
+		<a class="tab" href="enrollment.html">Enrollment</a>
+		<a id="active" class="tab" href="calendar.html">Program Calendar</a>
+		<a class="tab" href="dates.html">Dates + Events</a>
+		<a class="tab" href="residential.html">Residential Life</a>
+		<a class="tab" href="people.html">People</a>
+		<a class="tab" href="highlights.html">Highlights</a>
 	</div> 
 
 
@@ -26,9 +27,9 @@
 	<div class="calendar">
 		<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23a4b8e4&amp;ctz=America%2FLos_Angeles&amp;src=ZW5nLnVjc2QuZWR1X3Zwa2R1M2EyNmszYWxmOHJ0Mm0xOTA1NHVnQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4&amp;title=SPIS%20Calendar&amp;mode=WEEK&amp;showPrint=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 	</div>
-	<!--
-	<div class="note">
-		<p id="title"> Note to students regarding daily schedule: </p>
+	
+	<div class="dates">
+		<h1 class="title"> Note to students regarding daily schedule: </h1>
 		<ul>
 			<li> <b>FoCS Depth / FoCS Breadth: </b> These parallel Friday sessions offer an opportunity for you to make a choice. If there are aspects of the FoCS program from Monday-Thursday of that week that are still a bit hazy, and you'd like some review, the FOCS Depth sessions will recap what you learned that week, and go a bit deeper. If you feel pretty confident about what you've learned, the FoCS Breadth sessions provide an opportunity to learn about something new and different.
 			</li><br>
@@ -39,8 +40,8 @@
 			<li> <b>Faculty One-to-One Meetings: </b> These are individual meetings scheduled with faculty. You'll work in the lab on your FoCS and APS assignments until your appointment time, and then you'll come to your meeting.  After your meeting, you may return to the lab to continue working, or if you are finished with your work for the week, you are free to go explore the UCSD campus.
 			</li>
 		</ul>
-	</div>-->
-	
+	</div>
+	<!--
 	<div class="dates">
 		<h1> Important Dates </h1>
 		<ul>
@@ -53,9 +54,9 @@
 			<li>SPIS Welcome Day: <b class="programStart"></b></li>
 			<li>SPIS Closing Ceremony: <b class="programEnd"></b></li>
 		</ul>
-	</div>
+	</div>-->
 </div>
-
+<!--
 <div class="bottom">
 	<div class="welcome">
 		<h1><c class="year"></c> SPIS Welcome Day</h1>
@@ -205,7 +206,7 @@
 		</script>
 		<closing></closing>
 
-	</div>
+	</div>-->
 </div>
 
 <script src="upgrade.js"></script>

@@ -1,8 +1,9 @@
 <html>
 
 <head>
-	<title>Housing</title>
-	<link rel="stylesheet" href="housing.css">
+	<title>Residential Life</title>
+	<link rel="stylesheet" href="residential.css">
+	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
@@ -22,12 +23,12 @@
 		<img src="SPIS-logo.jpg">
 		<a class="tab" href="index.html">Home</a>
 		<a class="tab" href="academic.html">Academic Program</a>
-		<a class="tab" href="calendar.html">Calendar</a>
-		<a class="tab" href="people.html">People</a>
-		<a id="active" class="tab" href="housing.html">Housing</a>
-		<a class="tab" href="highlights.html">Highlights</a>
 		<a class="tab" href="enrollment.html">Enrollment</a>
-		<a class="tab" href="resources.html">Resources</a>
+		<a class="tab" href="calendar.html">Program Calendar</a>
+		<a class="tab" href="dates.html">Dates + Events</a>
+		<a id="active" class="tab" href="residential.html">Residential Life</a>
+		<a class="tab" href="people.html">People</a>
+		<a class="tab" href="highlights.html">Highlights</a>
 	</div>
 
 	
@@ -65,9 +66,8 @@
 						for(i = 0; i < data.length; i++) {
 							housing+= "<p><b class='title'>";
 							housing+= data[i].Title;
-							housing+= "<br></b> ";
+							housing+= "<br></b>";
 							housing+= data[i].Details;
-							housing+= "</p>";
 
 							while(data[i].Details.includes('\\')) {
 								housing = housing.replace("\\", "<br>");

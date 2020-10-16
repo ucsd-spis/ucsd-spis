@@ -41,7 +41,7 @@ img {
 
 .top {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 3fr 2fr;
 }
 
 .bottom {
@@ -54,6 +54,16 @@ img {
 	margin-bottom: 15px;
 	margin-right: 15px;
 	margin-left: 30px;
+	position: relative; 
+	padding-bottom: 75%; 
+	height: 0; 
+	overflow: hidden;
+}
+
+	 
+.calendar iframe {
+	position: absolute; top:0; left: 0; width: 100%; height: 100%;
+	 
 }
 
 .dates {
@@ -63,8 +73,7 @@ img {
 	margin-left: 15px;
 	background-color: #f2df61;
 	border-radius: 15px;
-	padding: 10px;
-	text-align: center;
+	padding: 20px;
 }
 
 ul {
@@ -95,7 +104,6 @@ a {
 	background-color: #369eba;
 	border-radius: 15px;
 	padding: 10px;
-	text-align: center;
 	color: white;
 }
 
@@ -107,7 +115,6 @@ a {
 	background-color: #142d91;
 	border-radius: 15px;
 	padding: 10px;
-	text-align: center;
 	color: white;
 }
 
@@ -116,5 +123,8 @@ a {
 }
 
 .title {
-	font-size: 17px;
+	font-size: 22px;
+	text-align: center;
+	padding-bottom: 3%;
+	padding-top: 1%;
 }
