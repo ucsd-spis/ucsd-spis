@@ -12,12 +12,13 @@ body {
 }
 
 .topnav a {
-  float: left;
-  color: #369eba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #369eba;
   padding: 14px 16px;
   text-decoration: none;
-  align-items: center;
   font-size: 17px;
 }
 
@@ -39,47 +40,105 @@ img {
 	margin: auto;
 }
 
-.intro{
-   margin-left: 100px;
-   margin-right: 100px;
+.top {
+	display: grid;
+	grid-template-columns: 6fr 1fr;
+	margin-left: 35px;
+	margin-right: 25px;
 }
 
-table, th, td {
+.intro{
+   margin-right: 35px;
+}
+
+.courseContent {
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+
+.courseButton{
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	font-size: 16px;
+	padding: 16px 32px;
+	margin: 4px 2px;
+}
+
+.courseButton:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+.facets {
   border: 1px solid gray;
   border-collapse: collapse;
   padding: 10px;
   font-size: 12px;
+  color: white;
+}
+
+.facets table {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 12px;
+	color: white;
+}
+
+.facets td {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 12px;
+	color: white;
+}
+
+.facets th {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 12px;
+	color: white;
+}
+
+#contentTextbooks table {
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+#contentMath table {
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+#contentMath th, td {
+	padding: 15px;
+}
+
+#contentLogistics table {
+	border-collapse: collapse;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
 }
 
 .classes {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.focs{
-	margin: 5%;
-	background-color: #369eba;
-	text-align: center;
-	padding: 10px;
-	color: white;
-	border-radius: 15px;
-}
-
-.aps{
-	margin: 5%;
-	background-color: #f2df61;
-	text-align: center;
-	padding: 10px;
-	border-radius: 15px;
-}
-
-.facets{
-	margin:5%;
-	background-color: #142d91;
-	text-align: center;
-	padding: 10px;
-	color: white;
-	border-radius: 15px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
 }
 
 h1{
@@ -88,21 +147,6 @@ h1{
 
 h2{
 	font-size: 15px;
-}
-
-button{
-  background-color: #369eba;
-  color: white;
-  border: 2px solid white;
-  font-size: 16px;
-  padding: 16px 32px;
-  margin: 4px 2px;
-}
-
-button:hover {
-	background-color: white;
-	color: #369eba;
-	cursor: pointer;
 }
 
 #title {
@@ -128,3 +172,288 @@ ul {
 	text-align: left;
 }
 
+.link {
+	color: white;
+}
+
+/* LIGHT BLUE COLLAPSIBLE */
+.collapsibleLightBlue {
+	background-color: #369eba;
+	color: white;
+	border: 2px solid #369eba;
+  	font-size: 16px;
+	cursor: pointer;
+	padding-left: 18px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+	width: 100%;
+	text-align: left;
+	outline: none;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .activeLightBlue, .collapsibleLightBlue:hover {
+	background-color: white;
+	color: #369eba;
+	border: 2px solid #369eba;
+	cursor: pointer;
+  }
+
+  .collapsibleLightBlue:after {
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; /*plus*/
+	font-size: 20px;
+	color: white;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .collapsibleLightBlue:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; 
+	font-size: 20px;	
+	color: #369eba;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .activeLightBlue:after {
+	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	color: #369eba;
+  }
+
+  .activeLightBlue:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content: '\002D';
+	font-size: 20px;	
+	color: #369eba;
+	float: right;
+	margin-left: 5px;
+  }
+
+
+/* DARK BLUE COLLAPSIBLE*/
+  .collapsibleDarkBlue {
+	background-color: #142d91;
+	color: white;
+	border: 2px solid #142d91;
+  	font-size: 16px;
+	cursor: pointer;
+	padding-left: 18px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+	width: 100%;
+	text-align: left;
+	outline: none;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .activeDarkBlue, .collapsibleDarkBlue:hover {
+	background-color: white;
+	color: #142d91;
+	border: 2px solid #142d91;
+	cursor: pointer;
+  }
+
+  .collapsibleDarkBlue:after {
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; /*plus*/
+	font-size: 20px;
+	color: white;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .collapsibleDarkBlue:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; 
+	font-size: 20px;	
+	color: #142d91;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .activeDarkBlue:after {
+	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	color: #142d91;
+  }
+
+  .activeDarkBlue:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content: '\002D';
+	font-size: 20px;	
+	color: #142d91;
+	float: right;
+	margin-left: 5px;
+  }
+
+  #contentFoCS, #contentFacets{
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #142d91;
+	color: white;
+	opacity: 100%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+  }
+
+  #contentAPS, #contentProjects {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #369eba;
+	color: white;
+	opacity: 95%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+  }
+
+
+
+/* YELLOW COLLAPSIBLE */
+  .collapsibleYellow {
+	background-color: #f2df61;
+	color: black;
+	border: 2px solid #f2df61;
+  	font-size: 16px;
+	cursor: pointer;
+	padding-left: 18px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: left;
+	outline: none;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .activeYellow, .collapsibleYellow:hover {
+	background-color: black;
+	color: #f2df61;
+	border: 2px solid black;
+	cursor: pointer;
+  }
+
+  .collapsibleYellow:after {
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; /*plus*/
+	font-size: 20px;
+	color: black;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .collapsibleYellow:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content:'\002B'; 
+	font-size: 20px;	
+	color: #f2df61;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .activeYellow:after {
+	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	color: #f2df61;
+  }
+
+  .activeYellow:hover:after {  
+	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
+	content: '\002D';
+	font-size: 20px;	
+	color: #f2df61;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .resources {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+  }
+
+  #contentTextbooks, #contentMath, #contentLogistics {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	background-color: #f2df61;
+	opacity: 85%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+  }
+
+  .button3 {
+	background-color: #f2df61;
+	color: black;
+	border: 2px solid black;
+	font-size: 16px;
+	padding: 8px 16px;
+	margin: 2px 1px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+  }
+
+  .button3:hover {
+	background-color: black;
+	color:#f2df61;
+	cursor: pointer;
+  }
+
+  .title {
+	  text-align: center;
+	  font-size: 25px;
+	  margin-top: 20px;
+  }
+  .contentFacetsHidden{
+	display:none;
+	/*
+	padding: 0 18px;
+	background-color: #142d91;
+	color: white;
+	opacity: 100%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;*/
+  }
+  /*
+  #contentFacets.contentFacetsShowing{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 0 18px;
+	background-color: #142d91;
+	color: white;
+	opacity: 100%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+  }
+  .insideFacets{
+	float: left;
+	width: 50%;
+	padding: 10px;
+  }*/
+
+  #contentFacets table {
+	border-collapse: collapse;
+	vertical-align: top;
+	padding: 10px;
+	font-size: 15px;
+	width: 100%;
+	color: white;
+}

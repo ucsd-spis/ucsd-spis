@@ -11,13 +11,14 @@ body {
 	font-family: 'Manjari', sans-serif;
 }
 
-.topnav a {
-  float: left;
-  color: #369eba;
+.topnav a {	
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #369eba;
   padding: 14px 16px;
   text-decoration: none;
-  align-items: center;
   font-size: 17px;
 }
 

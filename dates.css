@@ -12,12 +12,13 @@ body {
 }
 
 .topnav a {
-  float: left;
-  color: #369eba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #369eba;
   padding: 14px 16px;
   text-decoration: none;
-  align-items: center;
   font-size: 17px;
 }
 
@@ -146,7 +147,7 @@ br {
   
   .slideshow {
 	margin-right: 25%;
-	  position: relative;
+	position: relative;
 	width: 100%;
 	height: auto;
   }
