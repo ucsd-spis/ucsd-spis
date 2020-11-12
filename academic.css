@@ -138,15 +138,15 @@ img {
 	grid-gap: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
-	margin-top: 30px;
 }
 
 h1{
 	font-size: 25px;
+	text-align: center;
 }
 
 h2{
-	font-size: 15px;
+	font-size: 16px;
 }
 
 #title {
@@ -160,7 +160,7 @@ h2{
 }
 
 .smaller {
-	font-size: 13px;
+	font-size: 15px;
 }
 
 ol {
@@ -176,146 +176,68 @@ ul {
 	color: white;
 }
 
-/* LIGHT BLUE COLLAPSIBLE */
-.collapsibleLightBlue {
-	background-color: #369eba;
-	color: white;
-	border: 2px solid #369eba;
-  	font-size: 16px;
-	cursor: pointer;
-	padding-left: 18px;
-	padding-top: 20px;
-	padding-bottom: 16px;
-	width: 100%;
-	text-align: left;
-	outline: none;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .activeLightBlue, .collapsibleLightBlue:hover {
-	background-color: white;
-	color: #369eba;
-	border: 2px solid #369eba;
-	cursor: pointer;
-  }
+.classes {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
 
-  .collapsibleLightBlue:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
-	font-size: 20px;
-	color: white;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .collapsibleLightBlue:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; 
-	font-size: 20px;	
-	color: #369eba;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .activeLightBlue:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
-	color: #369eba;
-  }
-
-  .activeLightBlue:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content: '\002D';
-	font-size: 20px;	
-	color: #369eba;
-	float: right;
-	margin-left: 5px;
-  }
-
-
-/* DARK BLUE COLLAPSIBLE*/
-  .collapsibleDarkBlue {
+.dark {
 	background-color: #142d91;
 	color: white;
-	border: 2px solid #142d91;
-  	font-size: 16px;
-	cursor: pointer;
-	padding-left: 18px;
-	padding-top: 20px;
-	padding-bottom: 16px;
-	width: 100%;
-	text-align: left;
-	outline: none;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .activeDarkBlue, .collapsibleDarkBlue:hover {
-	background-color: white;
-	color: #142d91;
-	border: 2px solid #142d91;
-	cursor: pointer;
-  }
+	border-radius: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin: 15px;
+}
 
-  .collapsibleDarkBlue:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
-	font-size: 20px;
-	color: white;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .collapsibleDarkBlue:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; 
-	font-size: 20px;	
-	color: #142d91;
-	float: right;
-	margin-left: 5px;
-  }
-
-  .activeDarkBlue:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
-	color: #142d91;
-  }
-
-  .activeDarkBlue:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content: '\002D';
-	font-size: 20px;	
-	color: #142d91;
-	float: right;
-	margin-left: 5px;
-  }
-
-  #contentFoCS, #contentFacets{
-	padding: 0 18px;
-	display: none;
-	overflow: hidden;
-	background-color: #142d91;
-	color: white;
-	opacity: 100%;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding: 20px;
-  }
-
-  #contentAPS, #contentProjects {
-	padding: 0 18px;
-	display: none;
-	overflow: hidden;
+.light {
 	background-color: #369eba;
 	color: white;
-	opacity: 95%;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding: 20px;
-  }
+	border-radius: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin: 15px;
+}
 
+.facetsButton{
+	background-color: #369eba;
+	color: white;
+	border: 2px solid white;
+	font-size: 15px;
+	padding: 8px 16px;
+	margin: 2px 1px;
+}
 
+.facetsButton:hover {
+	background-color: white;
+	color: #369eba;
+	cursor: pointer;
+}
+
+.goFacetsButton {
+	text-align: center;
+}
+
+.projectsButton{
+	background-color: #142d91;
+	color: white;
+	border: 2px solid white;
+	font-size: 15px;
+	padding: 8px 16px;
+	margin: 2px 1px;
+}
+
+.projectsButton:hover {
+	background-color: white;
+	color: #142d91;
+	cursor: pointer;
+}
+
+.goProjectsButton {
+	text-align: center;
+}
 
 /* YELLOW COLLAPSIBLE */
   .collapsibleYellow {

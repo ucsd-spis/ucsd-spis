@@ -247,3 +247,14 @@ ul {
 	background-color: #fafbff2d;
 	margin-left: 2.5px;
   }
+
+  .note {
+	  text-align: center;
+	  padding-bottom: 15px;
+	  font-size: 15px;
+	  line-height: 15px;
+  }
+
+  #smol {
+	  line-height: 0;
+  }
