@@ -110,23 +110,10 @@ button:hover {
 	font-size: 20px;
 }
 
-li{
-	margin-left: 20px;
-}
-
-.inner {
-	margin-left: 15px;
-}
-
-.inner2 {
-	margin-left: 60px;
-}
-
-br {
-	line-height: 2px;
-}
-
-ul {
-	margin-top: 0;
-	margin-bottom: 0;
+.bulletSpacing {
+	margin-top: -12px;
+  }
+  
+.newLineSpacing {
+	line-height: 0;
 }

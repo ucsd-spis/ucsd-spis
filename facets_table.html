@@ -34,148 +34,110 @@
 		<a class="tab" href="highlights.html">Highlights</a>
     </div>
 
-    <div class="goBackButton">
-        <a href="academic.html"><button class="goBack"><span class="material-icons">undo</span> Go Back</button></a>
-    </div>
+    <p id="title"><c class="year"></c> Facets</p>
 
-    <p id="pageTitle"><c class="year"></c> Facets</p>
-    
-    <h2>Super Simple Bootstrap Responsive Timeline</h2>
+    <div id="contentFacets">
+		<table><tr><td>
+		<div class="facets1">
+			<h2>Facets is a series of interactive lectures where students will
+			<ul>
+				<li class="smaller">explore exciting ideas in computer science and engineering,</li>
+				<li class="smaller">learn about opportunities in industry,</li>
+				<li class="smaller">interact with departmental and college advisors for course planning, and</li>
+				<li class="smaller">gain the knowledge about various resources at UC San Diego.</li>
+			</ul>
+            The lectures will be presented by UC San Diego faculty, alumni, college/departmental advisors, and industry professionals.</h2>
+            <div class="centerButton"><a href="academic.html"><button class="goBack">Go Back</button></a></div>
+		</div></td>
+		<td style="width:65%"><div class="facets2"><facetsTable></facetsTable></td></tr>
+			<script>
+				var data;
+				d3.csv("facets.csv").then(function(result) {
+					data = result;
+					var table = "<table class='facets'>";
+					table+= "<tr><th>Date</th>";
+					table+= "<th>Title</th>";
+					table+= "<th>Speaker</th></tr>";
+					
+					for(i = 0; i < data.length; i++){
+						table+= "<tr><td>";
+						table+= data[i].Date;
+						table+= "</td><td>";
+						table+= data[i].Title;
+						table+= "</td><td>";
+						table+= data[i].Speaker;
+                        table+= "</td></tr>";
+					}
+                    table+= "</table>";
 
-    <ul class="timeline">
-        <li>
-            <div class="timeline-badge">
-            <a><i class="fa fa-circle" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Invitamus me testatur sed quod non dum animae tuae lacrimis ut libertatem deum rogus aegritudinis causet. Dicens hoc contra serpentibus isto.</p>
-                </div>
-                <div class="timeline-footer">
-                    <p class="text-right">Feb-21-2014</p>
-                </div>
-            </div>
-        </li>
-        
-        <li class="timeline-inverted">
-            <div class="timeline-badge">
-                <a><i class="fa fa-circle invert" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Stranguillione in deinde cepit roseo commendavit patris super color est se sed. Virginis plus plorantes abscederem assignato ipsum ait regem Ardalio nos filiae Hellenicus mihi cum. Theophilo litore in lucem in modo invenit quasi nomen magni ergo est se est Apollonius, habet clementiae venit ad nomine sed dominum depressit filia navem.</p>
-                </div>
-                <div class="timeline-footer">
-                    <p class="text-right">Feb-23-2014</p>
-                </div>
-            </div>
-        </li>
-        
-        <li>
-            <div class="timeline-badge">
-                <a><i class="fa fa-circle" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Advenientibus aliorum eam ad per te sed. Facere debetur aut veneris accedens.</p>
-                </div>
-                <div class="timeline-footer">
-                    <p class="text-right">Feb-23-2014</p>
-                </div>
-            </div>
-        </li>
-        
-        <li class="timeline-inverted">
-            <div class="timeline-badge">
-                <a><i class="fa fa-circle invert" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Volvitur ingreditur id ait mea vero cum autem quod ait Cumque ego illum vero cum unde beata. Commendavi si non dum est in. Dionysiadem tuos ratio puella ut casus, tunc lacrimas effunditis magister cives Tharsis. Puellae addita verbaque' capellam sanctissima quid, apollinem existimas filiam rex cum autem quod tamen adnuente rediens eam est se in. Peracta licet ad nomine Maria non ait in modo compungi mulierem volutpat.</p>
-                </div>
-                <div class="timeline-footer">
-                    <p class="text-right">Feb-27-2014</p>
-                </div>
-            </div>
-        </li>
-        
-        <li>
-            <div class="timeline-badge">
-                <a><i class="fa fa-circle" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Adfertur guttae sapientiae ducitur est Apollonius ut a a his domino Lycoridem in lucem. Theophile atque bona dei cenam veniebant est cum. Iusto opes mihi Tyrum in modo compungi mulierem ubi augue eiusdem ordo quos vero diam omni catervis famulorum. Bene dictis ut diem finito servis unde.</p>
-                </div>
-                <div class="timeline-footer">
-                    <p class="text-right">Mar-01-2014</p>
-                </div>
-            </div>
-        </li>
-        
-        <li  class="timeline-inverted">
-            <div class="timeline-badge">
-                <a><i class="fa fa-circle invert" id=""></i></a>
-            </div>
-            <div class="timeline-panel">
-                <div class="timeline-heading">
-                    <h4>Timeline Event</h4>
-                </div>
-                <div class="timeline-body">
-                    <p>Crede respiciens loco dedit beneficio ad suis alteri si puella eius in. Acceptis codicello lenonem in deinde plectrum anni ipsa quod eam est Apollonius.</p>
-                </div>
-                <div class="timeline-footer primary">
-                    <p class="text-right">Mar-02-2014</p>
-                </div>
-            </div>
-        </li>
-        <li class="clearfix no-float"></li>
-    </ul>
+                    // INSERT BULLET
+                    while(table.includes("*")) {
+                        var bulletStart = table.indexOf('*');
+                        var bulletEnd = table.indexOf('*', bulletStart + 1);
 
-    
-    
-    <script>
-        var data;
-        d3.csv("facets.csv").then(function(result) {
-            data = result;
-            var table = "<table class='facets'>";
-            table+= "<tr><th>Date</th>";
-            table+= "<th>Title</th>";
-            table+= "<th>Speaker</th></tr>";
-            
-            for(i = 0; i < data.length; i++){
-                table+= "<tr><td>";
-                table+= data[i].Date;
-                table+= "</td><td>";
-                table+= data[i].Title;
-                table+= "</td><td>";
-                table+= data[i].Speaker;
-                table+= "</td></tr>";
-            }
-            table+= "</table>";
+                        var bullet = table.substring(bulletStart + 1, bulletEnd);	
+                        var original = table.substring(bulletStart, bulletEnd + 1);
 
-            $("facetsTable").html(table);	
-        });
-    </script>
+                        var replacement = "<ul><li class='bulletSpacing'>" + bullet + "</li></ul>";
 
-    <div class="tableBackground">
-        <facetsTable></facetsTable>
+                        table = table.replace(original, replacement);
+                    }
+
+                    // INSERT SUB-BULLET
+                    while(table.includes("#")) {
+                        var subBulletStart = table.indexOf("#");
+                        var subBulletEnd = table.indexOf("#", subBulletStart + 1);
+
+                        var subBullet = table.substring(subBulletStart + 1, subBulletEnd);	
+                        var original = table.substring(subBulletStart, subBulletEnd + 1);
+
+                        var replacement = "<ul><ul><li class='bulletSpacing'>" + subBullet + "</li></ul></ul>";
+
+                        table = table.replace(original, replacement);
+                    }
+                    
+                    // ADD LINK TO WORD
+                    while(table.includes('[')){
+                        var wordStart = table.indexOf("[");
+                        var wordEnd = table.indexOf("]");
+                        var word = table.substring(wordStart+1, wordEnd);
+                        
+                        var linkStart = table.indexOf("{");
+                        var linkEnd = table.indexOf("}");
+                        var link = table.substring(linkStart+1, linkEnd);
+                        
+                        if (!(link.includes("https://"))) {
+                            link = "https://" + link;
+                        }
+
+                        table = table.replace(table.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
+                    }
+
+                    // INSERT VARIABLES
+                    while(table.includes('^')) {
+                        var varNameStart = table.indexOf('^');
+                        var varNameEnd = table.indexOf('^', varNameStart + 1);
+                
+                        var varName = table.substring(varNameStart + 1, varNameEnd);
+                        var v = localStorage.getItem(varName);
+                        var original = table.substring(varNameStart, varNameEnd + 1);
+                        var replacement = v;
+
+                        table = table.replace(original, replacement);
+                    }
+
+                    // ADD NEWLINE
+                    while(table.includes('\\')){
+                        table = table.replace("\\", "<section class='newLineSpacing'></section>");
+                    }
+
+					$("facetsTable").html(table);	
+				});
+			</script>
+		</table>
     </div>
     <br><br>
+		
+
     <script src="upgrade.js"></script>
 </body>

@@ -144,3 +144,11 @@ body {
 	margin-left: 15px;
 	margin-right: 15px;
 }
+
+.bulletSpacing {
+	margin-top: -12px;
+}
+  
+ .newLineSpacing {
+	line-height: 0;
+}

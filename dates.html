@@ -41,7 +41,7 @@
 						welcome+= data[i].Time;
 						welcome+= "<br></b>";
 						welcome+= data[i].Description;
-						
+						/*
 						if(data[i].Description.includes('[')) {
 							var wordStart = data[i].Description.indexOf('[');
 							var wordEnd = data[i].Description.indexOf(']');
@@ -110,8 +110,69 @@
 								welcome += "</ul>";
 							}
 						}
-						welcome += "</ul>";
+						welcome += "</ul>";*/
 					}
+					// INSERT BULLET
+					while(welcome.includes("*")) {
+						var bulletStart = welcome.indexOf('*');
+						var bulletEnd = welcome.indexOf('*', bulletStart + 1);
+
+						var bullet = welcome.substring(bulletStart + 1, bulletEnd);	
+						var original = welcome.substring(bulletStart, bulletEnd + 1);
+
+						var replacement = "<ul><li class='bulletSpacing'>" + bullet + "</li></ul>";
+
+						welcome = welcome.replace(original, replacement);
+					}
+					
+					// INSERT SUB-BULLET
+					while(welcome.includes("#")) {
+						var subBulletStart = welcome.indexOf("#");
+						var subBulletEnd = welcome.indexOf("#", subBulletStart + 1);
+
+						var subBullet = welcome.substring(subBulletStart + 1, subBulletEnd);	
+						var original = welcome.substring(subBulletStart, subBulletEnd + 1);
+
+						var replacement = "<ul><ul><li class='bulletSpacing'>" + subBullet + "</li></ul></ul>";
+
+						welcome = welcome.replace(original, replacement);
+					}
+					
+					// ADD LINK TO WORD
+					while(welcome.includes('[')){
+						var wordStart = welcome.indexOf("[");
+						var wordEnd = welcome.indexOf("]");
+						var word = welcome.substring(wordStart+1, wordEnd);
+						
+						var linkStart = welcome.indexOf("{");
+						var linkEnd = welcome.indexOf("}");
+						var link = welcome.substring(linkStart+1, linkEnd);
+						
+						if (!(link.includes("https://"))) {
+							link = "https://" + link;
+						}
+
+						welcome = welcome.replace(welcome.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
+					}
+					
+					// INSERT VARIABLES
+					while(welcome.includes('^')) {
+						var varNameStart = welcome.indexOf('^');
+						var varNameEnd = welcome.indexOf('^', varNameStart + 1);
+				
+						var varName = welcome.substring(varNameStart + 1, varNameEnd);
+						var v = localStorage.getItem(varName);
+						var original = welcome.substring(varNameStart, varNameEnd + 1);
+						var replacement = v;
+
+						welcome = welcome.replace(original, replacement);
+					}
+
+					// ADD NEWLINE
+					while(welcome.includes('\\')){
+						welcome = welcome.replace("\\", "<section class='newLineSpacing'></section>");
+					}
+			
 	
 					$("welcome").html(welcome);	
 				});
@@ -193,73 +254,76 @@
 						if (data[i].Intro.length > 0){
 							closing += "<p>" + data[i].Intro + "</p>";
 						}
-						var wordStart = closing.indexOf("[");
-						var wordEnd = closing.indexOf("]");
-						var word = closing.substring(wordStart+1, wordEnd);
-						
-						var linkStart = closing.indexOf("{");
-						var linkEnd = closing.indexOf("}");
-						var link = closing.substring(linkStart+1, linkEnd);
-						closing = closing.replace(closing.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>")
 					}
 	
-					var j = 0;
 					for(i = 0; i < data.length; i++){
 						closing += "<p></p> <b class='title'>";
 						closing += data[i].Time;
 						closing += "<br></b>";
 						closing += data[i].Description;
-	
-						while(data[i].Description.includes("*")) {
-							if (j == 0) {
-								closing = closing.replace("*", "<ul> *");
-								j++;
-							}
-	
-							var bulletStart = data[i].Description.indexOf('*');
-							var bulletEnd = data[i].Description.indexOf('*', bulletStart + 1);
-	
-							var bullet = data[i].Description.substring(bulletStart + 1, bulletEnd);	
-							var original = data[i].Description.substring(bulletStart, bulletEnd);
-							if(bulletEnd == -1) {
-								bullet = data[i].Description.substring(bulletStart + 1);
-								original = data[i].Description.substring(bulletStart);
-							}
-	
-							var replacement = "<li>" + bullet + "</li>";
-	
-							closing = closing.replace(original, replacement);
-	
-							data[i].Description = data[i].Description.replace('*', '');
-	
-							if (data[i].Description.includes("'")) {
-								var outerBulletStart = data[i].Description.indexOf("*");
-								var outerBulletEnd = data[i].Description.indexOf("'");
-								var outerBulletOriginal = data[i].Description.substring(outerBulletStart, outerBulletEnd);
-								var outerBulletReplacement = data[i].Description.substring(outerBulletStart + 1, outerBulletEnd);
-
-								closing = closing.replace(outerBulletOriginal, "<li>" + outerBulletReplacement + "</li>");
-	
-								closing+= "<ul>";
-								while(data[i].Description.includes("'")) {
-									var innerBulletStart = data[i].Description.indexOf("'");
-									var innerBulletEnd = data[i].Description.indexOf("'", innerBulletStart + 1);
-	
-									var innerBullet = data[i].Description.substring(innerBulletStart + 1, innerBulletEnd);	
-									
-									var innerOriginal = data[i].Description.substring(innerBulletStart, innerBulletEnd + 2);
-									var innerReplacement = "<li type='circle' class='inner'>" + innerBullet + "</li>";
-	
-									closing = closing.replace(innerOriginal, innerReplacement);
-	
-									data[i].Description = data[i].Description.replace("'", "");
-									data[i].Description = data[i].Description.replace("'", "");
-								}
-								closing += "</ul>";
-							}
-						}
-						closing += "</ul>";
 					}
+
+					// INSERT BULLET
+					while(closing.includes("*")) {
+							var bulletStart = closing.indexOf('*');
+							var bulletEnd = closing.indexOf('*', bulletStart + 1);
+
+							var bullet = closing.substring(bulletStart + 1, bulletEnd);	
+							var original = closing.substring(bulletStart, bulletEnd + 1);
+
+							var replacement = "<ul><li class='bulletSpacing'>" + bullet + "</li></ul>";
+
+							closing = closing.replace(original, replacement);
+						}
+
+						// INSERT SUB-BULLET
+						while(closing.includes("#")) {
+							var subBulletStart = closing.indexOf("#");
+							var subBulletEnd = closing.indexOf("#", subBulletStart + 1);
+
+							var subBullet = closing.substring(subBulletStart + 1, subBulletEnd);	
+							var original = closing.substring(subBulletStart, subBulletEnd + 1);
+
+							var replacement = "<ul><ul><li class='bulletSpacing'>" + subBullet + "</li></ul></ul>";
+
+							closing = closing.replace(original, replacement);
+						}
+						
+						// ADD LINK TO WORD
+						while(closing.includes('[')){
+							var wordStart = closing.indexOf("[");
+							var wordEnd = closing.indexOf("]");
+							var word = closing.substring(wordStart+1, wordEnd);
+							
+							var linkStart = closing.indexOf("{");
+							var linkEnd = closing.indexOf("}");
+							var link = closing.substring(linkStart+1, linkEnd);
+							
+							if (!(link.includes("https://"))) {
+								link = "https://" + link;
+							}
+
+							closing = closing.replace(closing.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
+						}
+
+						// INSERT VARIABLES
+						while(closing.includes('^')) {
+							var varNameStart = closing.indexOf('^');
+							var varNameEnd = closing.indexOf('^', varNameStart + 1);
+					
+							var varName = closing.substring(varNameStart + 1, varNameEnd);
+							var v = localStorage.getItem(varName);
+							var original = closing.substring(varNameStart, varNameEnd + 1);
+							var replacement = v;
+
+							closing = closing.replace(original, replacement);
+						}
+
+						// ADD NEWLINE
+						while(closing.includes('\\')){
+							closing = closing.replace("\\", "<section class='newLineSpacing'></section>");
+						}
+					
 					$("closing").html(closing);	
 				});
 			</script>

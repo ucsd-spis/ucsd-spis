@@ -22,240 +22,27 @@
 	</div>
  
 	<div class="top">
-		<div class="intro">
-			<p>
-			The academic program focuses on the foundations of computer science and engineering, (in short, FoCS, Foundations of Computer Science) where students will
-			</p>
+		<p>
+		The academic program focuses on the foundations of computer science and engineering, (in short, FoCS, Foundations of Computer Science) where students will
+		</p>
 
-			<ul> 
-				<li>learn basic concepts such as abstraction, computation, algorithm, programming, interaction with the physical world,
-				</li>
-				<li> gain competency in mathematical reasoning, algorithm design, programming, and hardware skills,
-				</li> 
-				<li>apply the concepts and skills to solve problems in domains such as image processing, computer vision, cryptography, data mining, and
-				</li>     
-				<li>bring together all the ideas to succeed in an open-ended project.
-				</li>
-			</ul>
-			<p>In addition, students will participate in the Facets of Computer Science and Engineering seminar, where they will be exposed to the larger world of computing and learn the tools and techniques needed to make a smooth transition to UC San Diego.
+		<ul> 
+			<li>learn basic concepts such as abstraction, computation, algorithm, programming, interaction with the physical world,
+			</li>
+			<li>gain competency in mathematical reasoning, algorithm design, programming, and hardware skills,
+			</li> 
+			<li>apply the concepts and skills to solve problems in domains such as image processing, computer vision, cryptography, data mining, and
+			</li>     
+			<li>bring together all the ideas to succeed in an open-ended project.
+			</li>
+		</ul>
+		<p>In addition, students will participate in the Facets of Computer Science and Engineering seminar, where they will be exposed to the larger world of computing and learn the tools and techniques needed to make a smooth transition to UC San Diego.
 
-			<c class="year"></c> SPIS faculty include Gary Gillespie, Curt Schurgers, and Niema Moshiri.</p>
-		</div>
-		<div class="courseContent">
-			<a href="https://" onclick="location.href=this.href+internalWebsiteLink;return false;"><button class="courseButton">Course Content</button></a>
-		</div>
-	</div>
+		<c class="year"></c> SPIS faculty include Gary Gillespie, Curt Schurgers, and Niema Moshiri.</p>
 
-	<!--
-	<div class="classes">
-		<button onclick="showFoCS()" type="button" class="collapsibleDarkBlue" id="focsButton">Foundations of Computer Science</button>
-		<button onclick="showAPS()" type="button" class="collapsibleLightBlue" id="apsButton">Algorithmic Problem Solving</button>
-		<button onclick="showFacets()" type="button" class="collapsibleDarkBlue" id="facetsButton">Facets</button>
-		<button onclick="showProjects()" type="button" class="collapsibleLightBlue" id="projectsButton">Projects</button>
-	</div>
-	<div id="contentFoCS" style="display:none">
-		<p></p>
-		<h1>Foundations of Computer Science</h1>
-		<h2>&nbsp;&nbsp;&nbsp;   This course introduces students to the intellectual and practical foundations of the discipline of computer science.  The goals of this course are to get students excited about studying CS and empowered with the knowledge and skills they need to thrive in UCSD's computer science program.  <br /><br />
-		<br>&nbsp;&nbsp; &nbsp;  This main page for the foundations course is focused on answering the question "What am I supposed to be working on right now?"   <br /><br />
-		<br>&nbsp;&nbsp; &nbsp;  The course will cover basic Computer Science skills such as algorithm development and programming with an emphasis on logical thinking and debugging. Students will implement programs in Python (a high-level language) and may work with the Raspberry Pi.  Throughout, we will emphasize the connections between low-level hardware, programming, and abstract algorithms as tools for solving problems.  Students will work on projects extending these ideas in the areas of data science, robotics, web development.</h2>
 	
 	</div>
-	<div id="contentAPS" style="display:none">
-		<h1>Algorithm Problem Solving</h1>
-		<h2>&nbsp;&nbsp; &nbsp; Though programming is the most visible aspect of how Computer Science is applied, the basis of Computer Science is a way of thinking about problems and solving them algorithmically before one starts implementing them as programs. Several lectures will be devoted to algorithmic problem solving (APS), where students will think about problems and algorithms and write the solutions precisely and coherently in plain English. The types of problems encountered in APS are similar to the ones often presented to prospective employees at job interviews for companies such as Qualcomm, Google, Microsoft, Facebook, as well as start-up companies.<br /><br />
-	</div>
-	<div id="contentFacets" class='contentFacetsHidden'>
-	<div id="contentFacets" style="display:none">
-		<table><tr><td>
-		<div class="facets1">
-			<h1>Facets</h1>
-			<h2>Facets is a series of interactive lectures where students will
-			<ul>
-				<li class="smaller">explore exciting ideas in computer science and engineering,</li>
-				<li class="smaller">learn about opportunities in industry,</li>
-				<li class="smaller">interact with departmental and college advisors for course planning, and</li>
-				<li class="smaller">gain the knowledge about various resources at UC San Diego.</li>
-			</ul>
-			The lectures will be presented by UC San Diego faculty, alumni, college/departmental advisors, and industry professionals.</h2>
-		</div></td>
-		<td style="width:65%"><div class="facets2"><facetsTable></facetsTable></td></tr>
-			<script>
-				var data;
-				d3.csv("facets.csv").then(function(result) {
-					data = result;
-					var table = "<table class='facets'>";
-					table+= "<tr><th>Date</th>";
-					table+= "<th>Title</th>";
-					table+= "<th>Speaker</th></tr>";
-					
-					for(i = 0; i < data.length; i++){
-						table+= "<tr><td>";
-						table+= data[i].Date;
-						table+= "</td><td>";
-						table+= data[i].Title;
-						table+= "</td><td>";
-						table+= data[i].Speaker;
-						table+= "</td></tr>";
-					}
-					table+= "</table>";
-	
-					$("facetsTable").html(table);	
-				});
-			</script>
-			</table>
-		</div>
-		
-	</div>
-	<div id="contentProjects" style="display:none">
-		<h1>Projects</h1><p></p>
-		<h2>&nbsp;&nbsp; &nbsp; At the end of the SPIS Program, each student will work with a partner to complete a final project using the skills learned throughout SPIS. Students will apply their Computer Science and Engineering skills to a real-world application in one of three project areas. Past project areas have included Machine Learning, Robotics, Web Applications, and Video Games. Students will present their final projects to parents and faculty at the SPIS Closing Ceremony. For examples from previous years, please visit the <a href="highlights.html" class="link">Highlights</a> page.</h2>
-	</div>
-	<script>
-			var focs = document.getElementById("contentFoCS");
-			var aps = document.getElementById("contentAPS");
-			var facets = document.getElementById("contentFacets");
-			var projects = document.getElementById("contentProjects");
-			
-			function showFoCS() {
-				if (!document.getElementById('focsButton').classList.contains('activeDarkBlue')){
-					document.getElementById('focsButton').classList.add('activeDarkBlue');
-				}
-				else {
-					document.getElementById('focsButton').classList.remove("activeDarkBlue");
-				}
 
-				if (document.getElementById('apsButton').classList.contains('activeLightBlue')){
-					document.getElementById('apsButton').classList.remove('activeLightBlue');
-				}
-				if (document.getElementById('facetsButton').classList.contains('activeDarkBlue')){
-					document.getElementById('facetsButton').classList.remove('activeDarkBlue');
-				}
-				if (document.getElementById('projectsButton').classList.contains('activeLightBlue')){
-					document.getElementById('projectsButton').classList.remove('activeLightBlue');
-				}
-				
-				if (focs.style.display === "block") {
-					focs.style.display = "none";
-				} else {
-					/*hide all of them, show this one*/
-					aps.style.display = "none";
-					facets.style.display = "none";
-					projects.style.display = "none";
-					focs.style.display = "block";
-				}
-				
-			}
-			
-			function showAPS(){
-				if(!document.getElementById('apsButton').classList.contains("activeLightBlue")) {
-					document.getElementById('apsButton').classList.add("activeLightBlue");
-				}
-				else {
-					document.getElementById('apsButton').classList.remove("activeLightBlue");
-				}
-
-				if(document.getElementById('focsButton').classList.contains("activeDarkBlue")) {
-					document.getElementById('focsButton').classList.remove("activeDarkBlue");	
-				}
-				if(document.getElementById('facetsButton').classList.contains("activeDarkBlue")) {
-					document.getElementById('facetsButton').classList.remove("activeDarkBlue");	
-				}
-				if(document.getElementById('projectsButton').classList.contains("activeLightBlue")) {
-					document.getElementById('projectsButton').classList.remove("activeLightBlue");	
-				}
-				
-				if (aps.style.display === "block") {
-					aps.style.display = "none";
-				} else {
-					focs.style.display = "none";
-					facets.style.display = "none";
-					projects.style.display = "none";
-					aps.style.display = "block";
-				}
-			}
-			
-			function showFacets(){
-				/*
-				console.log("Before: "+document.getElementById('contentFacets').classList);
-				if (document.getElementById('contentFacets').classList.contains('facetsContentShowing')){
-					console.log("showing found")
-					document.getElementById('contentFacets').classList.remove("facetsContentShowing");
-					document.getElementById('contentFacets').classList.add('facetsContentHidden');
-				}
-				else if (document.getElementById('contentFacets').classList.contains('facetsContentHidden')){
-					console.log("hidden found")
-					document.getElementById('contentFacets').classList.remove("facetsContentHidden");
-					document.getElementById('contentFacets').classList.add('facetsContentShowing');
-				}
-				
-				else{
-					document.getElementById('contentFacets').classList.add('facetsContentShowing');
-				}
-				console.log('After doing smth: '+document.getElementById('contentFacets').classList);
-				*/
-				
-				
-				
-				
-				
-
-				if (!document.getElementById('facetsButton').classList.contains('activeDarkBlue')){
-					document.getElementById('facetsButton').classList.add('activeDarkBlue');
-				}
-				else {
-					document.getElementById('facetsButton').classList.remove("activeDarkBlue");
-				}
-
-				if (document.getElementById('apsButton').classList.contains('activeLightBlue')){
-					document.getElementById('apsButton').classList.remove('activeLightBlue');
-				}
-				if (document.getElementById('focsButton').classList.contains('activeDarkBlue')){
-					document.getElementById('focsButton').classList.remove('activeDarkBlue');
-				}
-				if (document.getElementById('projectsButton').classList.contains('activeLightBlue')){
-					document.getElementById('projectsButton').classList.remove('activeLightBlue');
-				}
-
-				if (facets.style.display === "block") {
-					facets.style.display = "none";
-				} else {
-					aps.style.display = "none";
-					focs.style.display = "none";
-					projects.style.display = "none";
-					facets.style.display = "block";
-				}
-			}
-			
-			function showProjects(){
-				if(!document.getElementById('projectsButton').classList.contains("activeLightBlue")) {
-					document.getElementById('projectsButton').classList.add("activeLightBlue");
-				}
-				else {
-					document.getElementById('projectsButton').classList.remove("activeLightBlue");
-				}
-
-				if(document.getElementById('focsButton').classList.contains("activeDarkBlue")) {
-					document.getElementById('focsButton').classList.remove("activeDarkBlue");	
-				}
-				if(document.getElementById('facetsButton').classList.contains("activeDarkBlue")) {
-					document.getElementById('facetsButton').classList.remove("activeDarkBlue");	
-				}
-				if(document.getElementById('apsButton').classList.contains("activeLightBlue")) {
-					document.getElementById('apsButton').classList.remove("activeLightBlue");	
-				}
-				
-				if (projects.style.display === "block") {
-					projects.style.display = "none";
-				} else {
-					aps.style.display = "none";
-					facets.style.display = "none";
-					focs.style.display = "none";
-					projects.style.display = "block";
-				}
-			}
-	</script>
-	-->
 	<div class="classes">
 		<div class="dark">
 			<h1>Foundations of Computer Science</h1>
@@ -266,6 +53,9 @@
 				<li class="smaller">connections between low-level hardware, programming, and abstract algorithms as tools for solving problems</li>
 				<li class="smaller">work on projects extending these ideas in the areas of data science, robotics, web development</li>
 			</ul>
+			<div class="goFoCSButton">
+				<a href="https://" onclick="location.href=this.href+internalWebsiteLink;return false;"><button class="focsButton">See Course Content</button></a>
+			</div>
 		</div>
 		<div class="light">
 			<h1>Algorithm Problem Solving</h1>
@@ -274,6 +64,9 @@
 				<li class="smaller">think about problems and algorithms and write the solutions precisely and coherently in plain English</li>
 				<li class="smaller">practice the types of problems  often presented to prospective employees at job interviews for companies such as Qualcomm, Google, Microsoft, Facebook, as well as start-up companies</li>
 			</ul>
+			<div class="goAPSButton">
+				<a href="https://" onclick="location.href=this.href+internalWebsiteLink;return false;"><button class="apsButton">See Homeworks</button></a>
+			</div>
 		</div>
 		<div class="light">
 			<h1>Facets</h1>
@@ -416,32 +209,6 @@
 </script>
 
 <script src="upgrade.js"></script>
-
-<!--<div><p class="category">Textbooks and interesting reads</p>
-		<div class="textbooks">
-			<div><a href="https://www.cs.hmc.edu/csforall/index.html"><button class="button3">CS for Scientists and Engineers</button></a><br>by Christine Alvarado, Zachary Dodds, Geoff Keunning, Ran Libeskind-Hadas</div><br>
-			<div><a href="http://www.amazon.com/Algorithmic-Puzzles-Anany-Levitin/dp/0199740445"><button class="button3">Algorithmic Puzzles</button></a><br>by Anany Levitin and Maria Levitin</div><br>
-			<div><a href="https://www.raspberrypi.org"><button class="button3">Raspberry Pi</button></a><br>Explore all you can do with a credit-card sized computer</div>
-		</div></div>
-
-		<div><p class="category">Mathematics refreshers</p>
-		<div class="math">
-			<div><a href="http://www.math.uow.edu.au/subjects/summer/topics/logs.html"><button class="button3">Logarithms</button></a><br>(Thanks to the University of Wollongong, Australia)</div><br>
-			<div><a href="https://www.khanacademy.org/math/algebra2/logarithms-tutorial"><button class="button3">Logarithms</button></a><br>(Thanks to Khan Academy)</div><br>
-			<div><a href="http://www.math.cornell.edu/twiki/bin/view/MSC/MscCapsules#Logarithms"><button class="button3">Cornell University Math Support Center Capsule: Logarithms</button></a></div><br>
-			<div><a href="https://www.youtube.com/watch?v=biqp0HjJmfk"><button class="button3">Binary number system</button></a><br>Youtube video by duzauvi</div><br>
-			<div><a href="https://www.khanacademy.org/math/precalculus/seq_induction"><button class="button3">Induction, sequences, geometric series, ...</button></a><br>(Thanks to Khan Academy)</div><br>
-			<div><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/"><button class="button3">Mathematics for Computer Science</button></a><br>by Lehman, Leighton, and Meyer</div>
-		</div></div>
-
-		<div><p class="category">Logistics</p>
-		<div class="logistics">
-			<div><a href="https://sdacs.ucsd.edu/~icc/index.php"><button class="button3">Computer Accounts</button></a></div><br>
-			<div><a href="https://acms.ucsd.edu/info/vncgnome.html"><button class="button3">Remote Access to Computer Labs</button></a></div><br>
-			<div><a href="https://gradescope.com/courses/20062"><button class="button3">Gradescope</button></a><br>for APS homework submission</div><br>
-			<div><a href="http://autograder.ucsd.edu"><button class="button3">Autograder Queue</button></a><br>for in-lab assistance during open tutor hours</div>
-		</div></div>	-->
-
 
 </body>
 </html>

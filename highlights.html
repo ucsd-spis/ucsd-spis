@@ -121,6 +121,7 @@
 							var lastName2 = data[i]['Partner 2 Last Name'];
 							var projectTitle = data[i]['Project Name'];
 							var paragraph = data[i]['Short description of the project (limit: 350 characters)'];
+							var link = data[i]['Link to Project'];
 							
 							var pair = false;
 							var imageName;
@@ -148,13 +149,21 @@
 							}
 							project += '</i></h5>';
 
-							project += '<h5>'+ paragraph + '</h5></div>';
-							project += "</div>"
+							project += '<h5>'+ paragraph + '</h5>';
+							
+							if (link != ""){
+								project += '<h6>' + "<a href='" + link + "'>" + link + "</a>" + '</h6>';
+							}
+							
+							project += "</div></div>"
 						}
 						$("projectsSide").html(project);	
 					});
 				</script>
-				<projectsSide></projectsSide>
+				<div class="projectsSide">
+					<projectsSide></projectsSide>
+				</div>
+				
 
 			</div>
 			<a class="carousel-control-prev" href="#carouselProject" role="button" data-slide="prev">
@@ -169,7 +178,7 @@
 	</div>
 
 	<div>
-		<p>Testimonials</p>
+		<h2>Testimonials</h2>
 		<div class="container">
 			<div id="carouselContent" class="carousel slide" data-interval="false" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">

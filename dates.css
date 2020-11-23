@@ -124,13 +124,6 @@ a {
 	padding-bottom: 10px;
 }
 
-.inner {
-	margin-left: 30px;
-}
-
-br {
-	line-height: 2px;
-}
 /* slideshow */
 .hidden {
 	display: none;
@@ -163,4 +156,12 @@ br {
   .slideshow img {
 	  width: 100%;
 	margin: 0;
+  }
+
+  .bulletSpacing {
+	margin-top: -12px;
+  }
+  
+  .newLineSpacing {
+	line-height: 0;
   }

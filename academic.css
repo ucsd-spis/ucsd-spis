@@ -41,35 +41,8 @@ img {
 }
 
 .top {
-	display: grid;
-	grid-template-columns: 6fr 1fr;
 	margin-left: 35px;
-	margin-right: 25px;
-}
-
-.intro{
-   margin-right: 35px;
-}
-
-.courseContent {
-	display: flex;
-  	justify-content: center;
- 	align-items: center;
-}
-
-.courseButton{
-	background-color: white;
-	color: black;
-	border: 2px solid black;
-	font-size: 16px;
-	padding: 16px 32px;
-	margin: 4px 2px;
-}
-
-.courseButton:hover {
-	background-color: black;
-	color: white;
-	cursor: pointer;
+	margin-right: 35px;
 }
 
 .facets {
@@ -199,6 +172,44 @@ ul {
 	padding-right: 20px;
 	padding-bottom: 20px;
 	margin: 15px;
+}
+
+.focsButton{
+	background-color: #142d91;
+	color: white;
+	border: 2px solid white;
+	font-size: 15px;
+	padding: 8px 16px;
+	margin: 2px 1px;
+}
+
+.focsButton:hover {
+	background-color: white;
+	color: #142d91;
+	cursor: pointer;
+}
+
+.goFoCSButton {
+	text-align: center;
+}
+
+.apsButton{
+	background-color: #369eba;
+	color: white;
+	border: 2px solid white;
+	font-size: 15px;
+	padding: 8px 16px;
+	margin: 2px 1px;
+}
+
+.apsButton:hover {
+	background-color: white;
+	color: #369eba;
+	cursor: pointer;
+}
+
+.goAPSButton {
+	text-align: center;
 }
 
 .facetsButton{
