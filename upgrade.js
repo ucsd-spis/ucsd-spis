@@ -9,6 +9,7 @@ var evaluationConsent, mediaReleaseWaiver, waiverOfLiability;
 $.getJSON("upgrades.json", function(json) {
     console.log(json);
     var year = json.year;
+    var pastYears = json.pastYears;
     var applicationStart = json.applicationStart;
     var applicationEnd = json.applicationEnd;
     var fee = json.fee;
@@ -133,5 +134,9 @@ $.getJSON("upgrades.json", function(json) {
 
     for (i=0; i<document.getElementsByClassName("confirmDate").length; i++) {
         document.getElementsByClassName("confirmDate")[i].innerHTML = acceptanceConfirmation;
+    }
+
+    for (i=0; i<document.getElementsByClassName("pastYears").length; i++) {
+        document.getElementsByClassName("pastYears")[i].innerHTML = pastYears;
     }
 });

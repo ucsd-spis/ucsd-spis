@@ -12,402 +12,174 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
-    <script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
 </head>
 
 
 <body>
-	
-	<div class="topnav">
-		<img id="logo" src="SPIS-logo.jpg">
-		<a class="tab" href="index.html">Home</a>
-		<a class="tab" href="academic.html">Academic Program</a>
-		<a class="tab" href="enrollment.html">Enrollment</a>
-		<a class="tab" href="calendar.html">Program Calendar</a>
-		<a class="tab" href="dates.html">Dates + Events</a>
-		<a class="tab" href="residential.html">Residential Life</a>
-		<a class="tab" href="people.html">People</a>
-		<a id="active" class="tab" href="highlights.html">Highlights</a>
-	</div>
 
-	<!--
-		OLD, BEYONCE VERSION
-		- separate div for each year
-			- put in same class
-			- EACH DIV:
-				- cover picture (long strip)
-				- text to show year (using loop, JS var, pic titled by year)
-				- CSS: overlay for fading on hover
-				- on hover: show 3 buttons (dropdowns/collapsible)
-					- images, testimonials, projects
-						- images: folder titled yearHighlights to pull from
-						- testimonials: csv/json file
-						- projects: csv (similar to people, google form, image title schema)
-
-		- loop from 2018 to current year-1, adds another 'box' (div)
-		
-	-->
-	<!--
-		NEW FORMAT
-
-		- Separate, big div for each year
-			- 3 sub-divs per year
-			- read from YEARhighlights folder
-
-		- Sub-div 1: images, moving from arrow clicks
-			- images subfolder
-		- Sub-div 2: projects, moving from arrow clicks
-			- .jpg from projects
-			- paragraphs, names, etc from csv
-		- Sub-div 3: testimonials, moving automatically (slideshow vibes)
-			- from csv in subfolder
-
-	-->
-
-	<h1>SPIS Throughout the Years...</h1>
-	<div class="imagesProjects">
-		<div id="carouselImages" class="carousel slide" data-ride="carousel">
-			<h2>Images</h2>
-			<div class="carousel-inner">
-				<!-- loop through images in folder
-				make new div for each pic-->
-				<div class="carousel-item active">
-					<img class="d-block" src="/highlights/2018highlights/images/2018-1.jpg" alt="First slide">
-				</div>
-
-				<div class="carousel-item">
-					<img class="d-block" src="/highlights/2018highlights/images/2018-2.jpg" alt="Second slide">
-				</div>
-			
-				<div class="carousel-item">
-					<img class="d-block" src="/highlights/2018highlights/images/2018-3.jpg" alt="Third slide">
-				</div>
-
-				<div class="carousel-item">
-					<img class="d-block" src="/highlights/2018highlights/images/2018-4.jpg" alt="Fourth slide">
-				</div>
-
-				<div class="carousel-item">
-					<img class="d-block" src="/highlights/2018highlights/images/2018-5.jpg" alt="Fifth slide">
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselImages" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselImages" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-			</a>
-		</div>
-
-		<div id="carouselProject" class="carousel slide" data-interval="false" data-ride="carousel">
-			<h2>Projects</h2>
-			<!--for every project-->
-			<div class="carousel-inner">
-				<script>
-					var data;
-					// cycle years through arr [2017, 2018, 2019, 2020] (add new year each time)
-					var year = 2020;
-					var projInfoLocation = "highlights/"+year+"highlights/projects";
-					d3.csv(projInfoLocation + "/projects.csv").then(function(result) {
-						data = result;
-						var project = "";
-						
-						for(i = 0; i < data.length; i++){
-							var firstName1 = data[i]['Partner 1 First Name'];
-							var lastName1 = data[i]['Partner 1 Last Name'];
-							var firstName2 = data[i]['Partner 2 First Name'];
-							var lastName2 = data[i]['Partner 2 Last Name'];
-							var projectTitle = data[i]['Project Name'];
-							var paragraph = data[i]['Short description of the project (limit: 350 characters)'];
-							var link = data[i]['Link to Project'];
-							
-							var pair = false;
-							var imageName;
-							if (firstName2 != ""){
-								pair = true;
-								imageName = lastName1 + "_" + lastName2 + ".jpg";
-							}
-							else{
-								imageName = lastName1 + ".jpg";
-							}
-							
-
-							if (i == 0){
-								project += '<div class="carousel-item oneProject active">';
-							}
-							else{
-								project += '<div class="carousel-item oneProject">';
-							}
-							project += '<div class="projectPic"><img class="d-block" src=' + projInfoLocation + "/" + imageName + '></div>';
+    <div class="topnav">
+        <img id="logo" src="SPIS-logo.jpg">
+        <a class="tab" href="index.html">Home</a>
+        <a class="tab" href="academic.html">Academic Program</a>
+        <a class="tab" href="enrollment.html">Enrollment</a>
+        <a class="tab" href="calendar.html">Program Calendar</a>
+        <a class="tab" href="dates.html">Dates + Events</a>
+        <a class="tab" href="residential.html">Residential Life</a>
+        <a class="tab" href="people.html">People</a>
+        <a id="active" class="tab" href="highlights.html">Highlights</a>
+    </div>
+    <h1>SPIS Throughout the Years...</h1>
+    <section class="theContent">
+    <script>
+		//years = [2020, 2019, 2018, 2017, 2013];
+		$.getJSON("upgrades.json", function(json) {
+            var pastYears = json.pastYears;
+			//console.log("after", pastYears);
+            
+            var sideNav = "<nav><ul>";
+            var yearContent = "<main>";
+			pastYears.forEach(year => {
+                // YEAR FOR SIDE NAV
+				sideNav += "<li><a href='#section-"+ year + "'>" + year + "</a></li>";
 				
-							project += '<div class="projectDescription"><h3>'+ projectTitle + '</h3><h5><i>' + firstName1 + " " + lastName1;
-							
-							if (pair){
-								project += ", " + firstName2 + " " +  lastName2;
-							}
-							project += '</i></h5>';
+				// IMAGES
+				yearContent += "<section id='section-" + year + "'>";
+				yearContent += "<h2 class='yearTitle'>" + year + "</h2>";
 
-							project += '<h5>'+ paragraph + '</h5>';
-							
-							if (link != ""){
-								project += '<h6>' + "<a href='" + link + "'>" + link + "</a>" + '</h6>';
-							}
-							
-							project += "</div></div>"
-						}
-						$("projectsSide").html(project);	
-					});
-				</script>
-				<div class="projectsSide">
-					<projectsSide></projectsSide>
-				</div>
+				yearContent += "<div class='imagesProjects'><div id='carouselImages-" + year + "' class='carousel slide' data-ride='carousel'><h2>Images</h2><div class='carousel-inner'>";
+                // go through each pic in folder
+                imagesPath = "/highlights/" + year + "highlights/images/" + year;
+                yearContent += "<div class='carousel-item active'><img class='d-block' src='" + imagesPath + "-1.jpg'></div>";
+                for (var i=2; i < 6; i++){
+					yearContent += "<div class='carousel-item'><img class='d-block' src='" + imagesPath + "-" + i + ".jpg'></div>";
+                }
+                yearContent += "</div>";
+                yearContent += "<a class='carousel-control-prev' href='#carouselImages-" + year + "' role='button' data-slide='prev'><span class='carousel-control-prev-icon' aria-hidden='true'></span><span class='sr-only'>Previous</span></a><a class='carousel-control-next' href='#carouselImages-"+year+" 'role='button' data-slide='next'><span class='carousel-control-next-icon' aria-hidden='true'></span><span class='sr-only'>Next</span></a></div>";
+                
+				// PROJECTS
+				yearContent += "<div id='carouselProject-"+year+"' class='carousel slide' data-interval='false' data-ride='carousel'><h2>Projects</h2><div class='carousel-inner'><div class='projectsSide'>";
 				
-
-			</div>
-			<a class="carousel-control-prev" href="#carouselProject" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselProject" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-
-	<div>
-		<h2>Testimonials</h2>
-		<div class="container">
-			<div id="carouselContent" class="carousel slide" data-interval="false" data-ride="carousel">
-				<div class="carousel-inner" role="listbox">
-					<script>
-						var year = 2020;
-						var testimonialInfoLocation = "/highlights/"+year+"highlights/testimonials";
-						d3.csv(testimonialInfoLocation + "/testimonials.csv").then(function(result){
-							data = result;
-							var testimonials = "";
-							
-							for(i = 0; i < data.length; i++){
-								var para = data[i]['Testimonial (character limit: 275) :'];
-								var name = data[i]['First name'] + " " + data[i]['Last name'];
-								var role = data[i]['What was your SPIS role?'];
-								var spisYear = data[i]['What year (most recent, if there are multiple) did you participate in SPIS? ex. 2021'];
-
-								if (i == 0){
-									testimonials += '<div class="carousel-item active text-center p-4">';
-								}
-								else{
-									testimonials += '<div class="carousel-item text-center p-4">';
-								}
-								testimonials += '<p>"' + para + '"</p>';
-								testimonials += '<p><i>- ' + name + ", " + spisYear + " " + role + '</i></p>';
-								
-								testimonials += '</div>';
-							}
-							$("testimonialSection").html(testimonials);
-						});
-					</script>
-					<testimonialSection></testimonialSection>
-					
-				</div>
-				<a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<script>
-		// var to add to, will convert to html at end
-		var all = "";
-		/*
-
-		const testFolder = './highlights/';
-		const fs = require('fs');
-
-		fs.readdirSync(testFolder).forEach(file => {
-		console.log(file);
-		});*/
-		// iterate through each highlights year
-		//for h_year in **highlights folder**:
-			// IMAGES, new div
-
-			// Bootstrap image carousel
-			/*
-			
-			<div id="images" class="image_carousel" data-ride="carousel">
-				<div class="carousel-inner">
-
-				// loop through images in folder
-					// make new div for each pic
-					<div>
-						<div class="carousel-item active">
-						<img class="d-block w-100" src="..." alt="First slide">
-					</div>
-
-				</div>
-
-				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-			*/
-
-			// PROJECTS, new div
-
-			// Bootstrap image + text
-			/*
-			
-			<div id="images" class="image_carousel" data-ride="carousel">
-				<div class="carousel-inner">
-
 				var data;
-				var proj = "";
-				d3.csv("advisors.csv").then(function(result) {
+				var projInfoLocation = "highlights/"+year+"highlights/projects";
+				var project = "";
+				d3.csv(projInfoLocation + "/projects.csv").then(function(result) {
+					data = result;
+					
+					for(i = 0; i < data.length; i++){
+						var firstName1 = data[i]['Partner 1 First Name'];
+						var lastName1 = data[i]['Partner 1 Last Name'];
+						var firstName2 = data[i]['Partner 2 First Name'];
+						var lastName2 = data[i]['Partner 2 Last Name'];
+						var projectTitle = data[i]['Project Name'];
+						var paragraph = data[i]['Short description of the project (limit: 350 characters)'];
+						var link = data[i]['Link to Project'];
+						var pair = false;
+						var imageName;
+						if (firstName2 != ""){
+							pair = true;
+							imageName = lastName1 + "_" + lastName2 + ".jpg";
+						}
+						else{
+							imageName = lastName1 + ".jpg";
+						}
+						
+
+						if (i == 0){
+							project += '<div class="carousel-item oneProject active">';
+						}
+						else{
+							project += '<div class="carousel-item oneProject">';
+						}
+						project += '<div class="projectPic"><img class="d-block" src=' + projInfoLocation + "/" + imageName + '></div>';
+			
+						project += '<div class="projectDescription"><h3>'+ projectTitle + '</h3><h5><i>' + firstName1 + " " + lastName1;
+						console.log(project);
+						
+						if (pair){
+							project += ", " + firstName2 + " " +  lastName2;
+						}
+						project += '</i></h5>';
+
+						project += '<h5>'+ paragraph + '</h5>';
+						
+						if (link != ""){
+							project += '<h6>' + "<a href='" + link + "'>" + link + "</a>" + '</h6>';
+						}
+						
+						project += "</div></div>";
+					}
+					var sectionName = "projectSection" + year;
+					$(sectionName).html(project);
+				});
+				//yearContent += "<projectSection></projectSection>";
+				yearContent += "<projectSection"+year+"></projectSection"+ year + ">";
+				yearContent += '</div></div><a class="carousel-control-prev" href="#carouselProject-' + year + '" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselProject-' + year + '" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>';
 				
-				// loop through rows in csv
-				for(i = 0; i < data.length; i++){
-					// make outer div for each "slide", with pic and description (*side by side in CSS)
-					<div class="project_slide">
-						
-						// make new div for each description
-						<div>
-							// partner names
-							var firstName = data[i]['First Name'];
-							var lastName = data[i]['Last Name'];
 
-							// image name from partner names 
-							var imageName = firstName + '_' + lastName + ".jpg";
-							
-							// description paragraph
-							var paragraph = data[i]['Introduction/Welcome paragraph'];
-							
-							proj += "<div class='person'>";
-							proj += "<div class='centered'><img src='advisors/" + imageName + "'class='pic'><br>";
-							proj += "<h1 class='name'>" + firstName + " " + lastName + "</h1></div>";
-							proj += "<h2 class='intro'>" + paragraph + "</h2>";
-							proj += "</div>";
+				// TESTIMONIALS
+				yearContent += '</div><div><h2>Testimonials</h2><div class="container"><div id="carouselTestimonials-' + year + '" class="carousel slide" data-interval="false" data-ride="carousel"><div class="carousel-inner" role="listbox">';
+				var testimonialInfoLocation = "/highlights/"+year+"highlights/testimonials";
+				var testimonials = "";
+				d3.csv(testimonialInfoLocation + "/testimonials.csv").then(function(result){
+					data = result;
+					for(i = 0; i < data.length; i++){
+						var para = data[i]['Testimonial (character limit: 275) :'];
+						var name = data[i]['First name'] + " " + data[i]['Last name'];
+						var role = data[i]['What was your SPIS role?'];
+						var spisYear = data[i]['What year (most recent, if there are multiple) did you participate in SPIS? ex. 2021'];
 
-						</div>
-						
-						// make new div for each pic
-						<div>
-							<div class="carousel-item active">
-							<img class="d-block w-100" src="..." alt="First slide">
-						</div>
+						if (i == 0){
+							testimonials += '<div class="carousel-item active testimonials text-center p-4">';
+						}
+						else{
+							testimonials += '<div class="carousel-item testimonials text-center p-4">';
+						}
+						testimonials += '<p>"' + para + '"</p>';
+						testimonials += '<p><i>- ' + name + ", " + spisYear + " " + role + '</i></p>';
+								
+						testimonials += '</div>';
+					}
 
-					</div>	
-				</div>
+					var sectionName = "testimonialsSection" + year;
+					$(sectionName).html(testimonials);
+				});
+				yearContent += "<testimonialsSection"+year+"></testimonialsSection"+year+"> </div>";
+				yearContent += '<a class="carousel-control-prev" href="#carouselTestimonials-' + year + '" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselTestimonials-' + year + '" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a> </div>';
+				yearContent += "</div></div> </section>";
+				
+			});
+            
+			sideNav += "</ul></nav>";
+			yearContent += "</main>";
 
-				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-			*/
-
-
-			// TESTIMONIALS, new div
-			/*
-			<div class="container">
-				<div id="carouselContent" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active text-center p-4">
-							<p>lorem ipsum (imagine longer text)</p>
-						</div>
-						<div class="carousel-item text-center p-4">
-							
-							<p>lorem ipsum (imagine longer text)</p>
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div>
-			*/
-
+			$("sideNav").html(sideNav);
+			$("yearContent").html(yearContent);
+		});
 	</script>
-
 	
-	<!--
-	<div class="year">
-		<img src="2018highlights/cover.jpg" class="cover">
-		<div class="title">2018</div>
-		<div class="buttons">
-			<button class="collapsible">Images</button>
-			<div class="content">
-				<p>That's on Wonderful AF Pictures.</p>
-			</div>
-			<button class="collapsible">Testimonials</button>
-			<div class="content">
-				<p>Period queen you tell 'em.</p>
-			</div>
-			<button class="collapsible">Projects</button>
-			<div class="content">
-				<p>Nice.</p>
-			</div>
-		</div>
-	</div>
-	<div class="year">
-		<img src="2017highlights/cover.png" class="cover">
-		<div class="title">2017</div>
-		<div class="buttons">
-			<button class="collapsible">Images</button>
-			<div class="content">
-				<p>ew!!!!!!!!!</p>
-			</div>
-			<button class="collapsible">Testimonials</button>
-			<div class="content">
-				<p>i hate it here.</p>
-			</div>
-			<button class="collapsible">Projects</button>
-			<div class="content">
-				<p>~PROJECTile vomit~</p>
-			</div>
-		</div>
-	</div>
-	<script>
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
+	<sideNav></sideNav>
+	<yearContent></yearContent>
+  
 
-		for (i = 0; i < coll.length; i++) {
-		coll[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var content = this.nextElementSibling;
-			if (content.style.display === "block") {
-			content.style.display = "none";
-			} else {
-			content.style.display = "block";
+  <script>
+	window.addEventListener("scroll", event => {
+		let mainNavLinks = document.querySelectorAll("nav ul li a");
+		let fromTop = window.scrollY;
+
+		mainNavLinks.forEach(link => {
+			let section = document.querySelector(link.hash);
+
+			if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+				link.classList.add("current");
+			} 
+			else {
+				link.classList.remove("current");
 			}
 		});
-		}	
-	</script>
--->
-	<script src="upgrade.js"></script>
+	});
+  </script>
 
-</body>
-</html>
-
-
+  <script src="upgrade.js"></script>
+  </body>
+  </html>
