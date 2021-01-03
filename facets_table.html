@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-	<!-- https://ucsd-spis.github.io/ucsd-spis/index.html -->
 
 <head>
 	<title>Facets</title>
@@ -23,7 +22,6 @@
 	
 	<div class="topnav">
 		<img src="SPIS-logo.jpg">
-		<!--Home, Academic Program, Enrollment, Program Calendar, Dates + Events, Residential Life, People, Highlights-->
 		<a class="tab" href="index.html">Home</a>
 		<a class="tab" href="academic.html">Academic Program</a>
 		<a class="tab" href="enrollment.html">Enrollment</a>
@@ -106,8 +104,8 @@
                         var linkEnd = table.indexOf("}");
                         var link = table.substring(linkStart+1, linkEnd);
                         
-                        if (!(link.includes("https://"))) {
-                            link = "https://" + link;
+                        if (!(link.includes("http://")) && !(link.includes("https://"))) {
+                            link = "http://" + link;
                         }
 
                         table = table.replace(table.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");

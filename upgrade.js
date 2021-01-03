@@ -1,13 +1,12 @@
 // takes info from upgrades.json to update variables
 
-// TRY PARSING JSON 
-// PROBLEM: LINKS NO WORK BUT EVERYTHING ELSE DOES -> FIXED
 var applicationLink, internalWebsiteLink;
 var mapLink, faq, confidentialHealthHistory;
 var evaluationConsent, mediaReleaseWaiver, waiverOfLiability;
+var highlightYear = 2020;
 
 $.getJSON("upgrades.json", function(json) {
-    console.log(json);
+    //console.log(json);
     var year = json.year;
     var pastYears = json.pastYears;
     var applicationStart = json.applicationStart;

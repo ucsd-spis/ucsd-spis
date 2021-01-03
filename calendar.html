@@ -23,9 +23,89 @@
 	</div> 
 
 
+	<script>
+		$.getJSON("upgrades.json", function(json) {
+			// today's date
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = today.getFullYear();
+
+			today = mm + '/' + dd + '/' + yyyy;
+			console.log("today:", today);
+
+			// opening ceremony date
+			var opening = json.programStart;
+
+			// get opening ceremony month
+			var search = opening.search(/\d/);
+			var month_str = opening.slice(0, search);
+			
+			var opening_mm = "";
+			if (month_str == "August "){
+				opening_mm = "08";
+			}
+			
+			// get opening ceremony day
+			var opening_dd = opening.slice(search, opening.search(","));
+			if (opening_dd < 10){
+				opening_dd = "0" + opening_dd;
+			}
+
+			// get opening ceremony year
+			var opening_yyyy = opening.slice(opening.search(",")+2, opening.length);
+
+			// closing ceremony date
+			var closing = json.programEnd;
+
+			// get opening ceremony month
+			var search = closing.search(/\d/);
+			var month_str = closing.slice(0, search);
+			
+			var closing_mm = "";
+			if (month_str == "September "){
+				closing_mm = "09";
+			}
+			
+			// get opening ceremony day
+			var closing_dd = closing.slice(search, closing.search(","));
+			if (closing_dd < 10){
+				closing_dd = "0" + closing_dd;
+			}
+			// get opening ceremony year
+			var closing_yyyy = closing.slice(closing.search(",")+2, closing.length);
+
+			// choose correct date
+			var date = closing_yyyy + "";
+
+			// if today's date in current SPIS program, show today's date
+			if ((mm == '08' && parseInt(dd) >= parseInt(opening_dd))| (mm == '09' && parseInt(dd) <= parseInt(closing_dd))){
+				if (dd == '31'){
+					date += "0901/" + yyyy +"0902";
+				}
+				else{
+					if (parseInt(dd)<10){
+						date += mm + dd + "/" + yyyy + mm + "0"+ String(parseInt(dd)+1);
+					}
+					else{
+						date += mm + dd + "/" + yyyy + mm + String(parseInt(dd)+1);
+					}					
+					
+				}
+			}
+			// if current date between application and opening, show first week of upcoming spis
+			else{
+				date += opening_mm + opening_dd + "/" + opening_yyyy+ "0806";
+			}
+			var dates = date;
+			
+			document.getElementById('calendarSource').innerHTML = '<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23a4b8e4&amp;ctz=America%2FLos_Angeles&amp;src=ZW5nLnVjc2QuZWR1X3Zwa2R1M2EyNmszYWxmOHJ0Mm0xOTA1NHVnQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4&amp;title=SPIS%20Calendar&amp;mode=WEEK&amp;showPrint=0&amp;showCalendars=0&amp;dates='+dates+'" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>';
+		})
+	</script>
+
 <div class="top">
-	<div class="calendar">
-		<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23a4b8e4&amp;ctz=America%2FLos_Angeles&amp;src=ZW5nLnVjc2QuZWR1X3Zwa2R1M2EyNmszYWxmOHJ0Mm0xOTA1NHVnQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4&amp;title=SPIS%20Calendar&amp;mode=WEEK&amp;showPrint=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	<div class="calendar" id="calendar">
+		<div id='calendarSource'></div>
 	</div>
 	
 	<div class="dates">
@@ -41,172 +121,7 @@
 			</li>
 		</ul>
 	</div>
-	<!--
-	<div class="dates">
-		<h1> Important Dates </h1>
-		<ul>
-			<li><a href="https://" onclick="location.href=this.href+applicationLink;return false;">SPIS Application</a> will open starting <b class="appStart"></b></li>
-			<li>Application deadline: <b class="appEnd"></b></li>
-			<li>Admission/scholarship notification: <b class="acceptDate"></b></li>
-			<li>Acceptance confirmation: <b class="confirmDate"></b></li>
-			<li>Fee payment deadline: <b class="feeDue"></b></li>
-			<li>Registration deadline: <b class="registrationDue"></b></li>
-			<li>SPIS Welcome Day: <b class="programStart"></b></li>
-			<li>SPIS Closing Ceremony: <b class="programEnd"></b></li>
-		</ul>
-	</div>-->
 </div>
-<!--
-<div class="bottom">
-	<div class="welcome">
-		<h1><c class="year"></c> SPIS Welcome Day</h1>
-		<script>
-			var data;
-			d3.csv("opening.csv").then(function(result) {
-				data = result;
-				var welcome = "";
-				
-				for(i = 0; i < data.length; i++){
-					welcome+= "<p></p> <b class='title'>";
-				    welcome+= data[i].Time;
-					welcome+= "</b> <p>&nbsp;&nbsp; &nbsp;";
-					welcome+= data[i].Description;
-					welcome+= "</p>";
-					
-					if(data[i].Description.includes('[')) {
-						var wordStart = data[i].Description.indexOf('[');
-						var wordEnd = data[i].Description.indexOf(']');
-						var linkStart = data[i].Description.indexOf('{');
-						var linkEnd = data[i].Description.indexOf('}');
-				
-						var word = data[i].Description.substring(wordStart + 1, wordEnd);
-						var link = data[i].Description.substring(linkStart + 1, linkEnd);
-
-						var original = data[i].Description.substring(wordStart, linkEnd + 1);
-						var replacement = "<a href='" + link + "'>" + word + "</a>";
-
-						welcome = welcome.replace(original, replacement);
-					}
-
-					if(data[i].Description.includes("Welcoming team:")) {
-						welcome = welcome.replace("Welcoming team:", "</p> <p>&nbsp;&nbsp; &nbsp;Welcoming team:</p>");
-					}
-
-					while(data[i].Description.includes("*")) {
-						var bulletStart = data[i].Description.indexOf('*');
-						var bulletEnd = data[i].Description.indexOf('*', bulletStart + 1);
-
-						var bullet = data[i].Description.substring(bulletStart + 1, bulletEnd);	
-						var original = data[i].Description.substring(bulletStart, bulletEnd);
-						if(bulletEnd == -1) {
-							bullet = data[i].Description.substring(bulletStart + 1);
-							original = data[i].Description.substring(bulletStart);
-						}
-
-						var replacement = "<ul><li>" + bullet + "</li></ul>";
-
-						welcome = welcome.replace(original, replacement);
-
-						data[i].Description = data[i].Description.replace('*', '');
-					}
-				}
-
-				$("welcome").html(welcome);	
-			});
-		</script>
-		<welcome></welcome>
-
-	</div>
-
-
-
-	<div class="closing">
-		<h1><c class="year"></c> SPIS Closing Ceremony</h1>
-		<script>
-			var data;
-			var closing = "";
-			
-			d3.csv("closing.csv").then(function(result) {
-				data = result;
-				for (i = 0; i < data.length; i++){
-					if (data[i].Intro.length > 0){
-						closing += "<p>" + data[i].Intro + "</p>";
-					}
-					var wordStart = closing.indexOf("[");
-					var wordEnd = closing.indexOf("]");
-					var word = closing.substring(wordStart+1, wordEnd);
-					
-					var linkStart = closing.indexOf("{");
-					var linkEnd = closing.indexOf("}");
-					var link = closing.substring(linkStart+1, linkEnd);
-					closing = closing.replace(closing.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>")
-				}
-
-				var j = 0;
-				for(i = 0; i < data.length; i++){
-					closing += "<p></p> <b class='title'>";
-				    closing += data[i].Time;
-					closing += "</b> <p>&nbsp;&nbsp; &nbsp;";
-					closing += data[i].Description;
-					closing += "</p>";
-
-					while(data[i].Description.includes("*")) {
-						if (j == 0) {
-							closing = closing.replace("*", "<ul> *");
-							j++;
-						}
-
-						var bulletStart = data[i].Description.indexOf('*');
-						var bulletEnd = data[i].Description.indexOf('*', bulletStart + 1);
-
-						var bullet = data[i].Description.substring(bulletStart + 1, bulletEnd);	
-						var original = data[i].Description.substring(bulletStart, bulletEnd);
-						if(bulletEnd == -1) {
-							bullet = data[i].Description.substring(bulletStart + 1);
-							original = data[i].Description.substring(bulletStart);
-						}
-
-						var replacement = "<li>" + bullet + "</li>";
-
-						closing = closing.replace(original, replacement);
-
-						data[i].Description = data[i].Description.replace('*', '');
-
-						if (data[i].Description.includes("'")) {
-							var outerBulletStart = data[i].Description.indexOf("*");
-							var outerBulletEnd = data[i].Description.indexOf("'");
-							var outerBulletOriginal = data[i].Description.substring(outerBulletStart, outerBulletEnd);
-							var outerBulletReplacement = data[i].Description.substring(outerBulletStart + 1, outerBulletEnd);
-							console.log(outerBulletOriginal);
-							console.log(outerBulletReplacement);
-							closing = closing.replace(outerBulletOriginal, "<li>" + outerBulletReplacement + "</li>");
-
-							closing+= "<ul>";
-							while(data[i].Description.includes("'")) {
-								var innerBulletStart = data[i].Description.indexOf("'");
-								var innerBulletEnd = data[i].Description.indexOf("'", innerBulletStart + 1);
-
-								var innerBullet = data[i].Description.substring(innerBulletStart + 1, innerBulletEnd);	
-								
-								var innerOriginal = data[i].Description.substring(innerBulletStart, innerBulletEnd + 2);
-								var innerReplacement = "<li type='circle' class='inner'>" + innerBullet + "</li>";
-
-								closing = closing.replace(innerOriginal, innerReplacement);
-
-								data[i].Description = data[i].Description.replace("'", "");
-								data[i].Description = data[i].Description.replace("'", "");
-							}
-							closing += "</ul>";
-						}
-					}
-					closing += "</ul>";
-				}
-				$("closing").html(closing);	
-			});
-		</script>
-		<closing></closing>
-
-	</div>-->
 </div>
 
 <script src="upgrade.js"></script>

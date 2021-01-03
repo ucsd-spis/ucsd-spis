@@ -41,77 +41,8 @@
 						welcome+= data[i].Time;
 						welcome+= "<br></b>";
 						welcome+= data[i].Description;
-						/*
-						if(data[i].Description.includes('[')) {
-							var wordStart = data[i].Description.indexOf('[');
-							var wordEnd = data[i].Description.indexOf(']');
-							var linkStart = data[i].Description.indexOf('{');
-							var linkEnd = data[i].Description.indexOf('}');
-					
-							var word = data[i].Description.substring(wordStart + 1, wordEnd);
-							var link = data[i].Description.substring(linkStart + 1, linkEnd);
-	
-							var original = data[i].Description.substring(wordStart, linkEnd + 1);
-							var replacement = "<a href='" + link + "'>" + word + "</a>";
-	
-							welcome = welcome.replace(original, replacement);
-						}
-						
-						while(data[i].Description.includes('\\')) {
-							welcome = welcome.replace("\\", "<br>");
-							data[i].Description = data[i].Description.replace("\\", "");
-						}
-
-						while(data[i].Description.includes("*")) {
-							if (j == 0) {
-								welcome = welcome.replace("*", "<ul> *");
-								j++;
-							}
-	
-							var bulletStart = data[i].Description.indexOf('*');
-							var bulletEnd = data[i].Description.indexOf('*', bulletStart + 1);
-	
-							var bullet = data[i].Description.substring(bulletStart + 1, bulletEnd);	
-							var original = data[i].Description.substring(bulletStart, bulletEnd);
-							if(bulletEnd == -1) {
-								bullet = data[i].Description.substring(bulletStart + 1);
-								original = data[i].Description.substring(bulletStart);
-							}
-	
-							var replacement = "<li>" + bullet + "</li>";
-	
-							welcome = welcome.replace(original, replacement);
-	
-							data[i].Description = data[i].Description.replace('*', '');
-	
-							if (data[i].Description.includes("'")) {
-								var outerBulletStart = data[i].Description.indexOf("*");
-								var outerBulletEnd = data[i].Description.indexOf("'");
-								var outerBulletOriginal = data[i].Description.substring(outerBulletStart, outerBulletEnd);
-								var outerBulletReplacement = data[i].Description.substring(outerBulletStart + 1, outerBulletEnd);
-
-								welcome = welcome.replace(outerBulletOriginal, "<li>" + outerBulletReplacement + "</li>");
-	
-								welcome += "<ul>";
-								while(data[i].Description.includes("'")) {
-									var innerBulletStart = data[i].Description.indexOf("'");
-									var innerBulletEnd = data[i].Description.indexOf("'", innerBulletStart + 1);
-	
-									var innerBullet = data[i].Description.substring(innerBulletStart + 1, innerBulletEnd);	
-									
-									var innerOriginal = data[i].Description.substring(innerBulletStart, innerBulletEnd + 2);
-									var innerReplacement = "<li type='circle' class='inner'>" + innerBullet + "</li>";
-	
-									welcome = welcome.replace(innerOriginal, innerReplacement);
-	
-									data[i].Description = data[i].Description.replace("'", "");
-									data[i].Description = data[i].Description.replace("'", "");
-								}
-								welcome += "</ul>";
-							}
-						}
-						welcome += "</ul>";*/
 					}
+
 					// INSERT BULLET
 					while(welcome.includes("*")) {
 						var bulletStart = welcome.indexOf('*');
@@ -148,8 +79,8 @@
 						var linkEnd = welcome.indexOf("}");
 						var link = welcome.substring(linkStart+1, linkEnd);
 						
-						if (!(link.includes("https://"))) {
-							link = "https://" + link;
+						if (!((link.includes("http://")) || (link.includes("https://")))) {
+							link = "http://" + link;
 						}
 
 						welcome = welcome.replace(welcome.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
@@ -299,8 +230,8 @@
 							var linkEnd = closing.indexOf("}");
 							var link = closing.substring(linkStart+1, linkEnd);
 							
-							if (!(link.includes("https://"))) {
-								link = "https://" + link;
+							if (!(link.includes("http://")) && !(link.includes("https://"))) {
+								link = "http://" + link;
 							}
 
 							closing = closing.replace(closing.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");

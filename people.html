@@ -103,8 +103,8 @@
 				var linkEnd = instructor.indexOf("}");
 				var link = instructor.substring(linkStart+1, linkEnd);
 				
-				if (!(link.includes("https://"))) {
-					link = "https://" + link;
+				if (!(link.includes("http://")) && !(link.includes("https://"))) {
+					link = "http://" + link;
 				}
 
 				instructor = instructor.replace(instructor.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
@@ -205,8 +205,8 @@
 				var linkEnd = advisor.indexOf("}");
 				var link = advisor.substring(linkStart+1, linkEnd);
 				
-				if (!(link.includes("https://"))) {
-					link = "https://" + link;
+				if (!(link.includes("http://")) && !(link.includes("https://"))) {
+					link = "http://" + link;
 				}
 
 				advisor = advisor.replace(advisor.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");

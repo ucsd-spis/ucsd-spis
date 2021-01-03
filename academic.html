@@ -1,5 +1,4 @@
 <html>
-<!--Plan for page: 4 buttons (FoCS, APS, Facets, Projects) that show info when clicked-->
 <head>
 	<title>Academic Program</title>
 	<link rel="stylesheet" href="academic.css">
@@ -37,10 +36,27 @@
 			</li>
 		</ul>
 		<p>In addition, students will participate in the Facets of Computer Science and Engineering seminar, where they will be exposed to the larger world of computing and learn the tools and techniques needed to make a smooth transition to UC San Diego.
+		<script>
+		d3.csv("instructors.csv").then(function(result) {
+			data = result;
+			var profNames = "";
+			for(i = 0; i < data.length; i++){
+				var firstName = data[i]['First Name'];
+				var lastName = data[i]['Last Name'];
 
-		<c class="year"></c> SPIS faculty include Gary Gillespie, Curt Schurgers, and Niema Moshiri.</p>
-
-	
+				if (i == data.length-1){
+					profNames += " and " + firstName + " " + lastName + ".";
+				}
+				else{
+					profNames += firstName + " " + lastName + ", ";
+				}
+			}
+			
+			
+			$("profNames").html(profNames);	
+		});
+		</script>
+		<c class="year"></c> SPIS faculty include <profNames></profNames></p>
 	</div>
 
 	<div class="classes">

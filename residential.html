@@ -92,8 +92,8 @@
 							var linkEnd = housing.indexOf("}");
 							var link = housing.substring(linkStart+1, linkEnd);
 							
-							if (!(link.includes("https://"))) {
-								link = "https://" + link;
+							if (!(link.includes("http://")) && !(link.includes("https://"))) {
+								link = "http://" + link;
 							}
 
 							housing = housing.replace(housing.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
@@ -201,8 +201,8 @@
 							var linkEnd = dining.indexOf("}");
 							var link = dining.substring(linkStart+1, linkEnd);
 							
-							if (!(link.includes("https://"))) {
-								link = "https://" + link;
+							if (!(link.includes("http://")) && !(link.includes("https://"))) {
+								link = "http://" + link;
 							}
 
 							dining = dining.replace(dining.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");

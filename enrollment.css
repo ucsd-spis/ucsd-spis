@@ -95,10 +95,12 @@ h2 {
 .title {
 	font-size: 22px;
 }
+
 .small_title{
 	font-size: 20px;
 	line-height: 16px;
 }
+
 a {
 	color: white;
 	font-size: 18px;
@@ -150,8 +152,7 @@ ul {
   }
 
   .collapsibleLeft:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
+	content:'\002B'; 
 	font-size: 20px;
 	color: white;
 	float: right;
@@ -159,7 +160,6 @@ ul {
   }
 
   .collapsibleLeft:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content:'\002B'; 
 	font-size: 20px;	
 	color: #369eba;
@@ -168,12 +168,11 @@ ul {
   }
 
   .activeLeft:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	content: '\002D'; 
 	color: #369eba;
   }
 
   .activeLeft:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content: '\002D';
 	font-size: 20px;	
 	color: #369eba;
@@ -206,8 +205,7 @@ ul {
   }
 
   .collapsibleRight:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
+	content:'\002B'; 
 	font-size: 20px;
 	color: white;
 	float: right;
@@ -215,7 +213,6 @@ ul {
   }
 
   .collapsibleRight:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content:'\002B'; 
 	font-size: 20px;	
 	color: #142d91;
@@ -224,12 +221,11 @@ ul {
   }
 
   .activeRight:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	content: '\002D'; 
 	color: #142d91;
   }
 
   .activeRight:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content: '\002D';
 	font-size: 20px;	
 	color: #142d91;
@@ -239,7 +235,6 @@ ul {
 
 
   /* Style the collapsible content. Note: hidden by default */
-  
   .content {
 	padding: 0 18px;
 	display: none;

@@ -275,8 +275,7 @@ ul {
   }
 
   .collapsibleYellow:after {
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
-	content:'\002B'; /*plus*/
+	content:'\002B'; 
 	font-size: 20px;
 	color: black;
 	float: right;
@@ -284,7 +283,6 @@ ul {
   }
 
   .collapsibleYellow:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content:'\002B'; 
 	font-size: 20px;	
 	color: #f2df61;
@@ -293,12 +291,11 @@ ul {
   }
 
   .activeYellow:after {
-	content: '\002D'; /* Unicode character for "minus" sign (-) */
+	content: '\002D';
 	color: #f2df61;
   }
 
   .activeYellow:hover:after {  
-	/*content: '\02795';*/ /* Unicode character for "plus" sign (+) */
 	content: '\002D';
 	font-size: 20px;	
 	color: #f2df61;
@@ -349,38 +346,10 @@ ul {
 	  font-size: 25px;
 	  margin-top: 20px;
   }
+
   .contentFacetsHidden{
 	display:none;
-	/*
-	padding: 0 18px;
-	background-color: #142d91;
-	color: white;
-	opacity: 100%;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding: 20px;*/
   }
-  /*
-  #contentFacets.contentFacetsShowing{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	padding: 0 18px;
-	background-color: #142d91;
-	color: white;
-	opacity: 100%;
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	padding: 20px;
-  }
-  .insideFacets{
-	float: left;
-	width: 50%;
-	padding: 10px;
-  }*/
 
   #contentFacets table {
 	border-collapse: collapse;

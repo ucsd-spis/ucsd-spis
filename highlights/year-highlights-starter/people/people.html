@@ -1,0 +1,261 @@
+<html>
+
+<head>
+	<title>Previous People</title>
+	<link rel="stylesheet" href="people.css">
+	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+</head>
+
+<body>
+
+	<a href="../../../highlights.html"><button class="goBack">Go Back</button></a>
+	<h1 id="title">SPIS Team</h1>
+
+	<script>
+		var data;
+		d3.csv("instructors.csv").then(function(result) {
+			data = result;
+			
+			if(data.length % 4 == 0) {
+				var instructor = "<section class='instructors4'>";
+			}
+			else if(data.length % 3 == 0) {
+				var instructor = "<section class='instructors3'>";
+			}
+			else if(data.length % 4 > data.length % 3){
+				var instructor = "<section class='instructors4'>";
+			}
+			else {
+				var instructor = "<section class='instructors3'>";	
+			}
+			
+			for(i = 0; i < data.length; i++){
+				var firstName = data[i]['First Name'];
+				var lastName = data[i]['Last Name'];
+				var imageName = firstName + '_' + lastName + ".jpg";
+				var paragraph = data[i]['Introduction/Welcome paragraph'];
+				var email = data[i]['Preferred email address to publish so SPIS students can contact you directly'];
+				
+				instructor += "<div class='person'>";
+				instructor += "<div class='centered'><img src='/instructors/" + imageName + "'class='pic'><br>";
+				instructor += "<h1 class='name'>" + firstName + " " + lastName + "</h1></div>";
+				instructor += "<h2 class='intro'>" + paragraph + "</h2>";
+				instructor += "<h3 class='email'>Email: <a href='mailto: " + email + "'>" + email + "</a></h3>";
+				instructor += "</div>";
+
+			}
+			instructor += "</section>";
+			
+			// INSERT BULLET
+			while(instructor.includes("*")) {
+				var bulletStart = instructor.indexOf('*');
+				var bulletEnd = instructor.indexOf('*', bulletStart + 1);
+
+				var bullet = instructor.substring(bulletStart + 1, bulletEnd);	
+				var original = instructor.substring(bulletStart, bulletEnd + 1);
+
+				var replacement = "<ul><li class='bulletSpacing'>" + bullet + "</li></ul>";
+
+				instructor = instructor.replace(original, replacement);
+			}
+			
+			// INSERT SUB-BULLET
+			while(instructor.includes("#")) {
+				var subBulletStart = instructor.indexOf("#");
+				var subBulletEnd = instructor.indexOf("#", subBulletStart + 1);
+
+				var subBullet = instructor.substring(subBulletStart + 1, subBulletEnd);	
+				var original = instructor.substring(subBulletStart, subBulletEnd + 1);
+
+				var replacement = "<ul><ul><li class='bulletSpacing'>" + subBullet + "</li></ul></ul>";
+
+				instructor = instructor.replace(original, replacement);
+			}
+			
+			// ADD LINK TO WORD
+			while(instructor.includes('[')){
+				var wordStart = instructor.indexOf("[");
+				var wordEnd = instructor.indexOf("]");
+				var word = instructor.substring(wordStart+1, wordEnd);
+				
+				var linkStart = instructor.indexOf("{");
+				var linkEnd = instructor.indexOf("}");
+				var link = instructor.substring(linkStart+1, linkEnd);
+				
+				if (!(link.includes("https://"))) {
+					link = "https://" + link;
+				}
+
+				instructor = instructor.replace(instructor.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
+			}
+			
+			// INSERT VARIABLES
+			while(instructor.includes('^')) {
+				var varNameStart = instructor.indexOf('^');
+				var varNameEnd = instructor.indexOf('^', varNameStart + 1);
+		
+				var original = instructor.substring(varNameStart, varNameEnd + 1);
+
+				instructor = instructor.replace(original, "");
+			}
+
+			// ADD NEWLINE
+			while(instructor.includes('\\')){
+				instructor = instructor.replace("\\", "<section class='newLineSpacing'></section>");
+			}
+			
+			$("instructors").html(instructor);	
+		});
+	</script>
+	<p class="category">Instructors</p>
+	<instructors></instructors>
+	<br><br>
+
+	<script>
+		var data;
+		d3.csv("advisors.csv").then(function(result) {
+			data = result;
+			
+			if(data.length % 4 == 0) {
+				var advisor = "<section class='advisors4'>";
+			}
+			else if(data.length % 3 == 0) {
+				var advisor = "<section class='advisors3'>";
+			}
+			else if(data.length % 4 > data.length % 3){
+				var advisor = "<section class='advisors4'>";
+			}
+			else {
+				var advisor = "<section class='advisors3'>";	
+			}
+			
+			for(i = 0; i < data.length; i++){
+				var firstName = data[i]['First Name'];
+				var lastName = data[i]['Last Name'];
+				var imageName = firstName + '_' + lastName + ".jpg";
+				var paragraph = data[i]['Introduction/Welcome paragraph'];
+				var email = data[i]['Preferred email address to publish so SPIS students can contact you directly'];
+				advisor += "<div class='person'>";
+				advisor += "<div class='centered'><img src='/advisors/" + imageName + "'class='pic'><br>";
+				advisor += "<h1 class='name'>" + firstName + " " + lastName + "</h1></div>";
+				advisor += "<h2 class='intro'>" + paragraph + "</h2>";
+				advisor += "<h3 class='emailAdvisor'>Email: <a href='mailto: " + email + "'>" + email + "</a></h3>";
+				advisor += "</div>";
+
+			}
+			advisor += "</section>";
+			
+			// INSERT BULLET
+			while(advisor.includes("*")) {
+				var bulletStart = advisor.indexOf('*');
+				var bulletEnd = advisor.indexOf('*', bulletStart + 1);
+
+				var bullet = advisor.substring(bulletStart + 1, bulletEnd);	
+				var original = advisor.substring(bulletStart, bulletEnd + 1);
+
+				var replacement = "<ul><li class='bulletSpacing'>" + bullet + "</li></ul>";
+
+				advisor = advisor.replace(original, replacement);
+			}
+
+			// INSERT SUB-BULLET
+			while(advisor.includes("#")) {
+				var subBulletStart = advisor.indexOf("#");
+				var subBulletEnd = advisor.indexOf("#", subBulletStart + 1);
+
+				var subBullet = advisor.substring(subBulletStart + 1, subBulletEnd);	
+				var original = advisor.substring(subBulletStart, subBulletEnd + 1);
+
+				var replacement = "<ul><ul><li class='bulletSpacing'>" + subBullet + "</li></ul></ul>";
+
+				advisor = advisor.replace(original, replacement);
+			}
+			
+			// ADD LINK TO WORD
+			while(advisor.includes('[')){
+				var wordStart = advisor.indexOf("[");
+				var wordEnd = advisor.indexOf("]");
+				var word = advisor.substring(wordStart+1, wordEnd);
+				
+				var linkStart = advisor.indexOf("{");
+				var linkEnd = advisor.indexOf("}");
+				var link = advisor.substring(linkStart+1, linkEnd);
+				
+				if (!(link.includes("https://"))) {
+					link = "https://" + link;
+				}
+
+				advisor = advisor.replace(advisor.substring(wordStart, linkEnd+1), "<a href='" + link + "'>" + word + "</a>");
+			}
+
+			// INSERT VARIABLES
+			while(advisor.includes('^')) {
+				var varNameStart = advisor.indexOf('^');
+				var varNameEnd = advisor.indexOf('^', varNameStart + 1);
+
+				var original = advisor.substring(varNameStart, varNameEnd + 1);
+
+				advisor = advisor.replace(original, "");
+			}
+
+			// ADD NEWLINE
+			while(advisor.includes('\\')){
+				advisor = advisor.replace("\\", "<section class='newLineSpacing'></section>");
+			}
+			
+
+			$("advisors").html(advisor);	
+		});
+	</script>
+	<p class="category">Advisors</p>
+	<advisors></advisors>
+	<br><br>
+	
+	<script>
+		var data;
+		d3.csv("mentors.csv").then(function(result) {
+			data = result;
+			
+			if(data.length % 4 == 0) {
+				var mentor = "<section class='mentors4'>";
+			}
+			else if(data.length % 3 == 0) {
+				var mentor = "<section class='mentors3'>";
+			}
+			else if(data.length % 4 > data.length % 3){
+				var mentor = "<section class='mentors4'>";
+			}
+			else {
+				var mentor = "<section class='mentors3'>";	
+			}
+			
+			for(i = 0; i < data.length; i++){
+				var firstName = data[i]['First Name'];
+				var lastName = data[i]['Last Name'];
+				var imageName = firstName + '_' + lastName + ".jpg";
+				var paragraph = data[i]['Introduction/Welcome paragraph'];
+				var email = data[i]['Preferred email address to publish so SPIS students can contact you directly'];
+				
+				mentor += "<div class='person'>";
+				mentor += "<div class='centered'><img src='/mentors/" + imageName + "'class='pic'><br>";
+				mentor += "<h1 class='name'>" + firstName + " " + lastName + "</h1></div>";
+				mentor += "<h2 class='intro'>" + paragraph + "</h2>";
+				mentor += "<h3 class='email'>Email: <a href='mailto: " + email + "'>" + email + "</a></h3>";
+				mentor += "</div>";
+			}
+			mentor += "</section>"
+
+			$("mentorPictures").html(mentor);	
+		});
+	</script>
+	<p class="category">Mentors</p>
+	<mentorPictures></mentorPictures>
+
+	</div>
+
+</body>
+</html>
