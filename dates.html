@@ -2,19 +2,26 @@
 
 <head>
 	<title>Dates + Events</title>
-	<link rel="stylesheet" href="dates.css">
-	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
+	<link rel="stylesheet" href="./styles/dates.css">
+	<link rel="shortcut icon" href="./logos/spis_logo_pic.png" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
 	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+	<script>
+		$.getJSON("update.json", function(json) {
+			for (var key in json){
+				localStorage.setItem(key, json[key]);
+			}
+		});
+	</script>
 </head>
 
 
 <body>
 	
 	<div class="topnav">
-		<img src="SPIS-logo.jpg">
+		<img src="./logos/SPIS-logo.jpg">
 		<a class="tab" href="index.html">Home</a>
 		<a class="tab" href="academic.html">Academic Program</a>
 		<a class="tab" href="enrollment.html">Enrollment</a>
@@ -31,7 +38,7 @@
 			<h1><c class="year"></c> SPIS Welcome Day</h1>
 			<script>
 				var data;
-				d3.csv("welcome.csv").then(function(result) {
+				d3.csv("./csv/welcome.csv").then(function(result) {
 					data = result;
 					var welcome = "";
 					
@@ -179,7 +186,7 @@
 				var data;
 				var closing = "";
 				
-				d3.csv("closing.csv").then(function(result) {
+				d3.csv("./csv/closing.csv").then(function(result) {
 					data = result;
 					for (i = 0; i < data.length; i++){
 						if (data[i].Intro.length > 0){
@@ -263,7 +270,7 @@
 
 	</div>
 
-	<script src="upgrade.js"></script>
+	<script src="update.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.topnav {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ 	overflow: hidden;
+ 	background-color: white;
+	font-family: 'Manjari', sans-serif;
+}
+
+.topnav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #369eba;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #369eba;
+  color: white;
+}
+
+.topnav a#active {
+  background-color: #f2df61;
+  color: #142d91;
+}
+
+img {
+	display: block;
+	float:left;
+	height: 60px;
+	width: 100px;
+	margin: auto;
+}
+
+.split {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.welcome {
+	grid-row-start: 1;
+  	grid-row-end: 4;
+	margin-top: 15px;
+	margin-right: 20px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	background-color: #369eba;
+	border-radius: 15px;
+	color: white;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.images {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	margin-top: 22%;
+	margin-bottom: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.dates {
+	grid-column-start: 2;
+    grid-column-end: 3;
+	margin-top: 60%;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 100px;
+	background-color: #f2df61;;
+	border-radius: 15px;
+	color: black;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.closing {
+	grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+	margin-top: 15px;
+	margin-right: 30px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	background-color: #142d91;
+	border-radius: 15px;
+	color: white;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.title {
+	font-size: 17px;
+}
+
+h1 {
+	text-align: center;
+}
+
+a {
+	color: white;
+}
+
+.dates a {
+	color: black;
+}
+
+.dates li {
+	padding-bottom: 10px;
+}
+
+/* slideshow */
+.hidden {
+	display: none;
+  }
+
+.container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+  
+  .container > div {
+	display: inline-block;
+  }
+  
+  .slideshow {
+	margin-right: 25%;
+	position: relative;
+	width: 100%;
+	height: auto;
+  }
+  
+  .slideshow > div {
+	  position: absolute;
+	  top: 0; 
+	  left: 0; 
+	  right: 0; 
+	  bottom: 0; 
+  }
+  
+  .slideshow img {
+	  width: 100%;
+	margin: 0;
+  }
+
+  .bulletSpacing {
+	margin-top: -12px;
+  }
+  
+  .newLineSpacing {
+	line-height: 0;
+  }

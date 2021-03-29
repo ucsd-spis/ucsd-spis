@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.developers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+}
+
+.link {
+  opacity: 0.8;
+}
+
+.link:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.both {
+  background-color: #f2df61;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.anisha {
+  background-color: #369eba;
+  color: white;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 5%;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.alise {
+  background-color: #142d91;
+  color: white;
+  margin-left: 5%;
+  margin-right: 10%;
+  margin-top: 5%;
+  border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+h2 {
+  text-align: center;
+}
+
+button{
+  background-color: #f2df61;
+  border: 2px solid black;
+  font-size: 16px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  border-radius: 10px;
+}
+
+button:hover {
+	background-color: black;
+	color: #f2df61;
+	cursor: pointer;
+}
+
+.pic {
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image {
+	grid-template-columns: 1fr 1fr 1fr;
+}

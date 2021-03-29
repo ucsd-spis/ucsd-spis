@@ -3,16 +3,18 @@
 
 <head>
 	<title>Facets</title>
-	<link rel="stylesheet" href="facets_table.css">
-	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
+	<link rel="stylesheet" href="./styles/facets_table.css">
+	<link rel="shortcut icon" href="./logos/spis_logo_pic.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3-dsv.v2.min.js"></script>
     <script src="https://d3js.org/d3-fetch.v2.min.js"></script>
     <script>
-		$.getJSON("upgrades.json", function(json) {
-			localStorage.setItem("year", json.year);
+		$.getJSON("update.json", function(json) {
+			for (var key in json){
+				localStorage.setItem(key, json[key]);
+			}
 		});
 	</script>
 </head>
@@ -21,7 +23,7 @@
 <body>
 	
 	<div class="topnav">
-		<img src="SPIS-logo.jpg">
+		<img src="./logos/SPIS-logo.jpg">
 		<a class="tab" href="index.html">Home</a>
 		<a class="tab" href="academic.html">Academic Program</a>
 		<a class="tab" href="enrollment.html">Enrollment</a>
@@ -50,12 +52,13 @@
 		<td style="width:65%"><div class="facets2"><facetsTable></facetsTable></td></tr>
 			<script>
 				var data;
-				d3.csv("facets.csv").then(function(result) {
+				d3.csv("./csv/facets.csv").then(function(result) {
 					data = result;
 					var table = "<table class='facets'>";
 					table+= "<tr><th>Date</th>";
 					table+= "<th>Title</th>";
-					table+= "<th>Speaker</th></tr>";
+                    table+= "<th>Speaker</th>";
+                    table+= "<th>Place and Time</th></tr>";
 					
 					for(i = 0; i < data.length; i++){
 						table+= "<tr><td>";
@@ -64,6 +67,8 @@
 						table+= data[i].Title;
 						table+= "</td><td>";
 						table+= data[i].Speaker;
+                        table+= "</td><td>";
+                        table+= data[i]['Place and Time'];
                         table+= "</td></tr>";
 					}
                     table+= "</table>";
@@ -137,5 +142,5 @@
     <br><br>
 		
 
-    <script src="upgrade.js"></script>
+    <script src="update.js"></script>
 </body>

@@ -2,16 +2,17 @@
 
 <head>
 	<title>Residential Life</title>
-	<link rel="stylesheet" href="residential.css">
-	<link rel="shortcut icon" href="spis_logo_pic.png" type="image/png">
+	<link rel="stylesheet" href="./styles/residential.css">
+	<link rel="shortcut icon" href="./logos/spis_logo_pic.png" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Manjari|Source+Sans+Pro&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
 	<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
 	<script>
-		$.getJSON("upgrades.json", function(json) {
-			localStorage.setItem("programStart", json.programStart);
-			localStorage.setItem("programEnd", json.programEnd);
+		$.getJSON("update.json", function(json) {
+			for (var key in json){
+				localStorage.setItem(key, json[key]);
+			}
 		});
 	</script>
 </head>
@@ -20,7 +21,7 @@
 <body>
 
 	<div class="topnav">
-		<img src="SPIS-logo.jpg">
+		<img src="./logos/SPIS-logo.jpg">
 		<a class="tab" href="index.html">Home</a>
 		<a class="tab" href="academic.html">Academic Program</a>
 		<a class="tab" href="enrollment.html">Enrollment</a>
@@ -38,7 +39,7 @@
 			<h2>
 				<script>
 					var data;
-					d3.csv("housing.csv").then(function(result) {
+					d3.csv("./csv/housing.csv").then(function(result) {
 						data = result;
 						var housing = "";
 						
@@ -54,7 +55,18 @@
 							housing+= "<br></b>";
 							housing+= data[i].Details;
 						}
+
 						housing+= "<br>";
+						for(i = 0; i < data.length; i++) {
+							if(data[i].Buttons == "") {
+								break;
+							}
+							housing+= "<br><div class='buttons'><a href='";
+							housing+= data[i]['Button Links'];
+							housing+= "'><button>";
+							housing+= data[i].Buttons;
+							housing+= "</button></a></div>";
+						}
 
 						// INSERT BULLET
 						while(housing.includes("*")) {
@@ -121,10 +133,6 @@
 					});
 				</script>
 				<housing></housing>
-				
-				<div class="buttons"><a href="https://" onclick="location.href=this.href+mapLink;return false;"><button>Map</button></a><br></div>
-				<div class="buttons"><a href="https://" onclick="location.href=this.href+faq;return false;"><button>FAQs</button></a></div>
-
 			</h2>
 		</div>
 
@@ -135,7 +143,7 @@
 				<script>
 					var data;
 					var dining = "";
-					d3.csv("dining.csv").then(function(result) {
+					d3.csv("./csv/dining.csv").then(function(result) {
 						data = result;
 						var j = 0;
 						for(i = 0; i < data.length; i++){
@@ -155,7 +163,6 @@
 							dining+= "<p>";
 							dining+= data[i].Closing;
 							dining+= "</p>";
-							
 						}
 						
 						dining += "<p><b class='title'>Special Meal Accomodations</b></p>";
@@ -235,7 +242,7 @@
 		</div>
 	</div>
 
-	<script src="upgrade.js"></script>
+	<script src="update.js"></script>
 
 </body>
 </html>

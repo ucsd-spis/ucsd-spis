@@ -1,0 +1,8 @@
+Intro,[Application]{enrollment.html},[Fee]{enrollment.html},[Residential]{residential.html},[Program Duration]{calendar.html},[Contact]{mailto: ^programDirectorEmail^}
+"^year^ SPIS is a completely online program with no residential component. ^year^ SPIS will consider applications from all ^year^ UC San Diego freshmen who are admitted to one of the following majors:
+*Computer Engineering, Computer Science and Bioinformatics majors in the CSE Department*
+*Computer Engineering majors in the ECE Department*
+*Math/CS majors the Mathematics Department*
+*Data Science majors*
+\\
+In addition, we will consider applications from a small of number of other freshmen who would like to explore computer science and engineering.",Applications will open on ^applicationStart^ and close on ^applicationEnd^.,"Students are required to pay a total fee of $^fee^ to cover the instructional, housing and dining expenses as well as books, supplies, and event expenses.","Participants will live in UC, San Diego campus housing for the entire duration of the program.",The program runs for five weeks from ^programStart^ through ^programEnd^.,"If you have any questions about the program, please send email to ^programDirector^ at ^programDirectorEmail^ with a brief statement about your interest and academic background."
